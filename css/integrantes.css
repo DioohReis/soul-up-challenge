@@ -1,0 +1,43 @@
+.integrantes{
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.integrantes .slide{
+    position: absolute;
+    top: 10%;
+    width: 12.5rem;
+    height: 15.63rem;
+    left: calc(50% - 6.25rem); /* Centro do slide */
+    transform-style: preserve-3d; 
+    transform: perspective(62.5rem);
+    animation: autoRun 40s linear infinite; /* Aplicando a rotação da animação */
+    z-index: 2;
+}
+
+.integrantes .slide .item{
+    position: absolute;
+    inset: 0 0 0 0;
+    transform: rotateY(
+      calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)
+    )
+    translateZ(35.38rem); 
+}
+
+.integrantes .slide .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@keyframes autoRun {
+    from {
+    transform: perspective(62.5rem) rotateX(-10deg) rotateY(0deg);
+    }
+    to {
+    transform: perspective(62.5rem) rotateX(-10deg) rotateY(360deg);
+    }
+}
