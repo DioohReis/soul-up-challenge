@@ -13,6 +13,15 @@
     align-items: center;
 }
 
+.integrantes {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
 
 .integrantes{
     width: 100%;
@@ -30,7 +39,7 @@
     left: calc(50% - 6.25rem); /* Centro do slide */
     transform-style: preserve-3d; 
     transform: perspective(62.5rem);
-    animation: autoRun 40s linear infinite; /* Aplicando a rotação da animação */
+    animation: autoRun 20s linear infinite; /* Aplicando a rotação da animação */
     z-index: 2;
 }
 
