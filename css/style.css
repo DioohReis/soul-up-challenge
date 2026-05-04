@@ -7,7 +7,7 @@
 
 body {
     margin: 0;
-    background-color: #000;
+    background-color: #000000;
     color: #fff;
 }
 
@@ -76,25 +76,13 @@ nav a:hover {
 }
 
 .btn-curriculo:hover {
-    background-color: rgb(2, 137, 255);
-}
-
-.banner {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-}
-
-.banner .content .title {
-    font-family: 'Hallowed Ground';
-    font-size: 6em;
+    background-color: rgb(0, 42, 78);
 }
 
 body {
     margin: 0;
-    background-color: #000;
-    color: #fff;
+    background-color: #01310771;
+    color: #fff8f8c9;
 }
 
 .banner {
@@ -110,6 +98,11 @@ body {
     font-size: 8em;
 }
 
+.banner .content .subtitle {
+    font-family: 'Hallowed Ground';
+    font-size: 1.5em;
+    margin-top: 0.2rem;
+}
 .banner::before {
     content: "";
     position: absolute;
