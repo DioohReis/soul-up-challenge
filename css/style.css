@@ -42,13 +42,21 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 5rem;
+    position: relative;
+}
+
+.logo {
+    position: relative;
+    z-index: 1;
 }
 
 nav {
     display: flex;
     align-items: center;
     gap: 3rem;
-    margin-left: -5%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 nav a {
@@ -61,22 +69,6 @@ nav a {
 
 nav a:hover {
     color: rgb(2, 137, 255);
-}
-
-.btn-curriculo {
-    background-color: aliceblue;
-    color: rgb(70, 2, 2);
-    padding: 0.8rem 2rem;
-    border-radius: 50px;
-    border: none;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.2s;
-}
-
-.btn-curriculo:hover {
-    background-color: rgb(0, 42, 78);
-    color: #fff;
 }
 
 .banner {
@@ -118,7 +110,6 @@ nav a:hover {
 
     nav {
         gap: 1.5rem;
-        margin-left: 0;
     }
 
     nav a {
@@ -143,19 +134,15 @@ nav a:hover {
     }
 
     nav {
+        position: static;
+        transform: none;
         flex-wrap: wrap;
         gap: 0.8rem;
-        margin-left: 0;
     }
 
     nav a {
         font-size: 0.85rem;
         letter-spacing: 0.05rem;
-    }
-
-    .btn-curriculo {
-        width: 100%;
-        padding: 0.7rem 1rem;
     }
 
     .banner .content {
@@ -192,5 +179,92 @@ nav a:hover {
 
     nav a {
         font-size: 0.75rem;
+    }
+}
+
+@keyframes autoRun {
+    from {
+        transform: perspective(62.5rem) rotateX(-10deg) rotateY(0deg);
+    }
+    to {
+        transform: perspective(62.5rem) rotateX(-10deg) rotateY(360deg);
+    }
+}
+
+@media (max-width: 1024px) {
+    .integrantes .slide {
+        width: 10rem;
+        height: 12.5rem;
+        left: calc(50% - 5rem);
+    }
+
+    .integrantes .slide .item {
+        transform: rotateY(
+            calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)
+        )
+        translateZ(25rem);
+    }
+
+    .integrantes .content {
+        padding-bottom: 60px;
+        justify-content: center;
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .integrantes .slide {
+        width: 8rem;
+        height: 10rem;
+        left: calc(50% - 4rem);
+        top: 15%;
+    }
+
+    .integrantes .slide .item {
+        transform: rotateY(
+            calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)
+        )
+        translateZ(16rem);
+    }
+
+    .integrantes .content {
+        padding-bottom: 40px;
+        gap: 1rem;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    @keyframes autoRun {
+        from {
+            transform: perspective(40rem) rotateX(-8deg) rotateY(0deg);
+        }
+        to {
+            transform: perspective(40rem) rotateX(-8deg) rotateY(360deg);
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .integrantes .slide {
+        width: 6rem;
+        height: 7.5rem;
+        left: calc(50% - 3rem);
+        top: 18%;
+    }
+
+    .integrantes .slide .item {
+        transform: rotateY(
+            calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)
+        )
+        translateZ(11rem);
+    }
+
+    @keyframes autoRun {
+        from {
+            transform: perspective(30rem) rotateX(-6deg) rotateY(0deg);
+        }
+        to {
+            transform: perspective(30rem) rotateX(-6deg) rotateY(360deg);
+        }
     }
 }
