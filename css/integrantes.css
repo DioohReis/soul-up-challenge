@@ -1,5 +1,16 @@
+.integrantes {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
 
-.integrantes .content{
+.integrantes .content {
     position: absolute;
     bottom: 0;
     left: 50%;
@@ -13,46 +24,28 @@
     align-items: center;
 }
 
-.integrantes {
-    position: relative;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
-
-
-.integrantes{
-    width: 100%;
-    height: 100vh;
-    text-align: center;
-    overflow: hidden;
-    position: relative;
-}
-
-.integrantes .slide{
+.integrantes .slide {
     position: absolute;
     top: 10%;
     width: 12.5rem;
     height: 15.63rem;
-    left: calc(50% - 6.25rem); /* Centro do slide */
-    transform-style: preserve-3d; 
+    left: calc(50% - 6.25rem);
+    transform-style: preserve-3d;
     transform: perspective(62.5rem);
-    animation: autoRun 20s linear infinite; /* Aplicando a rotação da animação */
+    animation: autoRun 20s linear infinite;
     z-index: 2;
 }
 
-.integrantes .slide .item{
+.integrantes .slide .item {
     position: absolute;
-    inset: 0 0 0 0;
+    inset: 0;
     transform: rotateY(
-      calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)
+        calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)
     )
-    translateZ(35.38rem); 
+    translateZ(35.38rem);
 }
 
-.integrantes .slide .item img{
+.integrantes .slide .item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -60,9 +53,87 @@
 
 @keyframes autoRun {
     from {
-    transform: perspective(62.5rem) rotateX(-10deg) rotateY(0deg);
+        transform: perspective(62.5rem) rotateX(-10deg) rotateY(0deg);
     }
     to {
-    transform: perspective(62.5rem) rotateX(-10deg) rotateY(360deg);
+        transform: perspective(62.5rem) rotateX(-10deg) rotateY(360deg);
+    }
+}
+
+@media (max-width: 1024px) {
+    .integrantes .slide {
+        width: 10rem;
+        height: 12.5rem;
+        left: calc(50% - 5rem);
+    }
+
+    .integrantes .slide .item {
+        transform: rotateY(
+            calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)
+        )
+        translateZ(25rem);
+    }
+
+    .integrantes .content {
+        padding-bottom: 60px;
+        justify-content: center;
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .integrantes .slide {
+        width: 8rem;
+        height: 10rem;
+        left: calc(50% - 4rem);
+        top: 15%;
+    }
+
+    .integrantes .slide .item {
+        transform: rotateY(
+            calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)
+        )
+        translateZ(16rem);
+    }
+
+    .integrantes .content {
+        padding-bottom: 40px;
+        gap: 1rem;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    @keyframes autoRun {
+        from {
+            transform: perspective(40rem) rotateX(-8deg) rotateY(0deg);
+        }
+        to {
+            transform: perspective(40rem) rotateX(-8deg) rotateY(360deg);
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .integrantes .slide {
+        width: 6rem;
+        height: 7.5rem;
+        left: calc(50% - 3rem);
+        top: 18%;
+    }
+
+    .integrantes .slide .item {
+        transform: rotateY(
+            calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)
+        )
+        translateZ(11rem);
+    }
+
+    @keyframes autoRun {
+        from {
+            transform: perspective(30rem) rotateX(-6deg) rotateY(0deg);
+        }
+        to {
+            transform: perspective(30rem) rotateX(-6deg) rotateY(360deg);
+        }
     }
 }
