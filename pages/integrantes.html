@@ -14,7 +14,7 @@
 
     <div class="conteiner">
         <header>
-            <h1 class="logo">SOUL UP</h1>
+            <h1 class="logo">LUMEN.AI</h1>
             <nav>
                 <a href="../index.html">INÍCIO</a>
                 <a href="sobre.html">SOBRE</a>
@@ -24,22 +24,74 @@
             </nav>
         </header>
 
-    <div class="integrantes">
-        <div class="slide" style="--quantity: 5">
-            <div class="item" style="--position: 1"><img src="../image/DiogoRM573301.jpg" alt="Foto Do integrante Diogo"></div>
-            <div class="item" style="--position: 2"><img src="../image/Gabriel_Ricardo-01.jpeg" alt="Foto do integrante Gabriel"></div>
-            <div class="item" style="--position: 3"><img src="../image/Matheus_Rodrigues.jpeg" alt=""></div>
-            <div class="item" style="--position: 4"><img src="../image/LuizHenrique572727.jpeg" alt=""></div>
-            <div class="item" style="--position: 5"><img src="../image/razo.01.jpeg" alt="Foto do integrante Razo"></div>
-        </div>
+        <main>
+            <section class="integrantes" aria-labelledby="titulo-integrantes">
+                <div class="integrantes__texto">
+                    <h2 id="titulo-integrantes">Integrantes</h2>
+                    <p>Clique em uma imagem do carrossel para visualizar as informações do integrante.</p>
+                </div>
 
-        
+                <div class="slide" style="--quantity: 5" aria-label="Carrossel de integrantes">
+                    <button class="item" type="button" style="--position: 1" data-nome="Diogo Guilherme"
+                        data-cargo="Função do integrante" data-rm="RM73301"
+                        data-descricao="Escreva aqui uma breve descrição sobre esse integrante, suas responsabilidades e participação no projeto."
+                        data-imagem="../image/DiogoRM573301.jpg">
+                        <img src="../image/DiogoRM573301.jpg" alt="Diogo Guilherme">
+                    </button>
 
-    
+                    <button class="item" type="button" style="--position: 2" data-nome="Gabriel Ricardo"
+                        data-cargo="Função do integrante" data-rm="RM"
+                        data-descricao="Escreva aqui uma breve descrição sobre esse integrante, suas responsabilidades e participação no projeto."
+                        data-imagem="../image/Gabriel_Ricardo-01.jpeg">
+                        <img src="../image/Gabriel_Ricardo-01.jpeg" alt="Gabriel Ricardo">
+                    </button>
+
+                    <button class="item" type="button" style="--position: 3" data-nome="Matheus Rodrigues"
+                        data-cargo="Função do integrante" data-rm="RM570469"
+                        data-descricao="Escreva aqui uma breve descrição sobre esse integrante, suas responsabilidades e participação no projeto."
+                        data-imagem="../image/Matheus_Rodrigues.jpeg">
+                        <img src="../image/Matheus_Rodrigues.jpeg" alt="Matheus Rodrigues">
+                    </button>
+
+                    <button class="item" type="button" style="--position: 4" data-nome="Luiz Henrique"
+                        data-cargo="Função do integrante" data-rm="RM572727" 
+                        data-descricao="Escreva aqui uma breve descrição sobre esse integrante, suas responsabilidades e participação no projeto."
+                        data-imagem="../image/LuizHenrique572727.jpeg">
+                        <img src="../image/LuizHenrique572727.jpeg" alt="Luiz Henrique">
+                    </button>
+
+                    <button class="item" type="button" style="--position: 5" data-nome="Razo"
+                        data-cargo="Função do integrante" data-rm="RM572244"
+                        data-descricao="Escreva aqui uma breve descrição sobre esse integrante, suas responsabilidades e participação no projeto."
+                        data-imagem="../image/razo.01.jpeg">
+                        <img src="../image/razo.01.jpeg" alt="Razo">
+                    </button>
+                </div>
+            </section>
+
+            <section class="integrante-detalhes" id="integrante-detalhes" aria-live="polite">
+                <div class="integrante-detalhes__card">
+                    <img id="detalhe-imagem" src="../image/DiogoRM573301.jpg" alt="Foto do integrante selecionado">
+
+                    <div class="integrante-detalhes__conteudo">
+                        <span class="integrante-detalhes__tag">Integrante selecionado</span>
+                        <h2 id="detalhe-nome">Clique em um integrante</h2>
+                        <p class="integrante-detalhes__cargo" id="detalhe-cargo">As informações aparecerão aqui.</p>
+                        <p class="integrante-detalhes__rm" id="detalhe-rm">RM: --</p>
+                        <p id="detalhe-descricao">
+                            
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
         <footer>
             <p>© 2026 Soul Up. Todos os direitos reservados.</p>
         </footer>
-    </div>  
+    </div>
+
+    <script src="../js/integrantes.js"></script>
 </body>
 
 </html>

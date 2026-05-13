@@ -3,11 +3,21 @@
     padding: 0;
     box-sizing: border-box;
 }
+@font-face {
+    font-family: 'Protest';
+    src: url('../fonts/Protest Demo.otf') format('opentype'),
+         url('../fonts/Protest Demo.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 
 body {
+    font-family: 'Arial', sans-serif;
     margin: 0;
     background-color: #01310771;
-    color: #fff8f884;
+    color: #00f7ff;
 }
 
 .container {
@@ -27,6 +37,7 @@ header {
 }
 
 .logo {
+    
     position: relative;
     z-index: 1;
 }
@@ -46,10 +57,11 @@ nav a {
     transition: color 0.2s ease;
     text-decoration: none;
     color: inherit;
+    
 }
 
 nav a:hover {
-    color: rgb(2, 137, 255);
+    color: rgba(2, 137, 255, 0.438);
 }
 
 .banner {
@@ -61,12 +73,12 @@ nav a:hover {
 }
 
 .banner .content .title {
-    font-family: 'Hallowed Ground';
+    font-family: 'Protest';
     font-size: 8em;
 }
 
 .banner .content .subtitle {
-    font-family: 'Hallowed Ground';
+    font-family: 'Bebas Neue', cursive;
     font-size: 1.5em;
     margin-top: 0.2rem;
 }
@@ -157,9 +169,6 @@ nav a:hover {
 @media (max-width: 480px) {
     header {
         flex-direction: column;
-    }
-    h1 {
-        white-space: nowrap;
     }
     .banner .content .title {
         font-size: 2.2em;

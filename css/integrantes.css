@@ -10,6 +10,28 @@
     overflow: hidden;
 }
 
+.integrantes__texto {
+    position: absolute;
+    top: 6rem;
+    left: 50%;
+    width: min(90%, 720px);
+    transform: translateX(-50%);
+    z-index: 3;
+}
+
+.integrantes__texto h2 {
+    margin-bottom: 0.5rem;
+    font-size: clamp(2rem, 5vw, 4rem);
+    letter-spacing: 0.18rem;
+    text-transform: uppercase;
+}
+
+.integrantes__texto p {
+    color: #d7ffe3;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
 .integrantes .content {
     position: absolute;
     bottom: 0;
@@ -26,7 +48,7 @@
 
 .integrantes .slide {
     position: absolute;
-    top: 10%;
+    top: 25%;
     width: 12.5rem;
     height: 15.63rem;
     left: calc(50% - 6.25rem);
@@ -36,19 +58,105 @@
     z-index: 2;
 }
 
+.integrantes .slide:hover {
+    animation-play-state: paused;
+}
+
 .integrantes .slide .item {
     position: absolute;
     inset: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 1rem;
+    background: transparent;
+    cursor: pointer;
+    overflow: hidden;
     transform: rotateY(
         calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)
     )
     translateZ(35.38rem);
+    transition: filter 0.3s ease, box-shadow 0.3s ease;
+}
+
+.integrantes .slide .item:hover,
+.integrantes .slide .item:focus-visible {
+    filter: brightness(1.16);
+    outline: none;
+    box-shadow: 0 0 28px rgba(255, 2, 2, 0.8);
 }
 
 .integrantes .slide .item img {
     width: 100%;
     height: 100%;
+    display: block;
     object-fit: cover;
+}
+
+.integrante-detalhes {
+    width: min(1100px, calc(100% - 2rem));
+    margin: 0 auto 4rem;
+    opacity: 0;
+    transform: translateY(2rem);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.integrante-detalhes.ativo {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.integrante-detalhes__card {
+    display: grid;
+    grid-template-columns: minmax(260px, 380px) 1fr;
+    gap: 2rem;
+    align-items: center;
+    padding: 2rem;
+    border: 1px solid rgba(2, 255, 87, 0.35);
+    border-radius: 1.5rem;
+    background: rgba(0, 20, 12, 0.76);
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(10px);
+}
+
+.integrante-detalhes__card img {
+    width: 100%;
+    height: 420px;
+    border-radius: 1rem;
+    object-fit: cover;
+    box-shadow: 0 0 30px rgba(2, 255, 87, 0.22);
+}
+
+.integrante-detalhes__conteudo {
+    text-align: left;
+}
+
+.integrante-detalhes__tag {
+    display: inline-block;
+    margin-bottom: 1rem;
+    padding: 0.35rem 0.75rem;
+    border: 1px solid rgba(2, 255, 87, 0.4);
+    border-radius: 999px;
+    color: #d7ffe3;
+    font-size: 0.8rem;
+    letter-spacing: 0.08rem;
+    text-transform: uppercase;
+}
+
+.integrante-detalhes__conteudo h2 {
+    margin-bottom: 0.75rem;
+    font-size: clamp(2rem, 4vw, 3.4rem);
+}
+
+.integrante-detalhes__cargo,
+.integrante-detalhes__rm {
+    margin-bottom: 0.6rem;
+    color: #d7ffe3;
+    font-weight: 700;
+}
+
+.integrante-detalhes__conteudo p {
+    max-width: 640px;
+    line-height: 1.7;
 }
 
 @keyframes autoRun {
@@ -82,11 +190,19 @@
 }
 
 @media (max-width: 768px) {
+    .integrantes {
+        min-height: 86vh;
+    }
+
+    .integrantes__texto {
+        top: 4.5rem;
+    }
+
     .integrantes .slide {
         width: 8rem;
         height: 10rem;
         left: calc(50% - 4rem);
-        top: 15%;
+        top: 35%;
     }
 
     .integrantes .slide .item {
@@ -101,6 +217,14 @@
         gap: 1rem;
         flex-direction: column;
         align-items: center;
+    }
+
+    .integrante-detalhes__card {
+        grid-template-columns: 1fr;
+    }
+
+    .integrante-detalhes__card img {
+        height: 320px;
     }
 
     @keyframes autoRun {
@@ -118,7 +242,7 @@
         width: 6rem;
         height: 7.5rem;
         left: calc(50% - 3rem);
-        top: 18%;
+        top: 42%;
     }
 
     .integrantes .slide .item {
@@ -126,6 +250,14 @@
             calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)
         )
         translateZ(11rem);
+    }
+
+    .integrante-detalhes__card {
+        padding: 1rem;
+    }
+
+    .integrante-detalhes__card img {
+        height: 260px;
     }
 
     @keyframes autoRun {
