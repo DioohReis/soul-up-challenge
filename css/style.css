@@ -6,8 +6,8 @@
 
 body {
     margin: 0;
-    background-color:rgb(0, 111, 145);
-    color: hsl(204, 100%, 73%);
+    background-color: #01310771;
+    color: #fff8f884;
 }
 
 .container {
@@ -49,7 +49,7 @@ nav a {
 }
 
 nav a:hover {
-    color: hsl(207, 100%, 73%);
+    color: rgb(2, 137, 255);
 }
 
 .banner {
@@ -88,7 +88,7 @@ nav a:hover {
 
 /* ===================== */
 /* MASCOTE LUMËN ANIMADO */
-/* HTML + CSS + JS       */
+/* HTML + CSS + JS PURO  */
 /* ===================== */
 
 .lumen-particles {
@@ -105,7 +105,7 @@ nav a:hover {
     display: block;
     border-radius: 50%;
     background: #73fff2;
-    box-shadow: 0 0 14px hsl(174, 100%, 73%);
+    box-shadow: 0 0 14px #73fff2;
     opacity: 0;
     animation: lumenParticle linear infinite;
 }
@@ -812,4 +812,58 @@ body {
         min-height: auto;
     }
 }
+
+
+/* GLOBAL NATURE PARALLAX BACKGROUND */
+
+body{
+    background:
+        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.72)),
+        url('../image/fundo.gif') center center / cover fixed no-repeat;
+    position: relative;
+    overflow-x: hidden;
+}
+
+body::before{
+    content:'';
+    position: fixed;
+    inset:0;
+    background:
+        url('../image/fundo02.gif') center bottom / cover no-repeat;
+    opacity:0.22;
+    pointer-events:none;
+    z-index:-2;
+    animation: backgroundFloat 12s ease-in-out infinite;
+}
+
+body::after{
+    content:'';
+    position: fixed;
+    inset:0;
+    background:
+        radial-gradient(circle at top, rgba(85,255,241,0.12), transparent 60%),
+        linear-gradient(to bottom, rgba(2,40,30,0.2), rgba(0,0,0,0.5));
+    pointer-events:none;
+    z-index:-1;
+}
+
+header,
+.banner,
+.container,
+section,
+main,
+footer{
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes backgroundFloat{
+    0%,100%{
+        transform: scale(1) translateY(0px);
+    }
+    50%{
+        transform: scale(1.04) translateY(-12px);
+    }
+}
+
 
