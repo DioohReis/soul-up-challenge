@@ -527,9 +527,9 @@ soul-up-challegen/
 |---|---:|---|---|---|
 | Diogo Guilherme | 573301 | 1TDSPF | https://github.com/DioohReis | https://www.linkedin.com/in/diogo-guilherme-de-assis-reis-95b11624b/ |
 | Gabriel Ricardo | 573302 | 1TDSPF | https://github.com/gabriel-ricardo-ADS | https://www.linkedin.com/in/gabriel-ricardo-lima/ |
-| Matheus Rodrigues | 570469 | 1TDSPF | https://github.com/MatheusRodriguesSerrao | https://www.linkedin.com/in/matheusrodrigues |
-| Luiz Henrique | 572727 | 1TDSPF | https://github.com/LuizHenriqueAAlbarello | https://www.linkedin.com/in/luizhenrique |
-| Gabriel Razo | 572244 | 1TDSPF | https://github.com/gabrielrazod9j-ops | https://www.linkedin.com/in/razo |
+| Matheus Rodrigues | 570469 | 1TDSPF | https://github.com/MatheusRodriguesSerrao | https://www.linkedin.com/in/matheus-rodrigues-06060a3a6/ |
+| Luiz Henrique | 572727 | 1TDSPF | https://github.com/LuizHenriqueAAlbarello | https://www.linkedin.com/in/luiz-henrique-alves-albarello-82297b410/ |
+| Gabriel Razo | 572244 | 1TDSPF | https://github.com/gabrielrazod9j-ops | https://www.linkedin.com/in/gabriel-razo-dantas-34724b301/ |
 
 ---
 
