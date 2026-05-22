@@ -465,6 +465,7 @@ Esses conteúdos ajudaram principalmente em:
 - uso de formulários;
 - organização de arquivos do projeto.
 
+E um agradecimento especial ao Professor Alexandre Carlos de Jesus, pelos feedback e materiais de apoio. A quem devo muito!!!
 ---
 
 ## Critérios de Front-End atendidos
