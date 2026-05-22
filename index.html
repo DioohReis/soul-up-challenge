@@ -49,6 +49,7 @@
                     <strong>+clareza</strong>
                     <p>Menos dúvida para o usuário entender o que fazer, ganhar pontos e acompanhar seu impacto.</p>
                 </div>
+
             </section>
 
             <section class="experience-strip" aria-label="Principais benefícios da Lumen AI">
@@ -73,30 +74,31 @@
                 <div class="lumen-parallax-bg" aria-hidden="true"></div>
 
                 <div class="lumen-section-header">
-                    <span class="lumen-tag">Soul UP • Gamificação Sustentável</span>
-                    <h2>Seu progresso sustentável com o Lumën</h2>
-                    <p>Role a página e acompanhe pontos, ranques, missões e impacto dentro do ecossistema Soul UP.</p>
+                    <span class="lumen-tag">Soul UP • Quests sustentáveis</span>
+                    <h2>Experiência guiada pela Lumën</h2>
+                    <p>Escolha um problema ecológico, entenda a causa e veja missões práticas com pontuação, níveis e feedback instantâneo.</p>
                 </div>
 
                 <div class="lumen-app-panel">
                     <aside class="lumen-stats lumen-stats-left" aria-label="Estatísticas do aplicativo Soul UP">
                         <article class="stat-card">
-                            <span class="stat-label">Rank atual</span>
-                            <strong>Eco Starter</strong>
-                            <small>Suba de nível completando ações sustentáveis.</small>
+                            <span class="stat-label">Nível atual</span>
+                            <strong id="home-level">Eco Iniciante</strong>
+                            <small>Seu nível evolui conforme as quests sustentáveis são concluídas.</small>
                         </article>
 
                         <article class="stat-card">
                             <span class="stat-label">Pontos verdes</span>
-                            <strong data-count="1280">0</strong>
-                            <small>Pontos acumulados em missões e desafios.</small>
+                            <strong id="home-total-points" data-count="0">0</strong>
+                            <small>Total acumulado nas quests sustentáveis concluídas.</small>
                         </article>
                     </aside>
 
                     <div class="lumen-assistant" aria-label="Mascote Lumën animado">
-                        <div class="lumen-bubble">
-                            <h2>Bem-vindo!</h2>
-                            <p class="lumen-typing">Eu sou Lumën, seu agente <br> sustentável pessoal da Soul UP.</p>
+                        <div class="lumen-bubble home-lumen-bubble" aria-live="polite">
+                            <span class="mockup-label" id="home-lumen-label">Guia da experiência</span>
+                            <h2>Eu sou a Lumën</h2>
+                            <p id="home-lumen-main-text">Volte da página Experiência para acompanhar aqui seus pontos, nível, quests concluídas e impacto positivo no meio ambiente.</p>
                         </div>
 
                         <div class="lumen-mascot">
@@ -121,15 +123,15 @@
 
                     <aside class="lumen-stats lumen-stats-right" aria-label="Dados de progresso do usuário">
                         <article class="stat-card">
-                            <span class="stat-label">Missões feitas</span>
-                            <strong data-count="24">0</strong>
-                            <small>Check-ins, tarefas e hábitos concluídos.</small>
+                            <span class="stat-label">Quests concluídas</span>
+                            <strong id="home-completed-count" data-count="0">0</strong>
+                            <small>Total de missões sustentáveis finalizadas até agora.</small>
                         </article>
 
                         <article class="stat-card">
                             <span class="stat-label">Impacto estimado</span>
-                            <strong data-count="86">0</strong>
-                            <small>Interações positivas para uma rotina mais consciente.</small>
+                            <strong id="home-impact-percent">0%</strong>
+                            <small id="home-impact-summary">Complete quests para visualizar seu impacto ambiental.</small>
                         </article>
                     </aside>
                 </div>
