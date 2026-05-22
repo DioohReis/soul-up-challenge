@@ -103,7 +103,7 @@ function validarLogin(evento) {
     const usuarioEncontrado = buscarUsuarioPorEmail(email);
 
     if (!usuarioEncontrado) {
-        abrirModal('error', 'Usuário não cadastrado', 'Não encontramos nenhum usuário com esse e-mail. Verifique o endereço digitado.');
+        abrirModal('error', 'Usuário não cadastrado', 'Verifique o endereço digitado.');
         return;
     }
 
