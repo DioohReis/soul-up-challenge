@@ -108,7 +108,7 @@ function validarLogin(evento) {
     }
 
     if (usuarioEncontrado.senha !== senha) {
-        abrirModal('error', 'Senha incorreta', 'O e-mail está cadastrado, mas a senha informada não confere.');
+        abrirModal('error', 'Senha incorreta');
         return;
     }
 
