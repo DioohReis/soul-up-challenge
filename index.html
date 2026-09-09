@@ -1,150 +1,18 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="image/logo.png" type="image/x-icon">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/image/logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#00140f" />
+    <meta
+      name="description"
+      content="Lumen AI - experiência gamificada e sustentável desenvolvida para o Challenge Soul UP da FIAP."
+    />
     <title>Soul UP | Lumen AI</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/lumen.css">
-</head>
-<body>
-    <div class="layer-blur"></div>
-
-    <div class="conteiner">
-        <header>
-            <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-principal">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <nav class="main-menu" id="menu-principal" aria-label="Menu principal">
-                <a href="index.html" class="active">INÍCIO</a>
-                <a href="pages/sobre.html">SOBRE</a>
-                <a href="pages/solucao.html">SOLUÇÃO</a>
-                <a href="pages/experiencia.html">EXPERIÊNCIA</a>
-                <a href="pages/integrantes.html">INTEGRANTES</a>
-                <a href="pages/contato.html">CONTATO</a>
-                <a href="pages/faq.html">FAQ</a>
-            </nav>
-
-            <a href="pages/login.html" class="login-corner">LOGIN</a>
-        </header>
-
-        <main>
-            <section class="banner hero-pro" aria-labelledby="titulo-principal">
-                <div class="content hero-content">
-                    <span class="hero-eyebrow">Soul UP • Gamificação sustentável</span>
-                    <h1 class="title" id="titulo-principal">LUMEN AI</h1>
-                    <p class="subtitle">Potencializa seu tempo para o mundo e você</p>
-                    <p class="hero-description">Uma assistente digital para transformar missões, pontos e recompensas em uma jornada simples, motivadora e acessível.</p>
-                    <div class="hero-actions" aria-label="Ações principais">
-                        <a class="btn-primary" href="#lumen-app">Ver experiência</a>
-                        <a class="btn-secondary" href="pages/solucao.html">Entender solução</a>
-                    </div>
-                </div>
-
-                <div class="hero-glass-card" aria-label="Resumo do impacto da solução">
-                    <span class="card-kicker">Experiência guiada</span>
-                    <strong>+clareza</strong>
-                    <p>Menos dúvida para o usuário entender o que fazer, ganhar pontos e acompanhar seu impacto.</p>
-                </div>
-
-            </section>
-
-            <section class="experience-strip" aria-label="Principais benefícios da Lumen AI">
-                <article class="experience-card">
-                    <span class="experience-icon">01</span>
-                    <h2>Onboarding claro</h2>
-                    <p>Explica o primeiro passo do usuário sem excesso de informação.</p>
-                </article>
-                <article class="experience-card">
-                    <span class="experience-icon">02</span>
-                    <h2>Feedback imediato</h2>
-                    <p>Mostra progresso, pontos e missões concluídas de forma visual.</p>
-                </article>
-                <article class="experience-card">
-                    <span class="experience-icon">03</span>
-                    <h2>Motivação contínua</h2>
-                    <p>Usa níveis, recompensas e metas para aumentar engajamento.</p>
-                </article>
-            </section>
-
-            <section class="lumen-scroll-section" id="lumen-app">
-                <div class="lumen-parallax-bg" aria-hidden="true"></div>
-
-                <div class="lumen-section-header">
-                    <span class="lumen-tag">Soul UP • Quests sustentáveis</span>
-                    <h2>Experiência guiada pela Lumën</h2>
-                    <p>Escolha um problema ecológico, entenda a causa e veja missões práticas com pontuação, níveis e feedback instantâneo.</p>
-                </div>
-
-                <div class="lumen-app-panel">
-                    <aside class="lumen-stats lumen-stats-left" aria-label="Estatísticas do aplicativo Soul UP">
-                        <article class="stat-card">
-                            <span class="stat-label">Nível atual</span>
-                            <strong id="home-level">Eco Iniciante</strong>
-                            <small>Seu nível evolui conforme as quests sustentáveis são concluídas.</small>
-                        </article>
-
-                        <article class="stat-card">
-                            <span class="stat-label">Pontos verdes</span>
-                            <strong id="home-total-points" data-count="0">0</strong>
-                            <small>Total acumulado nas quests sustentáveis concluídas.</small>
-                        </article>
-                    </aside>
-
-                    <div class="lumen-assistant" aria-label="Mascote Lumën animado">
-                        <div class="lumen-bubble home-lumen-bubble" aria-live="polite">
-                            <span class="mockup-label" id="home-lumen-label">Guia da experiência</span>
-                            <h2>Eu sou a Lumën</h2>
-                            <p id="home-lumen-main-text">Volte da página Experiência para acompanhar aqui seus pontos, nível, quests concluídas e impacto positivo no meio ambiente.</p>
-                        </div>
-
-                        <div class="lumen-mascot">
-                            <div class="lumen-aura"></div>
-                            <div class="lumen-fire-hair">
-                                <span class="flame flame-left"></span>
-                                <span class="flame flame-main"></span>
-                                <span class="flame flame-right"></span>
-                                <span class="flame flame-core"></span>
-                            </div>
-                            <div class="lumen-arm"></div>
-                            <div class="lumen-head">
-                                <div class="lumen-face">
-                                    <span class="lumen-eye"></span>
-                                    <span class="lumen-eye"></span>
-                                </div>
-                                <div class="lumen-ear"></div>
-                            </div>
-                            <div class="lumen-body"></div>
-                        </div>
-                    </div>
-
-                    <aside class="lumen-stats lumen-stats-right" aria-label="Dados de progresso do usuário">
-                        <article class="stat-card">
-                            <span class="stat-label">Quests concluídas</span>
-                            <strong id="home-completed-count" data-count="0">0</strong>
-                            <small>Total de missões sustentáveis finalizadas até agora.</small>
-                        </article>
-
-                        <article class="stat-card">
-                            <span class="stat-label">Impacto estimado</span>
-                            <strong id="home-impact-percent">0%</strong>
-                            <small id="home-impact-summary">Complete quests para visualizar seu impacto ambiental.</small>
-                        </article>
-                    </aside>
-                </div>
-            </section>
-        </main>
-
-        <footer>
-            <p>© 2026 Soul Up. Todos os direitos reservados.</p>
-        </footer>
-    </div>
-
-    <script src="js/menu.js"></script>
-    <script src="js/effects.js"></script>
-    <script src="js/lumen.js"></script>
-</body>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
