@@ -1,481 +1,217 @@
-import {
-  useCallback,
-  useEffect,
-  useRef,
-  type PointerEvent as ReactPointerEvent,
-} from 'react'
-
+﻿import { useCallback, useEffect, useRef, useState, type PointerEvent as ReactPointerEvent } from 'react'
 import type { TeamMember } from '../types'
+import type { CSSProperties } from 'react'
 
 type TeamCarouselProps = {
   members: TeamMember[]
-  selectedRm?: string
   onSelect: (member: TeamMember) => void
+  selectedRm?: string
 }
 
-/**
- * O projeto original completava uma volta em aproximadamente 20 segundos.
- *
- * 360 / 20 = 18 graus por segundo.
- */
-const AUTO_ROTATION_SPEED = 18
-
-/**
- * Sensibilidade do movimento quando o usuário arrasta o carrossel.
- */
+const ROTATION_SPEED = 18
 const DRAG_SENSITIVITY = 0.35
+const controlClassName = 'team-carousel-control grid place-items-center rounded-full border border-white/[0.15] bg-black/[0.35] text-white hover:border-cyan-200/50 hover:bg-cyan-300/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-200 disabled:cursor-default disabled:opacity-40'
 
-export function TeamCarousel({
-  members,
-  selectedRm,
-  onSelect,
-}: TeamCarouselProps) {
+export function TeamCarousel({ members, onSelect, selectedRm }: TeamCarouselProps) {
+  const stageRef = useRef<HTMLDivElement>(null)
   const ringRef = useRef<HTMLDivElement>(null)
-
-  const rotationRef = useRef(0)
-
-  const animationFrameRef = useRef<number | null>(null)
-  const lastFrameTimeRef = useRef<number | null>(null)
-
-  const mouseInsideRef = useRef(false)
-  const focusInsideRef = useRef(false)
-  const draggingRef = useRef(false)
-
-  const pointerIdRef = useRef<number | null>(null)
-
-  const pointerStartXRef = useRef(0)
-  const lastPointerXRef = useRef(0)
-  const dragDistanceRef = useRef(0)
-
-  const suppressClickUntilRef = useRef(0)
-
-  const reducedMotionRef = useRef(false)
-
+  const rotation = useRef(0)
+  const targetRotation = useRef<number | null>(null)
+  const hovered = useRef(false)
+  const focused = useRef(false)
+  const visible = useRef(true)
+  const frontIndex = useRef(0)
+  const pointer = useRef<{ id: number; startX: number; lastX: number; dragged: boolean } | null>(null)
+  const suppressClickUntil = useRef(0)
+  const [paused, setPaused] = useState(false)
+  const [reducedMotion, setReducedMotion] = useState(false)
+  const [activeIndex, setActiveIndex] = useState(0)
   const quantity = members.length
+  const angle = quantity > 0 ? 360 / quantity : 0
 
-  const itemAngle =
-    quantity > 0
-      ? 360 / quantity
-      : 0
+  const paint = useCallback(() => {
+    ringRef.current?.style.setProperty('--carousel-rotation', `${rotation.current}deg`)
+    if (quantity > 0) {
+      const nearest = ((Math.round(-rotation.current / angle) % quantity) + quantity) % quantity
+      if (frontIndex.current !== nearest) {
+        frontIndex.current = nearest
+        setActiveIndex(nearest)
+      }
+    }
+  }, [angle, quantity])
 
-  /**
-   * Atualiza apenas o transform do carrossel.
-   *
-   * Não usamos setState a cada frame porque isso faria
-   * React renderizar o componente aproximadamente 60 vezes
-   * por segundo.
-   *
-   * Com ref, somente o transform do DOM é atualizado.
-   */
-  const paintRotation = useCallback(() => {
-    if (!ringRef.current) return
-
-    ringRef.current.style.transform = `
-      perspective(var(--carousel-perspective))
-      rotateX(var(--carousel-tilt))
-      rotateY(${rotationRef.current}deg)
-    `
+  useEffect(() => {
+    const preference = window.matchMedia('(prefers-reduced-motion: reduce)')
+    const update = () => setReducedMotion(preference.matches)
+    update()
+    preference.addEventListener('change', update)
+    return () => preference.removeEventListener('change', update)
   }, [])
 
-  /**
-   * Acessibilidade:
-   * se o usuário tiver redução de movimento ativada no SO,
-   * a rotação automática é desativada.
-   *
-   * Ainda é possível interagir manualmente.
-   */
   useEffect(() => {
-    const mediaQuery = window.matchMedia(
-      '(prefers-reduced-motion: reduce)',
-    )
-
-    const updatePreference = () => {
-      reducedMotionRef.current = mediaQuery.matches
-    }
-
-    updatePreference()
-
-    mediaQuery.addEventListener(
-      'change',
-      updatePreference,
-    )
-
-    return () => {
-      mediaQuery.removeEventListener(
-        'change',
-        updatePreference,
-      )
-    }
+    const observer = new IntersectionObserver(([entry]) => { visible.current = entry.isIntersecting })
+    if (stageRef.current) observer.observe(stageRef.current)
+    return () => observer.disconnect()
   }, [])
 
-  /**
-   * Rotação automática.
-   *
-   * requestAnimationFrame deixa o movimento muito mais natural
-   * que atualizar state usando setInterval.
-   */
   useEffect(() => {
-    if (quantity <= 1) return undefined
+    if (quantity < 2) return undefined
+    let frame = 0
+    let previous: number | null = null
 
     function animate(time: number) {
-      if (lastFrameTimeRef.current === null) {
-        lastFrameTimeRef.current = time
-      }
-
-      /**
-       * Limitamos o delta para evitar saltos grandes,
-       * por exemplo ao voltar para uma aba que ficou inativa.
-       */
-      const deltaSeconds = Math.min(
-        (time - lastFrameTimeRef.current) / 1000,
-        0.05,
-      )
-
-      lastFrameTimeRef.current = time
-
-      const shouldRotate =
-        !mouseInsideRef.current &&
-        !focusInsideRef.current &&
-        !draggingRef.current &&
-        !reducedMotionRef.current
-
-      if (shouldRotate) {
-        rotationRef.current +=
-          AUTO_ROTATION_SPEED * deltaSeconds
-
-        /**
-         * Evita que o valor cresça infinitamente.
-         */
-        if (rotationRef.current >= 360) {
-          rotationRef.current -= 360
+      const delta = previous === null ? 0 : Math.min((time - previous) / 1000, 0.05)
+      previous = time
+      if (!document.hidden && visible.current) {
+        if (targetRotation.current !== null) {
+          const distance = targetRotation.current - rotation.current
+          if (reducedMotion || Math.abs(distance) < 0.05) {
+            rotation.current = targetRotation.current
+            targetRotation.current = null
+          } else {
+            rotation.current += distance * (1 - Math.exp(-10 * delta))
+          }
+          paint()
+        } else if (!paused && !reducedMotion && !hovered.current && !focused.current && !pointer.current) {
+          rotation.current = (rotation.current + ROTATION_SPEED * delta) % 360
+          paint()
         }
-
-        paintRotation()
       }
-
-      animationFrameRef.current =
-        window.requestAnimationFrame(animate)
+      frame = window.requestAnimationFrame(animate)
     }
 
-    animationFrameRef.current =
-      window.requestAnimationFrame(animate)
+    frame = window.requestAnimationFrame(animate)
+    return () => window.cancelAnimationFrame(frame)
+  }, [paint, paused, quantity, reducedMotion])
 
-    return () => {
-      if (animationFrameRef.current !== null) {
-        window.cancelAnimationFrame(
-          animationFrameRef.current,
-        )
-      }
-
-      animationFrameRef.current = null
-      lastFrameTimeRef.current = null
-    }
-  }, [paintRotation, quantity])
-
-  function handlePointerDown(
-    event: ReactPointerEvent<HTMLDivElement>,
-  ) {
-    /**
-     * Impede clique com botão direito do mouse
-     * de iniciar o drag.
-     */
-    if (
-      event.pointerType === 'mouse' &&
-      event.button !== 0
-    ) {
-      return
-    }
-
-    draggingRef.current = true
-
-    pointerIdRef.current = event.pointerId
-
-    pointerStartXRef.current = event.clientX
-    lastPointerXRef.current = event.clientX
-
-    dragDistanceRef.current = 0
-  }
-
-  function handlePointerMove(
-    event: ReactPointerEvent<HTMLDivElement>,
-  ) {
-    if (!draggingRef.current) return
-
-    const deltaX =
-      event.clientX -
-      lastPointerXRef.current
-
-    const totalDistance =
-      event.clientX -
-      pointerStartXRef.current
-
-    lastPointerXRef.current =
-      event.clientX
-
-    dragDistanceRef.current =
-      Math.abs(totalDistance)
-
-    /**
-     * Só fazemos pointer capture depois que ficou claro
-     * que o usuário está arrastando.
-     *
-     * Isso permite clicar normalmente nas imagens.
-     */
-    if (
-      dragDistanceRef.current > 4 &&
-      pointerIdRef.current !== null &&
-      !event.currentTarget.hasPointerCapture(
-        pointerIdRef.current,
-      )
-    ) {
-      event.currentTarget.setPointerCapture(
-        pointerIdRef.current,
-      )
-    }
-
-    /**
-     * Arrastou para a direita -> gira para a direita.
-     * Arrastou para esquerda -> gira para esquerda.
-     */
-    rotationRef.current +=
-      deltaX * DRAG_SENSITIVITY
-
-    paintRotation()
-  }
-
-  function finishPointerInteraction(
-    event: ReactPointerEvent<HTMLDivElement>,
-  ) {
-    if (!draggingRef.current) return
-
-    draggingRef.current = false
-
-    /**
-     * Se houve movimento real, evitamos que o browser
-     * interprete o fim do drag como clique em uma foto.
-     */
-    if (dragDistanceRef.current > 6) {
-      suppressClickUntilRef.current =
-        performance.now() + 250
-    }
-
-    if (
-      pointerIdRef.current !== null &&
-      event.currentTarget.hasPointerCapture(
-        pointerIdRef.current,
-      )
-    ) {
-      event.currentTarget.releasePointerCapture(
-        pointerIdRef.current,
-      )
-    }
-
-    pointerIdRef.current = null
-  }
-
-  function handleSelect(member: TeamMember) {
-    /**
-     * Não seleciona o integrante caso o usuário
-     * estivesse apenas arrastando o carrossel.
-     */
-    if (
-      performance.now() <
-      suppressClickUntilRef.current
-    ) {
-      return
-    }
-
-    onSelect(member)
-
-    /**
-     * Mesmo comportamento do projeto original:
-     * após selecionar, desce suavemente para os detalhes.
-     */
-    window.requestAnimationFrame(() => {
-      document
-        .getElementById('integrante-detalhes')
-        ?.scrollIntoView({
-          behavior: 'smooth',
-          block: 'center',
+  function focusMember(index: number, showDetails = false) {
+    if (quantity === 0 || performance.now() < suppressClickUntil.current) return
+    const normalizedIndex = ((index % quantity) + quantity) % quantity
+    const desired = -normalizedIndex * angle
+    const distance = ((desired - rotation.current + 540) % 360 + 360) % 360 - 180
+    targetRotation.current = rotation.current + distance
+    onSelect(members[normalizedIndex])
+    if (showDetails) {
+      window.requestAnimationFrame(() => {
+        document.getElementById('integrante-detalhes')?.scrollIntoView({
+          behavior: reducedMotion ? 'instant' : 'smooth',
+          block: 'start',
         })
-    })
+      })
+    }
   }
 
-  if (members.length === 0) {
-    return (
-      <p className="text-center text-white/60">
-        Nenhum integrante cadastrado.
-      </p>
-    )
+  function move(direction: number, focusPhoto = false) {
+    if (quantity < 2) return
+    const current = Math.round(-(targetRotation.current ?? rotation.current) / angle)
+    const next = ((current + direction) % quantity + quantity) % quantity
+    focusMember(next)
+    if (focusPhoto) ringRef.current?.querySelectorAll('button')[next]?.focus({ preventScroll: true })
   }
+
+  function startDrag(event: ReactPointerEvent<HTMLDivElement>) {
+    if (quantity < 2 || !event.isPrimary || event.button !== 0) return
+    targetRotation.current = null
+    pointer.current = { id: event.pointerId, startX: event.clientX, lastX: event.clientX, dragged: false }
+  }
+
+  function drag(event: ReactPointerEvent<HTMLDivElement>) {
+    const gesture = pointer.current
+    if (!gesture || gesture.id !== event.pointerId) return
+    if (!gesture.dragged && Math.abs(event.clientX - gesture.startX) > 6) {
+      gesture.dragged = true
+      event.currentTarget.setPointerCapture(event.pointerId)
+    }
+    if (gesture.dragged) {
+      rotation.current += (event.clientX - gesture.lastX) * DRAG_SENSITIVITY
+      paint()
+    }
+    gesture.lastX = event.clientX
+  }
+
+  function finishDrag(event: ReactPointerEvent<HTMLDivElement>) {
+    const gesture = pointer.current
+    if (!gesture || gesture.id !== event.pointerId) return
+    pointer.current = null
+    if (gesture.dragged) suppressClickUntil.current = performance.now() + 300
+    if (event.currentTarget.hasPointerCapture(event.pointerId)) event.currentTarget.releasePointerCapture(event.pointerId)
+  }
+
+  if (quantity === 0) return <p className="text-center text-white/60">Nenhum integrante cadastrado.</p>
 
   return (
     <div
-      className="
-        absolute
-        left-1/2
-        top-[42%]
-        z-[2]
-
-        h-[7.5rem]
-        w-24
-
-        -translate-x-1/2
-
-        select-none
-        touch-pan-y
-
-        sm:top-[35%]
-        sm:h-40
-        sm:w-32
-
-        md:h-[12.5rem]
-        md:w-40
-
-        lg:top-[25%]
-        lg:h-[15.63rem]
-        lg:w-[12.5rem]
-      "
-      onMouseEnter={() => {
-        mouseInsideRef.current = true
-      }}
-      onMouseLeave={() => {
-        mouseInsideRef.current = false
-      }}
-      onFocus={() => {
-        focusInsideRef.current = true
-      }}
-      onBlur={(event) => {
-        const nextElement =
-          event.relatedTarget as Node | null
-
-        if (
-          !nextElement ||
-          !event.currentTarget.contains(nextElement)
-        ) {
-          focusInsideRef.current = false
-        }
-      }}
-      onPointerDown={handlePointerDown}
-      onPointerMove={handlePointerMove}
-      onPointerUp={finishPointerInteraction}
-      onPointerCancel={finishPointerInteraction}
-      aria-label="Carrossel de integrantes"
+      className="team-carousel relative mx-auto w-full overflow-hidden pb-8 [--carousel-height:15.63rem] [--carousel-perspective:62.5rem] [--carousel-radius:35.38rem] [--carousel-tilt:-10deg] [--carousel-width:12.5rem] max-[1024px]:[--carousel-height:12.5rem] max-[1024px]:[--carousel-radius:25rem] max-[1024px]:[--carousel-width:10rem] max-[768px]:[--carousel-height:10rem] max-[768px]:[--carousel-perspective:40rem] max-[768px]:[--carousel-radius:16rem] max-[768px]:[--carousel-tilt:-8deg] max-[768px]:[--carousel-width:8rem] max-[480px]:[--carousel-height:7.5rem] max-[480px]:[--carousel-perspective:30rem] max-[480px]:[--carousel-radius:11rem] max-[480px]:[--carousel-tilt:-6deg] max-[480px]:[--carousel-width:6rem]"
+      role="region"
+      aria-roledescription="carrossel"
+      aria-label="Integrantes da equipe"
     >
       <div
-        ref={ringRef}
-        className="
-          relative
-          h-full
-          w-full
-
-          cursor-grab
-
-          [transform-style:preserve-3d]
-          will-change-transform
-
-          active:cursor-grabbing
-
-          [--carousel-perspective:30rem]
-          [--carousel-radius:11rem]
-          [--carousel-tilt:-6deg]
-
-          sm:[--carousel-perspective:40rem]
-          sm:[--carousel-radius:16rem]
-          sm:[--carousel-tilt:-8deg]
-
-          md:[--carousel-radius:25rem]
-
-          lg:[--carousel-perspective:62.5rem]
-          lg:[--carousel-radius:28rem]
-          lg:[--carousel-tilt:-10deg]
-
-          xl:[--carousel-radius:35.38rem]
-        "
-        style={{
-          transform:
-            'perspective(var(--carousel-perspective)) rotateX(var(--carousel-tilt)) rotateY(0deg)',
+        ref={stageRef}
+        className="team-carousel-stage relative h-[53rem] cursor-grab touch-pan-y select-none active:cursor-grabbing max-[1024px]:h-[34rem] max-[768px]:h-[27rem] max-[480px]:h-[21rem]"
+        onPointerLeave={(event) => {
+          hovered.current = false
+          if (!pointer.current?.dragged) finishDrag(event)
+        }}
+        onFocusCapture={() => { focused.current = true }}
+        onBlurCapture={(event) => {
+          if (!event.currentTarget.contains(event.relatedTarget)) focused.current = false
+        }}
+        onPointerDown={startDrag}
+        onPointerMove={drag}
+        onPointerUp={finishDrag}
+        onPointerCancel={finishDrag}
+        onLostPointerCapture={finishDrag}
+        onKeyDown={(event) => {
+          if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+            event.preventDefault()
+            move(event.key === 'ArrowLeft' ? -1 : 1, true)
+          }
         }}
       >
-        {members.map((member, index) => {
-          const isSelected =
-            selectedRm === member.rm
-
-          return (
-            <button
-              key={member.rm}
-              type="button"
-              aria-label={`Ver informações de ${member.nome}`}
-              aria-pressed={isSelected}
-              onClick={() =>
-                handleSelect(member)
-              }
-              className={`
-                group
-
-                absolute
-                inset-0
-
-                overflow-hidden
-
-                rounded-2xl
-
-                border
-
-                bg-transparent
-
-                shadow-[0_18px_46px_rgba(0,0,0,0.32)]
-
-                outline-none
-
-                transition-[filter,border-color,box-shadow]
-                duration-300
-
-                hover:border-cyan-300/60
-                hover:brightness-110
-                hover:saturate-110
-                hover:shadow-[0_0_34px_rgba(0,247,255,0.42)]
-
-                focus-visible:border-cyan-300
-                focus-visible:shadow-[0_0_34px_rgba(0,247,255,0.42)]
-
-                ${
-                  isSelected
-                    ? `
-                      border-emerald-300/80
-                      shadow-[0_0_34px_rgba(110,231,183,0.4)]
-                    `
-                    : `
-                      border-cyan-100/20
-                    `
-                }
-              `}
-              style={{
-                transform: `
-                  rotateY(${index * itemAngle}deg)
-                  translateZ(var(--carousel-radius))
-                `,
-              }}
-            >
-              <img
-                src={member.imagem}
-                alt={member.nome}
-                draggable={false}
-                className="
-                  h-full
-                  w-full
-                  object-cover
-
-                  transition-transform
-                  duration-500
-
-                  group-hover:scale-[1.03]
-                "
-              />
-            </button>
-          )
-        })}
+        <div className="team-carousel-position absolute left-1/2 top-[36%] h-[var(--carousel-height)] w-[var(--carousel-width)] -translate-x-1/2 -translate-y-1/2 [transform-style:preserve-3d] max-[1024px]:top-[40%] max-[768px]:top-[43%]">
+          <div
+            ref={ringRef}
+            className="team-carousel-ring h-full w-full [transform-style:preserve-3d] [transform:perspective(var(--carousel-perspective))_rotateX(var(--carousel-tilt))_rotateY(var(--carousel-rotation,0deg))] motion-safe:will-change-transform"
+            onPointerEnter={(event) => { if (event.pointerType === 'mouse') hovered.current = true }}
+            onPointerLeave={() => { hovered.current = false }}
+          >
+            {members.map((member, index) => (
+              <button
+                key={member.rm}
+                type="button"
+                onClick={() => focusMember(index, true)}
+                className="team-carousel-card absolute inset-0 h-full w-full cursor-[inherit] overflow-hidden rounded-2xl border border-[#c4fff6]/[0.18] bg-transparent p-0 shadow-[0_18px_46px_rgba(0,0,0,0.32)] transition-[border-color,box-shadow,filter] duration-300 [transform:rotateY(var(--card-angle))_translateZ(var(--carousel-radius))] hover:border-[#00f7ff]/[0.55] hover:brightness-[1.12] hover:saturate-[1.05] hover:shadow-[0_0_34px_rgba(0,247,255,0.42)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-200"
+                style={{ '--card-angle': `${index * angle}deg` } as CSSProperties}
+                aria-label={`Selecionar ${member.nome}`}
+                aria-pressed={member.rm === selectedRm}
+              >
+                <img src={member.imagem} alt={`Foto de ${member.nome}`} draggable={false} className="pointer-events-none h-full w-full object-cover object-center" />
+              </button>
+            ))}
+          </div>
+        </div>
       </div>
+      <div className="relative z-10 mx-auto flex flex-wrap items-center justify-center gap-3">
+        <button type="button" disabled={quantity < 2} onClick={() => move(-1)} className={`${controlClassName} h-11 w-11 text-xl`} aria-label="Integrante anterior">←</button>
+        <div className="flex items-center" aria-label="Posição do carrossel">
+          {members.map((member, index) => (
+            <button key={member.rm} type="button" onClick={() => focusMember(index)} className="grid h-11 w-8 place-items-center rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-200" aria-label={`Ir para ${member.nome}`} aria-current={index === activeIndex ? 'true' : undefined}>
+              <span className={`h-2.5 rounded-full transition-all ${index === activeIndex ? 'w-6 bg-cyan-200' : 'w-2.5 bg-white/25'}`} />
+            </button>
+          ))}
+        </div>
+        <button type="button" disabled={quantity < 2} onClick={() => move(1)} className={`${controlClassName} h-11 w-11 text-xl`} aria-label="Próximo integrante">→</button>
+        {!reducedMotion && quantity > 1 && (
+          <button type="button" onClick={() => setPaused((current) => !current)} className={`${controlClassName} min-h-11 px-4 text-xs font-bold`} aria-label={paused ? 'Retomar rotação automática' : 'Pausar rotação automática'} aria-pressed={paused}>
+            {paused ? 'Retomar' : 'Pausar'}
+          </button>
+        )}
+      </div>
+      <p className="relative z-10 mx-auto mt-4 max-w-lg px-3 text-center text-xs leading-6 text-white/[0.55]">
+        {reducedMotion ? 'Use as setas ou arraste para conhecer a equipe.' : 'Giro automático. Arraste para explorar ou passe o mouse sobre as fotos para pausar.'}
+        {' '}Selecione uma foto para ver o perfil.
+      </p>
     </div>
   )
 }
