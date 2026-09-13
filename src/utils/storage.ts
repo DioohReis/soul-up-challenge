@@ -36,11 +36,27 @@ export function getCompletedQuests(): string[] {
   }
 }
 
-export function getLevel(points: number) {
-  if (points >= 500) return { nome: 'Guardião Verde', atual: 500, proximo: 500 }
-  if (points >= 300) return { nome: 'Eco Líder', atual: 300, proximo: 500 }
-  if (points >= 120) return { nome: 'Eco Ativo', atual: 120, proximo: 300 }
-  return { nome: 'Eco Iniciante', atual: 0, proximo: 120 }
+export type JourneyLevel = {
+  nome: string
+  atual: number
+  proximo: number
+  number: number
+}
+
+export function getLevel(points: number): JourneyLevel {
+  if (points >= 500) {
+    return { nome: 'Guardião Verde', atual: 500, proximo: 500, number: 4 }
+  }
+
+  if (points >= 300) {
+    return { nome: 'Eco Líder', atual: 300, proximo: 500, number: 3 }
+  }
+
+  if (points >= 120) {
+    return { nome: 'Eco Ativo', atual: 120, proximo: 300, number: 2 }
+  }
+
+  return { nome: 'Eco Iniciante', atual: 0, proximo: 120, number: 1 }
 }
 
 export function getImpactSummary(completed: number, points: number, level: string) {

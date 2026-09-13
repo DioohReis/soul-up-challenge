@@ -20,8 +20,8 @@ export const team: TeamMember[] = [
     github: 'https://github.com/gabriel-ricardo-ADS',
     linkedin: 'https://www.linkedin.com/in/gabriel-ricardo-lima/',
     descricao:
-      'Atua no desenvolvimento da solução, contribuindo com funcionalidades e com a evolução técnica do projeto.',
-    imagem: '/image/Gabriel_Ricardo-01.jpeg',
+      'Atua principalmente no desenvolvimento em Python e na Engenharia de Software do projeto, contribuindo com a lógica da Lumen AI, definição de fluxos, arquitetura da solução e integração entre inteligência, dados e experiência do usuário.',
+    imagem: '/image/Gabriel_Ricardo-01.jpg',
   },
   {
     nome: 'Matheus Rodrigues',
