@@ -5,8 +5,8 @@ export const nexoHomeMessages = {
     'Assim que estiver pronto, é só começar a experiência e eu guio o nosso papo de acordo com o seu objetivo.',
   ],
   usuarioAtivo: [
-    'Seu progresso já começou. Vamos manter a sequência e escolher a próxima ação com o melhor custo de esforço.',
+    'O seu progresso já começou. Vamos manter o ritmo e escolher a próxima ação que traz o maior retorno com o menor esforço.',
     'Você não precisa fazer tudo de uma vez. O importante é enxergar evolução e voltar para a próxima missão.',
-    'Na experiência, eu consigo contextualizar seu nível, pontos e tema atual antes de sugerir o próximo passo.',
+    'Dentro da experiência, eu avalio o seu nível, seus pontos e o tema do momento antes de sugerir o próximo passo.',
   ],
 }
