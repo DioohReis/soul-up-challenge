@@ -42,7 +42,7 @@ export const team: TeamMember[] = [
     github: 'https://github.com/LuizHenriqueAAlbarello',
     linkedin: 'https://www.linkedin.com/in/luiz-henrique-alves-albarello-82297b410/',
     descricao:
-      'Atua no desenvolvimento das funcionalidades do projeto e na integração entre as diferentes partes da solução.',
+      'Atua no desenvolvimento da IA.',
     imagem: '/image/Luiz_Henrique_Albarello.jpeg',
   },
   {
