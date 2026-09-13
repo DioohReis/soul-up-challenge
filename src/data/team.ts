@@ -43,7 +43,7 @@ export const team: TeamMember[] = [
     linkedin: 'https://www.linkedin.com/in/luiz-henrique-alves-albarello-82297b410/',
     descricao:
       'Atua no desenvolvimento da IA.',
-    imagem: '/image/Luiz_Henrique_Albarello.jpeg',
+    imagem: '/image/Luiz_Henrique.jpeg',
   },
   {
     nome: 'Gabriel Razo',
