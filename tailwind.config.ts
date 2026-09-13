@@ -11,70 +11,77 @@ export default {
       '2xl': '1440px',
     },
     extend: {
+      colors: {
+        soul: {
+          navy: '#071A47',
+          deep: '#04122E',
+          blue: '#1F5FE0',
+          azure: '#338BF2',
+          sky: '#5CC8FF',
+          ice: '#DFF5FF',
+          mist: '#EAF4FF',
+          cloud: '#F6FAFF',
+        },
+      },
       boxShadow: {
         neon: '0 0 32px rgba(34, 211, 238, 0.18)',
         green: '0 0 38px rgba(110, 231, 183, 0.16)',
       },
       keyframes: {
-        lumenFloat: {
-          '0%, 100%': { transform: 'translateX(-50%) translateY(0px) rotate(-0.5deg)' },
-          '50%': { transform: 'translateX(-50%) translateY(-10px) rotate(0.8deg)' },
+        nexoChatPulse: {
+          '0%, 100%': { opacity: '0.3' },
+          '50%': { opacity: '1' },
         },
-        lumenBreathe: {
-          '0%, 100%': { transform: 'translate(-50%, -50%) scale(0.96)', opacity: '0.35' },
-          '50%': { transform: 'translate(-50%, -50%) scale(1.04)', opacity: '0.75' },
+        lumenFloat: {
+          '0%, 100%': { transform: 'translateY(0px) rotate(-0.4deg)' },
+          '50%': { transform: 'translateY(-9px) rotate(0.4deg)' },
         },
         lumenBlink: {
-          '0%, 42%, 46%, 100%': { transform: 'scaleY(1)' },
-          '44%': { transform: 'scaleY(0.08)' },
+          '0%, 46%, 49%, 100%': { transform: 'scaleY(1)' },
+          '47.5%': { transform: 'scaleY(0.08)' },
+        },
+        lumenHalo: {
+          '0%, 100%': { transform: 'translate(-50%, -50%) scale(0.94)', opacity: '0.25' },
+          '50%': { transform: 'translate(-50%, -50%) scale(1.05)', opacity: '0.65' },
+        },
+        lumenHaloSlow: {
+          '0%, 100%': { transform: 'translate(-50%, -50%) scale(1)', opacity: '0.12' },
+          '50%': { transform: 'translate(-50%, -50%) scale(1.08)', opacity: '0.35' },
+        },
+        lumenEnergy: {
+          '0%, 100%': { transform: 'translateY(0px) scaleY(0.96)' },
+          '50%': { transform: 'translateY(-3px) scaleY(1.05)' },
+        },
+        lumenCore: {
+          '0%, 100%': { opacity: '0.72', transform: 'scale(0.94)' },
+          '50%': { opacity: '1', transform: 'scale(1.06)' },
         },
         lumenWave: {
-          '0%, 100%': { transform: 'rotate(-17deg)' },
-          '50%': { transform: 'rotate(-36deg)' },
+          '0%, 100%': { transform: 'rotate(0deg)' },
+          '25%': { transform: 'rotate(-7deg)' },
+          '50%': { transform: 'rotate(5deg)' },
+          '75%': { transform: 'rotate(-5deg)' },
         },
-        lumenWaveFast: {
-          '0%, 100%': { transform: 'rotate(-12deg)' },
-          '25%': { transform: 'rotate(-48deg)' },
-          '50%': { transform: 'rotate(-8deg)' },
-          '75%': { transform: 'rotate(-42deg)' },
+        lumenShadow: {
+          '0%, 100%': { transform: 'scaleX(0.92)', opacity: '0.12' },
+          '50%': { transform: 'scaleX(1.06)', opacity: '0.22' },
         },
-        lumenFlame: {
-          '0%, 100%': { transform: 'rotate(-24deg) scaleY(0.94)' },
-          '50%': { transform: 'rotate(-17deg) scaleY(1.08) translateY(-2px)' },
-        },
-        lumenFlameMain: {
-          '0%, 100%': { transform: 'rotate(-4deg) scaleY(0.95)' },
-          '50%': { transform: 'rotate(5deg) scaleY(1.1) translateY(-3px)' },
-        },
-        lumenFlameDelayed: {
-          '0%, 100%': { transform: 'rotate(21deg) scaleY(1.03)' },
-          '50%': { transform: 'rotate(13deg) scaleY(0.92) translateY(2px)' },
-        },
-        lumenFlameCore: {
-          '0%, 100%': { transform: 'rotate(2deg) scaleY(0.86)', opacity: '0.72' },
-          '50%': { transform: 'rotate(-4deg) scaleY(1.08)', opacity: '1' },
-        },
-        lumenOrbit: {
-          '0%, 100%': { transform: 'translate(0, 0)', opacity: '0.3' },
-          '50%': { transform: 'translate(10px, -18px)', opacity: '1' },
-        },
-        lumenOrbitDelayed: {
-          '0%, 100%': { transform: 'translate(0, 0)', opacity: '0.8' },
-          '50%': { transform: 'translate(-12px, 15px)', opacity: '0.25' },
+        nexoSignal: {
+          '0%, 100%': { opacity: '0.38', transform: 'scale(0.92)' },
+          '50%': { opacity: '1', transform: 'scale(1.08)' },
         },
       },
       animation: {
-        'lumen-float': 'lumenFloat 4.2s ease-in-out infinite',
-        'lumen-breathe': 'lumenBreathe 3.4s ease-in-out infinite',
-        'lumen-blink': 'lumenBlink 3.8s ease-in-out infinite',
-        'lumen-wave': 'lumenWave 1.45s ease-in-out infinite',
-        'lumen-wave-fast': 'lumenWaveFast 0.7s ease-in-out infinite',
-        'lumen-flame': 'lumenFlame 1.05s ease-in-out infinite',
-        'lumen-flame-main': 'lumenFlameMain 0.82s ease-in-out infinite',
-        'lumen-flame-delayed': 'lumenFlameDelayed 1.15s ease-in-out infinite',
-        'lumen-flame-core': 'lumenFlameCore 0.66s ease-in-out infinite',
-        'lumen-orbit': 'lumenOrbit 3.8s ease-in-out infinite',
-        'lumen-orbit-delayed': 'lumenOrbitDelayed 4.4s ease-in-out infinite 0.7s',
+        'nexo-chat-pulse': 'nexoChatPulse 1s ease-in-out infinite',
+        'lumen-float': 'lumenFloat 4.6s ease-in-out infinite',
+        'lumen-blink': 'lumenBlink 4.8s ease-in-out infinite',
+        'lumen-halo': 'lumenHalo 3.2s ease-in-out infinite',
+        'lumen-halo-slow': 'lumenHaloSlow 5.2s ease-in-out infinite',
+        'lumen-energy': 'lumenEnergy 1.6s ease-in-out infinite',
+        'lumen-core': 'lumenCore 2.4s ease-in-out infinite',
+        'lumen-wave': 'lumenWave 0.7s ease-in-out',
+        'lumen-shadow': 'lumenShadow 4.6s ease-in-out infinite',
+        'nexo-signal': 'nexoSignal 1.35s ease-in-out infinite',
       },
     },
   },
