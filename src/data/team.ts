@@ -47,7 +47,7 @@ export const team: TeamMember[] = [
   },
   {
     nome: 'Gabriel Razo',
-    cargo: 'Full-Stack Developer',
+    cargo: 'Java Developer',
     rm: '572244',
     turma: '1TDSPF',
     github: 'https://github.com/gabrielrazod9j-ops',
