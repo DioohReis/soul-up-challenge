@@ -36,16 +36,15 @@ export const team: TeamMember[] = [
     imagem: "/image/Rodrigues.png",
   },
   {
-    nome: "Luiz Henrique Alves Albarello",
-    cargo: "Full-Stack Developer",
-    rm: "572727",
-    turma: "1TDSPF",
-    github: "https://github.com/LuizHenriqueAAlbarello",
-    linkedin:
-      "https://www.linkedin.com/in/luiz-henrique-alves-albarello-82297b410/",
+    nome: 'Luiz Henrique Alves Albarello',
+    cargo: 'Chat-Bot and AI Developer',
+    rm: '572727',
+    turma: '1TDSPF',
+    github: 'https://github.com/LuizHenriqueAAlbarello',
+    linkedin: 'https://www.linkedin.com/in/luiz-henrique-alves-albarello-82297b410/',
     descricao:
-      "Atua no desenvolvimento das funcionalidades do projeto e na integração entre as diferentes partes da solução.",
-    imagem: "/image/LuizHenrique572727.jpeg",
+      'Atua no desenvolvimento da IA.',
+    imagem: '/image/Luiz_Henrique.jpeg',
   },
   {
     nome: "Gabriel Razo",
