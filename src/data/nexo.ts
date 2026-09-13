@@ -1,12 +1,12 @@
 export const nexoHomeMessages = {
   visitante: [
-    'Eu organizo sua jornada em pequenos passos para você sempre saber o que fazer a seguir.',
-    'Missões curtas, progresso visível e recompensas claras ajudam a transformar intenção em hábito.',
-    'Quando você estiver pronto, entre na experiência e eu conduzo a conversa de acordo com seu objetivo.',
+    'Transformando a sua jornada em passos simples, garantindo que você nunca se sinta perdido sobre o que fazer agora.',
+    'Missões rápidas, progresso evidente e recompensas claras convertem intenções em hábitos.',
+    'Assim que estiver pronto, é só começar a experiência e eu guio o nosso papo de acordo com o seu objetivo.',
   ],
   usuarioAtivo: [
-    'Seu progresso já começou. Vamos manter a sequência e escolher a próxima ação com o melhor custo de esforço.',
+    'O seu progresso já começou. Vamos manter o ritmo e escolher a próxima ação que traz o maior retorno com o menor esforço.',
     'Você não precisa fazer tudo de uma vez. O importante é enxergar evolução e voltar para a próxima missão.',
-    'Na experiência, eu consigo contextualizar seu nível, pontos e tema atual antes de sugerir o próximo passo.',
+    'Dentro da experiência, eu avalio o seu nível, seus pontos e o tema do momento antes de sugerir o próximo passo.',
   ],
 }
