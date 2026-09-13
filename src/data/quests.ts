@@ -16,7 +16,7 @@ export const ecologicalProblems: EcologicalProblem[] = [
         pontos: 40,
         tempo: "10 min de preparação",
         descricao:
-          "Desligue luzes desnecessárias, tire carregadores da tomada e reduza o brilho da tela por pelo menos 2 horas.",
+          "Desative luzes desnecessárias, desconecte carregadores inativos e ative o modo economia de energia nos seus dispositivos por 2 horas.",
       },
       {
         titulo: "Trajeto de baixo carbono",
@@ -24,7 +24,7 @@ export const ecologicalProblems: EcologicalProblem[] = [
         pontos: 80,
         tempo: "1 deslocamento",
         descricao:
-          "Faça um trajeto curto caminhando, de bicicleta, transporte público ou carona compartilhada.",
+          "Substitua um trajeto motorizado por uma caminhada, uso de bicicleta, transporte público ou organize uma carona solidária.",
       },
       {
         titulo: "Dia com consumo consciente",
@@ -32,7 +32,7 @@ export const ecologicalProblems: EcologicalProblem[] = [
         pontos: 140,
         tempo: "1 dia",
         descricao:
-          "Passe um dia sem compras por impulso e registre três escolhas que reduziram gasto de energia ou recursos.",
+          "Sobreviva a um dia inteiro sem compras supérfluas e registre no sistema 3 ações reais que reduziram seu gasto de energia.",
       },
     ],
   },
@@ -51,7 +51,7 @@ export const ecologicalProblems: EcologicalProblem[] = [
         pontos: 35,
         tempo: "15 min",
         descricao:
-          "Separe papel, plástico, metal ou vidro de um descarte comum e identifique onde cada item deveria ir.",
+          "Realize a triagem de recicláveis (papel, plástico, metal, vidro) do lixo comum e destine-os ao local correto de coleta.",
       },
       {
         titulo: "Reutilize antes de jogar fora",
@@ -59,7 +59,7 @@ export const ecologicalProblems: EcologicalProblem[] = [
         pontos: 75,
         tempo: "30 min",
         descricao:
-          "Escolha uma embalagem ou objeto e encontre uma forma útil de reutilizá-lo por mais uma semana.",
+          "Resgate uma embalagem ou objeto prestes a ser descartado e atribua a ele uma nova função prática por, no mínimo, uma semana.",
       },
       {
         titulo: "Dia lixo mínimo",
@@ -67,7 +67,7 @@ export const ecologicalProblems: EcologicalProblem[] = [
         pontos: 130,
         tempo: "1 dia",
         descricao:
-          "Planeje um dia tentando gerar o mínimo possível de lixo descartável e anote quais escolhas ajudaram mais.",
+          "Planeje um dia gerando o mínimo absoluto de lixo não-reciclável e documente as estratégias de substituição que você utilizou.",
       },
     ],
   },
@@ -86,7 +86,7 @@ export const ecologicalProblems: EcologicalProblem[] = [
         pontos: 30,
         tempo: "1 banho",
         descricao:
-          "Reduza o tempo do banho e registre quantos minutos conseguiu economizar em relação ao normal.",
+          "Cronometre seu banho, reduza o tempo habitual e registre exatamente quantos minutos de água corrente você economizou.",
       },
       {
         titulo: "Caça ao vazamento",
@@ -94,7 +94,7 @@ export const ecologicalProblems: EcologicalProblem[] = [
         pontos: 70,
         tempo: "20 min",
         descricao:
-          "Verifique torneiras, descarga e cozinha procurando sinais de vazamento ou uso desnecessário de água.",
+          "Faça uma inspeção técnica nas torneiras, chuveiros e descargas da sua casa em busca de vazamentos ou goteiras ocultas.",
       },
       {
         titulo: "Rotina de reuso",
@@ -102,7 +102,7 @@ export const ecologicalProblems: EcologicalProblem[] = [
         pontos: 120,
         tempo: "1 dia",
         descricao:
-          "Encontre uma forma segura de reutilizar água em uma tarefa doméstica, como limpeza de área externa ou rega.",
+          "Implemente um sistema seguro para reutilizar água em uma tarefa doméstica (ex: usar água da máquina para lavar o quintal).",
       },
     ],
   },
@@ -121,7 +121,7 @@ export const ecologicalProblems: EcologicalProblem[] = [
         pontos: 45,
         tempo: "20 min",
         descricao:
-          "Identifique uma praça, árvore ou área verde próxima e registre por que ela é importante para a comunidade.",
+          "Mapeie uma praça ou área verde próxima à sua residência e documente a importância desse ecossistema para a comunidade local.",
       },
       {
         titulo: "Cuidado com uma planta",
@@ -129,7 +129,7 @@ export const ecologicalProblems: EcologicalProblem[] = [
         pontos: 85,
         tempo: "1 semana",
         descricao:
-          "Escolha uma planta para cuidar durante a semana, acompanhando luz, água e crescimento.",
+          "Adote uma planta local por uma semana. Monitore ativamente sua exposição à luz, necessidade de água e desenvolvimento geral.",
       },
       {
         titulo: "Ação de preservação local",
@@ -137,7 +137,7 @@ export const ecologicalProblems: EcologicalProblem[] = [
         pontos: 150,
         tempo: "1 ação",
         descricao:
-          "Participe ou organize uma pequena ação de cuidado com área verde, como limpeza segura ou conscientização.",
+          "Lidere ou participe ativamente de uma ação de preservação em uma área verde (limpeza responsável, plantio ou conscientização).",
       },
     ],
   },
@@ -156,7 +156,7 @@ export const ecologicalProblems: EcologicalProblem[] = [
         pontos: 35,
         tempo: "15 min",
         descricao:
-          "Observe um ponto com lixo, fumaça ou descarte irregular e pense em uma ação preventiva para esse problema.",
+          "Identifique um foco de poluição (lixo acumulado, fumaça, descarte irregular) e crie um plano de ação preventivo para a área.",
       },
       {
         titulo: "Sem descartável hoje",
@@ -164,7 +164,7 @@ export const ecologicalProblems: EcologicalProblem[] = [
         pontos: 80,
         tempo: "1 dia",
         descricao:
-          "Evite copos, sacolas ou talheres descartáveis por um dia e registre qual item foi mais fácil substituir.",
+          "Boicote completamente o uso de copos, sacolas ou talheres plásticos descartáveis por 24 horas e registre a experiência.",
       },
       {
         titulo: "Mini campanha consciente",
@@ -172,7 +172,7 @@ export const ecologicalProblems: EcologicalProblem[] = [
         pontos: 135,
         tempo: "1 publicação ou conversa",
         descricao:
-          "Crie uma mensagem curta de conscientização sobre descarte correto ou redução de poluição e compartilhe com alguém.",
+          "Desenvolva um conteúdo curto de conscientização sobre descarte correto e dissemine ativamente para sua rede de contatos.",
       },
     ],
   },
