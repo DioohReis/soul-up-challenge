@@ -6,91 +6,54 @@ export const team: TeamMember[] = [
     cargo: 'Full-Stack Developer',
     rm: '573301',
     turma: '1TDSPF',
-
     github: 'https://github.com/DioohReis',
-
-    linkedin:
-      'https://www.linkedin.com/in/diogo-guilherme-de-assis-reis-95b11624b/',
-
+    linkedin: 'https://www.linkedin.com/in/diogo-guilherme-de-assis-reis-95b11624b/',
     descricao:
-      'Diogo é responsável pelo desenvolvimento do frontend do projeto, cuidando da interface do usuário, garantindo que o design seja implementado de forma responsiva e acessível.',
-
+      'Responsável pelo desenvolvimento do front-end do projeto, cuidando da interface, responsividade e acessibilidade da experiência.',
     imagem: '/image/DiogoRM573301.jpg',
   },
-
   {
     nome: 'Gabriel Ricardo',
     cargo: 'Full-Stack Developer',
-
-    // ATENÇÃO:
-    // No projeto original estava 573302.
-    // Se o RM correto for outro, altere APENAS aqui.
-    rm: '573302',
-
+    rm: '572279',
     turma: '1TDSPF',
-
     github: 'https://github.com/gabriel-ricardo-ADS',
-
-    linkedin:
-      'https://www.linkedin.com/in/gabriel-ricardo-lima/',
-
+    linkedin: 'https://www.linkedin.com/in/gabriel-ricardo-lima/',
     descricao:
-      'Gabriel é responsável pelo desenvolvimento do backend, implementando funcionalidades e garantindo a integridade dos dados.',
-
+      'Atua no desenvolvimento da solução, contribuindo com funcionalidades e com a evolução técnica do projeto.',
     imagem: '/image/Gabriel_Ricardo-01.jpeg',
   },
-
   {
     nome: 'Matheus Rodrigues',
     cargo: 'Full-Stack Developer',
     rm: '570469',
     turma: '1TDSPF',
-
-    github:
-      'https://github.com/MatheusRodriguesSerrao',
-
-    linkedin:
-      'https://www.linkedin.com/in/matheus-rodrigues-06060a3a6/',
-
+    github: 'https://github.com/MatheusRodriguesSerrao',
+    linkedin: 'https://www.linkedin.com/in/matheus-rodrigues-06060a3a6/',
     descricao:
-      'Matheus Rodrigues é responsável pelo desenvolvimento do banco de dados, projetando a estrutura e garantindo a eficiência das consultas para suportar as funcionalidades do sistema.',
-
+      'Contribui com a estrutura de dados do projeto e com a organização das informações que suportam as funcionalidades da solução.',
     imagem: '/image/Matheus_Rodrigues.jpeg',
   },
-
   {
     nome: 'Luiz Henrique Alves Albarello',
     cargo: 'Full-Stack Developer',
     rm: '572727',
     turma: '1TDSPF',
-
-    github:
-      'https://github.com/LuizHenriqueAAlbarello',
-
-    linkedin:
-      'https://www.linkedin.com/in/luiz-henrique-alves-albarello-82297b410/',
-
+    github: 'https://github.com/LuizHenriqueAAlbarello',
+    linkedin: 'https://www.linkedin.com/in/luiz-henrique-alves-albarello-82297b410/',
     descricao:
-      'Luiz é responsável pelo desenvolvimento do backend, implementando funcionalidades e garantindo a integridade dos dados.',
-
+      'Atua no desenvolvimento das funcionalidades do projeto e na integração entre as diferentes partes da solução.',
     imagem: '/image/LuizHenrique572727.jpeg',
   },
-
   {
     nome: 'Gabriel Razo',
     cargo: 'Full-Stack Developer',
     rm: '572244',
     turma: '1TDSPF',
-
-    github:
-      'https://github.com/gabrielrazod9j-ops',
-
-    linkedin:
-      'https://www.linkedin.com/in/gabriel-razo-dantas-34724b301/',
-
+    github: 'https://github.com/gabrielrazod9j-ops',
+    linkedin: 'https://www.linkedin.com/in/gabriel-razo-dantas-34724b301/',
     descricao:
-      'Razo é responsável pelo desenvolvimento do backend, criando a estrutura do avatar em linguagem Java.',
-
+      'Contribui com o desenvolvimento da solução e com a estruturação técnica do avatar inteligente Lumën.',
     imagem: '/image/razo.01.jpeg',
   },
 ]
