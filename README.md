@@ -1,3 +1,5 @@
+https://www.youtube.com/watch?v=oXtvHNy5etg&list=PLcF-2M9iPSkGeEEfcYFv0e-eHLnwvsjuJ
+
 # Lumen AI · Soul UP — Challenge 2026
 
 > Aplicação Front-End desenvolvida pela equipe **1TDSPF** para o desafio **Avatar Inteligente e Interativo** da Soul UP, na disciplina **Front-End Design Engineering — Sprint 3**.
