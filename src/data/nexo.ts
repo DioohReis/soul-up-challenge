@@ -1,7 +1,7 @@
 export const nexoHomeMessages = {
   visitante: [
-    'Eu organizo sua jornada em pequenos passos para você sempre saber o que fazer a seguir.',
-    'Missões curtas, progresso visível e recompensas claras ajudam a transformar intenção em hábito.',
+    'Transformo a sua jornada em passos simples, garantindo que você nunca se sinta perdido sobre o que fazer agora.',
+    'Missões rápidas, progresso evidente e recompensas claras convertem intenções em hábitos.',
     'Quando você estiver pronto, entre na experiência e eu conduzo a conversa de acordo com seu objetivo.',
   ],
   usuarioAtivo: [
