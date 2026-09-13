@@ -1,179 +1,179 @@
-import type { EcologicalProblem } from '../types'
+import type { EcologicalProblem } from "../types";
 
 export const ecologicalProblems: EcologicalProblem[] = [
   {
-    id: 'clima',
-    titulo: 'Mudanças climáticas',
-    causa: 'Emissões de gases de efeito estufa',
+    id: "clima",
+    titulo: "Mudanças climáticas",
+    causa: "Alta emissão de gases de efeito estufa e matriz fóssil",
     resumo:
-      'Uso de energia, transporte movido a combustíveis fósseis e consumo sem controle aumentam emissões e desperdício de recursos.',
+      "O uso intenso de energias não renováveis e o consumo desenfreado aceleram o aquecimento global, exigindo mudanças imediatas de hábito.",
     mensagem:
-      'Comece por ações de energia e transporte. São hábitos simples de medir, pontuar e transformar em evolução dentro da plataforma.',
+      "Sua jornada começa otimizando energia e transporte. Pequenas ações diárias geram grandes pontos de impacto e ajudam a reverter esse cenário.",
     quests: [
       {
-        titulo: 'Modo economia por 2 horas',
-        dificuldade: 'facil',
+        titulo: "Modo economia por 2 horas",
+        dificuldade: "facil",
         pontos: 40,
-        tempo: '10 min de preparação',
+        tempo: "10 min de preparação",
         descricao:
-          'Desligue luzes desnecessárias, tire carregadores da tomada e reduza o brilho da tela por pelo menos 2 horas.',
+          "Desative luzes desnecessárias, desconecte carregadores inativos e ative o modo economia de energia nos seus dispositivos por 2 horas.",
       },
       {
-        titulo: 'Trajeto de baixo carbono',
-        dificuldade: 'medio',
+        titulo: "Trajeto de baixo carbono",
+        dificuldade: "medio",
         pontos: 80,
-        tempo: '1 deslocamento',
+        tempo: "1 deslocamento",
         descricao:
-          'Faça um trajeto curto caminhando, de bicicleta, transporte público ou carona compartilhada.',
+          "Substitua um trajeto motorizado por uma caminhada, uso de bicicleta, transporte público ou organize uma carona solidária.",
       },
       {
-        titulo: 'Dia com consumo consciente',
-        dificuldade: 'dificil',
+        titulo: "Dia com consumo consciente",
+        dificuldade: "dificil",
         pontos: 140,
-        tempo: '1 dia',
+        tempo: "1 dia",
         descricao:
-          'Passe um dia sem compras por impulso e registre três escolhas que reduziram gasto de energia ou recursos.',
+          "Sobreviva a um dia inteiro sem compras supérfluas e registre no sistema 3 ações reais que reduziram seu gasto de energia.",
       },
     ],
   },
   {
-    id: 'residuos',
-    titulo: 'Resíduos e descarte incorreto',
-    causa: 'Excesso de lixo, descarte misturado e baixa reutilização',
+    id: "residuos",
+    titulo: "Resíduos e descarte incorreto",
+    causa: "Consumo excessivo, descarte incorreto e baixa reciclagem",
     resumo:
-      'O aumento de resíduos pressiona coleta, aterros e reciclagem. Separar, reduzir e reutilizar evita desperdício e melhora o impacto ambiental.',
+      "O volume crescente de lixo sobrecarrega aterros sanitários. A adoção da economia circular (reduzir, reutilizar e reciclar) é o caminho.",
     mensagem:
-      'Para resíduos, a melhor quest é objetiva: separar, reutilizar e reduzir. A Lumën pontua ações fáceis de comprovar no dia a dia.',
+      "Transforme o que seria lixo em recurso. Nesta categoria, suas missões envolvem separar corretamente os materiais e repensar suas embalagens.",
     quests: [
       {
-        titulo: 'Separação inteligente',
-        dificuldade: 'facil',
+        titulo: "Separação inteligente",
+        dificuldade: "facil",
         pontos: 35,
-        tempo: '15 min',
+        tempo: "15 min",
         descricao:
-          'Separe papel, plástico, metal ou vidro de um descarte comum e identifique onde cada item deveria ir.',
+          "Realize a triagem de recicláveis (papel, plástico, metal, vidro) do lixo comum e destine-os ao local correto de coleta.",
       },
       {
-        titulo: 'Reutilize antes de jogar fora',
-        dificuldade: 'medio',
+        titulo: "Reutilize antes de jogar fora",
+        dificuldade: "medio",
         pontos: 75,
-        tempo: '30 min',
+        tempo: "30 min",
         descricao:
-          'Escolha uma embalagem ou objeto e encontre uma forma útil de reutilizá-lo por mais uma semana.',
+          "Resgate uma embalagem ou objeto prestes a ser descartado e atribua a ele uma nova função prática por, no mínimo, uma semana.",
       },
       {
-        titulo: 'Dia lixo mínimo',
-        dificuldade: 'dificil',
+        titulo: "Dia lixo mínimo",
+        dificuldade: "dificil",
         pontos: 130,
-        tempo: '1 dia',
+        tempo: "1 dia",
         descricao:
-          'Planeje um dia tentando gerar o mínimo possível de lixo descartável e anote quais escolhas ajudaram mais.',
+          "Planeje um dia gerando o mínimo absoluto de lixo não-reciclável e documente as estratégias de substituição que você utilizou.",
       },
     ],
   },
   {
-    id: 'agua',
-    titulo: 'Desperdício de água',
-    causa: 'Uso excessivo, vazamentos e hábitos sem controle',
+    id: "agua",
+    titulo: "Desperdício de água",
+    causa: "Uso irresponsável e vazamentos não monitorados",
     resumo:
-      'Banhos longos, torneiras abertas e pequenos vazamentos aumentam desperdício. Medir o uso ajuda a mudar comportamento.',
+      "A água potável é um recurso finito e precioso. Alterações simples na rotina podem economizar milhares de litros por ano.",
     mensagem:
-      'Água combina muito com missões rápidas. O usuário entende o impacto quando percebe onde desperdiça sem notar.',
+      "Foque em missões de curto prazo. Fechar a torneira e identificar vazamentos são as formas mais rápidas de acumular pontos e salvar recursos.",
     quests: [
       {
-        titulo: 'Banho cronometrado',
-        dificuldade: 'facil',
+        titulo: "Banho cronometrado",
+        dificuldade: "facil",
         pontos: 30,
-        tempo: '1 banho',
+        tempo: "1 banho",
         descricao:
-          'Reduza o tempo do banho e registre quantos minutos conseguiu economizar em relação ao normal.',
+          "Cronometre seu banho, reduza o tempo habitual e registre exatamente quantos minutos de água corrente você economizou.",
       },
       {
-        titulo: 'Caça ao vazamento',
-        dificuldade: 'medio',
+        titulo: "Caça ao vazamento",
+        dificuldade: "medio",
         pontos: 70,
-        tempo: '20 min',
+        tempo: "20 min",
         descricao:
-          'Verifique torneiras, descarga e cozinha procurando sinais de vazamento ou uso desnecessário de água.',
+          "Faça uma inspeção técnica nas torneiras, chuveiros e descargas da sua casa em busca de vazamentos ou goteiras ocultas.",
       },
       {
-        titulo: 'Rotina de reuso',
-        dificuldade: 'dificil',
+        titulo: "Rotina de reuso",
+        dificuldade: "dificil",
         pontos: 120,
-        tempo: '1 dia',
+        tempo: "1 dia",
         descricao:
-          'Encontre uma forma segura de reutilizar água em uma tarefa doméstica, como limpeza de área externa ou rega.',
+          "Implemente um sistema seguro para reutilizar água em uma tarefa doméstica (ex: usar água da máquina para lavar o quintal).",
       },
     ],
   },
   {
-    id: 'biodiversidade',
-    titulo: 'Perda de biodiversidade',
-    causa: 'Desmatamento, degradação de habitats e baixa conexão com áreas verdes',
+    id: "biodiversidade",
+    titulo: "Perda de biodiversidade",
+    causa: "Desmatamento e perda de conexão com áreas verdes",
     resumo:
-      'A natureza depende de habitats preservados. Pequenas ações de cuidado com áreas verdes ajudam a criar consciência e proteção local.',
+      "A preservação da flora e fauna locais mantém o equilíbrio ecológico, essencial para a qualidade de vida e a saúde dos ecossistemas.",
     mensagem:
-      'Aqui a experiência conecta o usuário com o ambiente ao redor. A quest parece simples, mas ajuda a criar vínculo com a natureza.',
+      "Reconecte-se com o meio ambiente ao seu redor. Suas missões aqui envolvem mapear, cuidar e proteger as áreas verdes da sua comunidade.",
     quests: [
       {
-        titulo: 'Mapa verde do bairro',
-        dificuldade: 'facil',
+        titulo: "Mapa verde do bairro",
+        dificuldade: "facil",
         pontos: 45,
-        tempo: '20 min',
+        tempo: "20 min",
         descricao:
-          'Identifique uma praça, árvore ou área verde próxima e registre por que ela é importante para a comunidade.',
+          "Mapeie uma praça ou área verde próxima à sua residência e documente a importância desse ecossistema para a comunidade local.",
       },
       {
-        titulo: 'Cuidado com uma planta',
-        dificuldade: 'medio',
+        titulo: "Cuidado com uma planta",
+        dificuldade: "medio",
         pontos: 85,
-        tempo: '1 semana',
+        tempo: "1 semana",
         descricao:
-          'Escolha uma planta para cuidar durante a semana, acompanhando luz, água e crescimento.',
+          "Adote uma planta local por uma semana. Monitore ativamente sua exposição à luz, necessidade de água e desenvolvimento geral.",
       },
       {
-        titulo: 'Ação de preservação local',
-        dificuldade: 'dificil',
+        titulo: "Ação de preservação local",
+        dificuldade: "dificil",
         pontos: 150,
-        tempo: '1 ação',
+        tempo: "1 ação",
         descricao:
-          'Participe ou organize uma pequena ação de cuidado com área verde, como limpeza segura ou conscientização.',
+          "Lidere ou participe ativamente de uma ação de preservação em uma área verde (limpeza responsável, plantio ou conscientização).",
       },
     ],
   },
   {
-    id: 'poluicao',
-    titulo: 'Poluição urbana',
-    causa: 'Emissões, descarte irregular e excesso de materiais descartáveis',
+    id: "poluicao",
+    titulo: "Poluição urbana",
+    causa: "Emissões veiculares e descarte irregular de materiais",
     resumo:
-      'Poluição afeta ar, água, solo e saúde. A experiência incentiva escolhas que reduzam exposição e descarte incorreto.',
+      "A poluição afeta severamente a qualidade do ar, da água e a nossa saúde. Reduzir a pegada de descartáveis é um passo vital.",
     mensagem:
-      'Para poluição, a Lumën recomenda missões visíveis: observar o problema, reduzir descartáveis e compartilhar uma solução simples.',
+      "Seja um agente fiscalizador ambiental. Suas missões focam na observação crítica, redução de plásticos de uso único e conscientização.",
     quests: [
       {
-        titulo: 'Observador da poluição',
-        dificuldade: 'facil',
+        titulo: "Observador da poluição",
+        dificuldade: "facil",
         pontos: 35,
-        tempo: '15 min',
+        tempo: "15 min",
         descricao:
-          'Observe um ponto com lixo, fumaça ou descarte irregular e pense em uma ação preventiva para esse problema.',
+          "Identifique um foco de poluição (lixo acumulado, fumaça, descarte irregular) e crie um plano de ação preventivo para a área.",
       },
       {
-        titulo: 'Sem descartável hoje',
-        dificuldade: 'medio',
+        titulo: "Sem descartável hoje",
+        dificuldade: "medio",
         pontos: 80,
-        tempo: '1 dia',
+        tempo: "1 dia",
         descricao:
-          'Evite copos, sacolas ou talheres descartáveis por um dia e registre qual item foi mais fácil substituir.',
+          "Boicote completamente o uso de copos, sacolas ou talheres plásticos descartáveis por 24 horas e registre a experiência.",
       },
       {
-        titulo: 'Mini campanha consciente',
-        dificuldade: 'dificil',
+        titulo: "Mini campanha consciente",
+        dificuldade: "dificil",
         pontos: 135,
-        tempo: '1 publicação ou conversa',
+        tempo: "1 publicação ou conversa",
         descricao:
-          'Crie uma mensagem curta de conscientização sobre descarte correto ou redução de poluição e compartilhe com alguém.',
+          "Desenvolva um conteúdo curto de conscientização sobre descarte correto e dissemine ativamente para sua rede de contatos.",
       },
     ],
   },
-]
+];
