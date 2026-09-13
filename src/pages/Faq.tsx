@@ -3,7 +3,7 @@ import { PageHero } from '../components/PageHero'
 
 const questions = [
   ['O que é a Lumen AI?', 'É um avatar inteligente e interativo pensado para orientar o usuário dentro da Soul UP, explicando missões, pontuação, níveis e recompensas de forma simples.'],
-  ['Qual problema o projeto resolve?', 'O projeto reduz dúvidas na jornada do usuário. Em vez de deixar a pessoa descobrir tudo sozinha, a Lumën indica próximos passos e mostra o impacto das ações.'],
+  ['Qual problema o projeto resolve?', 'O projeto reduz dúvidas na jornada do usuário. O Nexo indica próximos passos e mostra o progresso das ações.'],
   ['Como o usuário ganha pontos?', 'O usuário ganha pontos ao concluir quests sustentáveis. A pontuação varia de acordo com a dificuldade da missão.'],
   ['Por que a solução usa gamificação?', 'A gamificação transforma tarefas em metas, progresso e recompensas, tornando a experiência mais motivadora e aumentando o engajamento.'],
   ['O site funciona em celular?', 'Sim. A interface foi desenvolvida com Tailwind CSS e responsividade para mobile, tablet e desktop.'],

@@ -11,7 +11,7 @@ export function Sobre() {
 
   const journey = [
     ['1', 'Entra', 'O usuário acessa a plataforma e recebe uma orientação inicial objetiva.'],
-    ['2', 'Entende', 'A Lumën apresenta missões, pontos e recompensas com linguagem direta.'],
+    ['2', 'Entende', 'O Nexo apresenta missões, pontos e conquistas com linguagem direta.'],
     ['3', 'Interage', 'O usuário completa ações, acompanha evolução e recebe feedback visual.'],
     ['4', 'Retorna', 'A clareza da experiência incentiva continuidade e engajamento.'],
   ]
@@ -58,7 +58,7 @@ export function Sobre() {
         </GlassCard>
 
         <GlassCard>
-          <span className="text-xs font-black uppercase tracking-[0.2em] text-emerald-200">Roadmap da Lumën</span>
+          <span className="text-xs font-black uppercase tracking-[0.2em] text-emerald-200">Roadmap do Nexo</span>
           <div className="mt-5 space-y-4">
             {[
               ['1', 'Interface inicial', 'Páginas obrigatórias, navegação e identidade visual.'],
