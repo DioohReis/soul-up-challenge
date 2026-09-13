@@ -4,7 +4,7 @@ import { PageHero } from '../components/PageHero'
 
 export function Solucao() {
   const flow = [
-    ['1', 'Diagnóstico rápido', 'A Lumën identifica o momento do usuário e explica qual ação faz mais sentido naquele ponto da jornada.'],
+    ['1', 'Orientação inicial', 'O Nexo apresenta missões e sugestões de acordo com o progresso salvo nesta jornada.'],
     ['2', 'Missão recomendada', 'A interface mostra uma missão sustentável simples, com objetivo, recompensa e impacto esperado.'],
     ['3', 'Feedback visual', 'Após a ação, o usuário visualiza pontos, progresso, nível e próxima recomendação.'],
   ]
@@ -25,7 +25,7 @@ export function Solucao() {
 
       <section className="mx-auto grid max-w-7xl gap-5 px-4 pt-10 sm:px-6 lg:grid-cols-2 lg:px-8">
         <GlassCard className="bg-gradient-to-br from-cyan-300/10 to-transparent">
-          <span className="text-xs font-black uppercase tracking-[0.2em] text-cyan-200">Lumën AI</span>
+          <span className="text-xs font-black uppercase tracking-[0.2em] text-cyan-200">Lumen AI</span>
           <h2 className="mt-4 text-3xl font-black">Olá! Quer ganhar pontos hoje?</h2>
           <p className="mt-4 text-base leading-8 text-white/65">Complete uma missão rápida: escolha um tema sustentável e registre sua ação. Cada dificuldade oferece uma pontuação diferente.</p>
           <Link to="/experiencia" className="mt-7 inline-flex rounded-full bg-gradient-to-r from-cyan-300 to-emerald-300 px-6 py-3 text-sm font-black text-[#00140f] transition hover:brightness-110">

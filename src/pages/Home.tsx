@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { GlassCard } from '../components/GlassCard'
-import { LumenMascot } from '../components/LumenMascot'
+import { NexoHomeAssistant } from '../components/nexo/NexoHomeAssistant'
+import { nexoHomeMessages } from '../data/nexo'
 import { getCompletedQuests, getImpactSummary, getLevel, getStoredPoints, getStoredUser, TOTAL_QUESTS } from '../utils/storage'
 
 type HomeProgress = {
@@ -23,27 +24,37 @@ const initialProgress: HomeProgress = {
 
 export function Home() {
   const [progress, setProgress] = useState<HomeProgress>(initialProgress)
+  const [storageUnavailable, setStorageUnavailable] = useState(false)
 
   useEffect(() => {
     const refreshProgress = () => {
-      const points = getStoredPoints()
-      const completed = getCompletedQuests().length
-      const level = getLevel(points).nome
-      const impact = Math.min(Math.round((completed / TOTAL_QUESTS) * 100), 100)
-      const user = getStoredUser()
-      setProgress({
-        points,
-        completed,
-        level,
-        impact,
-        impactSummary: getImpactSummary(completed, points, level),
-        userName: user?.nome,
-      })
+      try {
+        const points = getStoredPoints()
+        const completed = getCompletedQuests().length
+        const level = getLevel(points).nome
+        const impact = Math.min(Math.round((completed / TOTAL_QUESTS) * 100), 100)
+        const user = getStoredUser()
+        setProgress({
+          points,
+          completed,
+          level,
+          impact,
+          impactSummary: getImpactSummary(completed, points, level),
+          userName: user?.nome,
+        })
+        setStorageUnavailable(false)
+      } catch {
+        setStorageUnavailable(true)
+      }
     }
 
     refreshProgress()
     window.addEventListener('focus', refreshProgress)
-    return () => window.removeEventListener('focus', refreshProgress)
+    window.addEventListener('storage', refreshProgress)
+    return () => {
+      window.removeEventListener('focus', refreshProgress)
+      window.removeEventListener('storage', refreshProgress)
+    }
   }, [])
 
   const benefits = [
@@ -67,7 +78,7 @@ export function Home() {
             </h1>
             <p className="mt-5 text-xl font-semibold text-cyan-200 sm:text-2xl">Potencializa seu tempo para o mundo e você</p>
             <p className="mx-auto mt-5 max-w-3xl text-base leading-8 text-white/80 sm:text-lg lg:mx-0">
-              Uma assistente digital para transformar missões, pontos e recompensas em uma jornada simples, motivadora e acessível.
+              Um companheiro digital para transformar missões, pontos e recompensas em uma jornada simples, motivadora e acessível.
             </p>
             <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row lg:justify-start">
               <Link to="/experiencia" className="rounded-full bg-gradient-to-r from-cyan-300 to-emerald-300 px-7 py-3.5 text-sm font-black text-[#00140f] transition hover:-translate-y-0.5 hover:brightness-110">
@@ -100,11 +111,12 @@ export function Home() {
       <section className="mx-auto max-w-7xl px-4 pb-20 pt-8 sm:px-6 lg:px-8" id="lumen-app">
         <div className="mb-10 max-w-3xl">
           <span className="text-xs font-black uppercase tracking-[0.2em] text-cyan-200">Soul UP • Quests sustentáveis</span>
-          <h2 className="mt-3 text-3xl font-black sm:text-5xl">Experiência guiada pela Lumën</h2>
+          <h2 className="mt-3 text-3xl font-black sm:text-5xl">Experiência guiada pelo Nexo</h2>
           <p className="mt-4 text-base leading-8 text-white/65">Escolha um problema ecológico, entenda a causa e veja missões práticas com pontuação, níveis e feedback instantâneo.</p>
         </div>
 
-        <div className="grid items-center gap-5 lg:grid-cols-[1fr_1.15fr_1fr]">
+        {storageUnavailable && <p role="status" className="mb-6 rounded-xl border border-amber-200/30 bg-amber-200/10 p-4 text-sm text-amber-100">Não foi possível carregar seu progresso salvo. Você pode explorar a experiência; permita o armazenamento neste navegador para retomar seus dados.</p>}
+        <div className="grid items-center gap-5 lg:grid-cols-[0.82fr_1.65fr_0.82fr]">
           <div className="grid gap-4">
             <GlassCard>
               <span className="text-xs uppercase tracking-[0.18em] text-white/45">Nível atual</span>
@@ -118,20 +130,13 @@ export function Home() {
             </GlassCard>
           </div>
 
-          <div className="rounded-[2rem] border border-cyan-200/15 bg-gradient-to-b from-cyan-300/10 to-transparent p-6 text-center shadow-neon">
-            <div className="rounded-2xl border border-cyan-200/20 bg-black/25 p-5 text-left">
-              <span className="text-xs font-black uppercase tracking-[0.18em] text-cyan-200">
-                {progress.userName ? `Olá, ${progress.userName}` : 'Guia da experiência'}
-              </span>
-              <h3 className="mt-2 text-2xl font-black">Eu sou a Lumën</h3>
-              <p className="mt-3 text-sm leading-7 text-white/65">
-                {progress.completed > 0
-                  ? 'Seu progresso está atualizado nas caixas ao redor. Continue completando quests para evoluir seu impacto ambiental.'
-                  : 'Complete quests na página Experiência e acompanhe seu nível, pontos, missões e impacto nas caixas ao redor.'}
-              </p>
-            </div>
-            <LumenMascot />
-          </div>
+          <NexoHomeAssistant
+            eyebrow={progress.userName ? `Olá, ${progress.userName}` : 'Guia da experiência'}
+            title="Eu sou o Nexo"
+            messages={progress.completed > 0 ? nexoHomeMessages.usuarioAtivo : nexoHomeMessages.visitante}
+            status="Pronto para ajudar"
+            action={{ label: 'Começar uma missão', to: '/experiencia' }}
+          />
 
           <div className="grid gap-4">
             <GlassCard>

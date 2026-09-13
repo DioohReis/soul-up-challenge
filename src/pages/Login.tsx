@@ -31,8 +31,12 @@ export function Login() {
       setModal({ open: true, success: false, title: 'Senha incorreta', message: 'A senha não corresponde ao usuário selecionado.' })
       return
     }
-    localStorage.setItem('usuarioSoulUp', JSON.stringify({ nome: user.nome, email: user.email }))
-    setModal({ open: true, success: true, title: `Bem-vindo, ${user.nome}!`, message: 'Login realizado localmente. Feche esta mensagem para abrir a experiência.' })
+    try {
+      localStorage.setItem('usuarioSoulUp', JSON.stringify({ nome: user.nome, email: user.email }))
+      setModal({ open: true, success: true, title: `Bem-vindo, ${user.nome}!`, message: 'Seu perfil de demonstração está pronto. Continue para iniciar sua jornada com o Nexo.' })
+    } catch {
+      setModal({ open: true, success: false, title: 'Não foi possível guardar seu perfil', message: 'O armazenamento do navegador está indisponível. Permita o armazenamento deste site e tente novamente. Você também pode abrir a página Experiência pelo menu sem entrar.' })
+    }
   }
 
   function closeModal() {
@@ -45,22 +49,22 @@ export function Login() {
 
   return (
     <main className="pb-20">
-      <PageHero tag="Acesso interativo" title="Entrar na Soul UP" description="Use uma conta de teste para simular autenticação apenas no front-end e personalizar a mensagem da Lumën." />
+      <PageHero tag="Acesso interativo" title="Entrar na Soul UP" description="Escolha uma conta de demonstração para conhecer a experiência e receber as boas-vindas do Nexo." />
 
       <section className="mx-auto grid max-w-6xl gap-6 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
         <form onSubmit={handleSubmit(onSubmit)} noValidate className="rounded-3xl border border-cyan-200/15 bg-black/25 p-6 shadow-neon sm:p-8">
           <span className="text-xs font-black uppercase tracking-[0.2em] text-cyan-200">Login de demonstração</span>
           <h2 className="mt-3 text-2xl font-black">Identifique seu perfil</h2>
-          <p className="mt-2 text-sm leading-6 text-white/55">O estado do usuário é salvo com localStorage, sem backend e sem requisições HTTP.</p>
+          <p className="mt-2 text-sm leading-6 text-white/55">Use as contas de teste ao lado. Seu perfil fica salvo apenas neste navegador; esta demonstração não cria uma conta real.</p>
 
           <label className="mt-6 block text-sm font-bold text-white/80">E-mail
-            <input type="email" autoComplete="email" placeholder="Digite seu e-mail" className={`${field} ${errors.email ? 'border-rose-400' : 'border-white/15'}`} {...register('email', { required: 'Informe o e-mail.', pattern: { value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, message: 'Digite um e-mail válido.' } })} />
-            {errors.email && <span className="mt-2 block text-xs text-rose-300">{errors.email.message}</span>}
+            <input type="email" autoComplete="email" aria-invalid={Boolean(errors.email)} aria-describedby={errors.email ? 'login-email-error' : undefined} placeholder="Digite seu e-mail" className={`${field} ${errors.email ? 'border-rose-400' : 'border-white/15'}`} {...register('email', { setValueAs: (value: string) => value.trim(), required: 'Informe o e-mail.', pattern: { value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, message: 'Digite um e-mail válido.' } })} />
+            {errors.email && <span id="login-email-error" role="alert" className="mt-2 block text-xs text-rose-300">{errors.email.message}</span>}
           </label>
 
           <label className="mt-5 block text-sm font-bold text-white/80">Senha
-            <input type="password" autoComplete="current-password" placeholder="Digite sua senha" className={`${field} ${errors.senha ? 'border-rose-400' : 'border-white/15'}`} {...register('senha', { required: 'Informe a senha.' })} />
-            {errors.senha && <span className="mt-2 block text-xs text-rose-300">{errors.senha.message}</span>}
+            <input type="password" autoComplete="current-password" aria-invalid={Boolean(errors.senha)} aria-describedby={errors.senha ? 'login-password-error' : undefined} placeholder="Digite sua senha" className={`${field} ${errors.senha ? 'border-rose-400' : 'border-white/15'}`} {...register('senha', { required: 'Informe a senha.', validate: (value) => Boolean(value.trim()) || 'Informe a senha.' })} />
+            {errors.senha && <span id="login-password-error" role="alert" className="mt-2 block text-xs text-rose-300">{errors.senha.message}</span>}
           </label>
 
           <button type="submit" className="mt-6 w-full rounded-xl bg-gradient-to-r from-cyan-300 to-emerald-300 px-5 py-3 text-sm font-black text-[#00140f] transition hover:brightness-110">Entrar e abrir experiência</button>
