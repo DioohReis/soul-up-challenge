@@ -32,7 +32,7 @@ export const team: TeamMember[] = [
     linkedin: 'https://www.linkedin.com/in/matheus-rodrigues-06060a3a6/',
     descricao:
       'Contribui com a estrutura de dados do projeto e com a organização das informações que suportam as funcionalidades da solução.',
-    imagem: '/image/Matheus_Rodrigues.jpeg',
+    imagem: '',
   },
   {
     nome: 'Luiz Henrique Alves Albarello',
