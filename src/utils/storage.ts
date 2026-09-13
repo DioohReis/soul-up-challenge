@@ -7,15 +7,21 @@ export function getStoredUser(): StoredUser | null {
   if (!raw) return null
 
   try {
-    return JSON.parse(raw) as StoredUser
+    const parsed: unknown = JSON.parse(raw)
+    if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) return null
+    const user = parsed as Record<string, unknown>
+    if (typeof user.nome !== 'string' || typeof user.email !== 'string') return null
+    const nome = user.nome.trim()
+    const email = user.email.trim()
+    return nome && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) ? { nome, email } : null
   } catch {
-    localStorage.removeItem('usuarioSoulUp')
     return null
   }
 }
 
 export function getStoredPoints(): number {
-  return Number(localStorage.getItem('pontosSoulUp')) || 0
+  const points = Number(localStorage.getItem('pontosSoulUp'))
+  return Number.isSafeInteger(points) && points >= 0 ? points : 0
 }
 
 export function getCompletedQuests(): string[] {
@@ -24,9 +30,8 @@ export function getCompletedQuests(): string[] {
 
   try {
     const parsed: unknown = JSON.parse(raw)
-    return Array.isArray(parsed) ? parsed.filter((item): item is string => typeof item === 'string') : []
+    return Array.isArray(parsed) ? [...new Set(parsed.filter((item): item is string => typeof item === 'string' && Boolean(item.trim())))] : []
   } catch {
-    localStorage.removeItem('questsConcluidasSoulUp')
     return []
   }
 }
