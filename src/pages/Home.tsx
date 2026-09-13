@@ -78,7 +78,7 @@ export function Home() {
             </h1>
             <p className="mt-5 text-xl font-semibold text-cyan-200 sm:text-2xl">Potencializa seu tempo para o mundo e você</p>
             <p className="mx-auto mt-5 max-w-3xl text-base leading-8 text-white/80 sm:text-lg lg:mx-0">
-              Um companheiro digital para transformar missões, pontos e recompensas em uma jornada simples, motivadora e acessível.
+              Uma inteligência interativa que orienta o usuário por meio de avatares, transformando missões, pontos e recompensas em uma jornada simples, motivadora e acessível.
             </p>
             <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row lg:justify-start">
               <Link to="/experiencia" className="rounded-full bg-gradient-to-r from-cyan-300 to-emerald-300 px-7 py-3.5 text-sm font-black text-[#00140f] transition hover:-translate-y-0.5 hover:brightness-110">

@@ -5,8 +5,8 @@ export function Sobre() {
   const cards = [
     ['01', 'Contexto', 'A Soul UP transforma interações digitais em pontos, benefícios e impacto positivo. O desafio é explicar essa jornada de forma simples para diferentes usuários.'],
     ['02', 'Problema', 'Quando missões, pontuação e recompensas não ficam claras, o usuário pode abandonar a experiência antes de entender o valor da plataforma.'],
-    ['03', 'Solução proposta', 'A Lumen AI atua como guia visual, orientando próximos passos, explicando progresso e reforçando o impacto sustentável das ações realizadas.'],
-    ['04', 'Impacto esperado', 'A proposta melhora entendimento, retenção e engajamento, criando uma experiência mais humana, acessível e alinhada à sustentabilidade digital.'],
+    ['03', 'Solução proposta', 'A Lumen AI atua como camada inteligente da experiência, orientando usuários por meio de avatares, explicando recursos, sugerindo missões e acompanhando sua evolução dentro da plataforma.'],
+    ['04', 'Impacto esperado', 'A proposta busca aumentar entendimento, retenção e engajamento, criando uma experiência mais humana, acessível e preparada para personalização e integração com serviços reais da Soul UP.'],
   ]
 
   const journey = [
@@ -18,7 +18,7 @@ export function Sobre() {
 
   return (
     <main className="pb-20">
-      <PageHero tag="Sobre o projeto" title="Lumen AI para Soul UP" description="A Lumen AI é uma proposta de avatar inteligente e interativo para tornar a jornada da Soul UP mais clara, motivadora e fácil de acompanhar." />
+      <PageHero tag="Sobre o projeto" title="Lumen AI para Soul UP" description="A Lumen AI é uma inteligência interativa projetada para orientar a jornada dos usuários da Soul UP por meio de avatares digitais, como o Nexo, tornando a experiência mais clara, personalizada e envolvente." />
 
       <section className="mx-auto grid max-w-7xl gap-4 px-4 sm:px-6 md:grid-cols-2 lg:px-8 xl:grid-cols-4">
         {cards.map(([number, title, description]) => (
@@ -58,13 +58,13 @@ export function Sobre() {
         </GlassCard>
 
         <GlassCard>
-          <span className="text-xs font-black uppercase tracking-[0.2em] text-emerald-200">Roadmap do Nexo</span>
+          <span className="text-xs font-black uppercase tracking-[0.2em] text-emerald-200">Roadmap da LumenAI</span>
           <div className="mt-5 space-y-4">
             {[
-              ['1', 'Interface inicial', 'Páginas obrigatórias, navegação e identidade visual.'],
-              ['2', 'Interatividade', 'SPA, formulários tipados e experiência de quests.'],
-              ['3', 'Personalização', 'Recomendações conforme perfil e progresso local do usuário.'],
-              ['4', 'Integração futura', 'Conectar dados reais da Soul UP em uma sprint futura.'],
+              ['1', 'Interface inicial', 'Páginas, navegação, identidade visual e primeiro avatar interativo.'],
+              ['2', 'Interatividade', 'Missões, progresso, feedbacks e experiência gamificada no front-end.'],
+              ['3', 'Inteligência', 'Integração da Lumen AI para interpretar mensagens, orientar usuários e personalizar respostas.'],
+              ['4', 'Evolução futura', 'Integração com backend, banco de dados, dados reais da Soul UP e novos avatares ou interfaces.'],
             ].map(([number, title, description]) => (
               <div key={number} className="flex gap-4 rounded-2xl bg-black/20 p-4">
                 <strong className="text-cyan-300">{number}</strong>
