@@ -2,13 +2,35 @@ import { useState } from 'react'
 import { PageHero } from '../components/PageHero'
 
 const questions = [
-  ['O que é a Lumen AI?', 'É um avatar inteligente e interativo pensado para orientar o usuário dentro da Soul UP, explicando missões, pontuação, níveis e recompensas de forma simples.'],
-  ['Qual problema o projeto resolve?', 'O projeto reduz dúvidas na jornada do usuário. O Nexo indica próximos passos e mostra o progresso das ações.'],
-  ['Como o usuário ganha pontos?', 'O usuário ganha pontos ao concluir quests sustentáveis. A pontuação varia de acordo com a dificuldade da missão.'],
-  ['Por que a solução usa gamificação?', 'A gamificação transforma tarefas em metas, progresso e recompensas, tornando a experiência mais motivadora e aumentando o engajamento.'],
-  ['O site funciona em celular?', 'Sim. A interface foi desenvolvida com Tailwind CSS e responsividade para mobile, tablet e desktop.'],
-  ['Quais tecnologias foram usadas?', 'React, Vite, TypeScript, Tailwind CSS, React Router DOM e React Hook Form, mantendo a experiência como uma SPA.'],
-]
+  [
+    "O que é a Lumen AI?",
+    "É um avatar inteligente e interativo pensado para orientar o usuário dentro da Soul UP, explicando missões, pontuação, níveis e recompensas de forma simples.",
+  ],
+  [
+    "Qual problema o projeto resolve?",
+    "O projeto reduz dúvidas na jornada do usuário. O Nexo indica próximos passos e mostra o progresso das ações.",
+  ],
+  [
+    "Como o usuário ganha pontos?",
+    "O usuário ganha pontos ao concluir quests sustentáveis. A pontuação varia de acordo com a dificuldade da missão.",
+  ],
+  [
+    "Por que a solução usa gamificação?",
+    "A gamificação transforma tarefas em metas, progresso e recompensas, tornando a experiência mais motivadora e aumentando o engajamento.",
+  ],
+  [
+    "O site funciona em celular?",
+    "Sim. A interface foi desenvolvida com Tailwind CSS e responsividade para mobile, tablet e desktop.",
+  ],
+  [
+    "Quais tecnologias foram usadas?",
+    "React, Vite, TypeScript, Tailwind CSS, React Router DOM e React Hook Form, mantendo a experiência como uma SPA.",
+  ],
+  [
+    "Meus dados ficam salvos?",
+    "Sim, o progresso é salvo localmente no navegador (localStorage). Se trocar de dispositivo ou limpar o cache, o progresso não é sincronizado nesta versão.",
+  ],
+];
 
 export function Faq() {
   const [openIndex, setOpenIndex] = useState(0)
