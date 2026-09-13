@@ -6,9 +6,9 @@ export const ecologicalProblems: EcologicalProblem[] = [
     titulo: "Mudanças climáticas",
     causa: "Alta emissão de gases de efeito estufa e matriz fóssil",
     resumo:
-      "Uso de energia, transporte movido a combustíveis fósseis e consumo sem controle aumentam emissões e desperdício de recursos.",
+      "O uso intenso de energias não renováveis e o consumo desenfreado aceleram o aquecimento global, exigindo mudanças imediatas de hábito.",
     mensagem:
-      "Comece por ações de energia e transporte. São hábitos simples de medir, pontuar e transformar em evolução dentro da plataforma.",
+      "Sua jornada começa otimizando energia e transporte. Pequenas ações diárias geram grandes pontos de impacto e ajudam a reverter esse cenário.",
     quests: [
       {
         titulo: "Modo economia por 2 horas",
@@ -41,9 +41,9 @@ export const ecologicalProblems: EcologicalProblem[] = [
     titulo: "Resíduos e descarte incorreto",
     causa: "Consumo excessivo, descarte incorreto e baixa reciclagem",
     resumo:
-      "O aumento de resíduos pressiona coleta, aterros e reciclagem. Separar, reduzir e reutilizar evita desperdício e melhora o impacto ambiental.",
+      "O volume crescente de lixo sobrecarrega aterros sanitários. A adoção da economia circular (reduzir, reutilizar e reciclar) é o caminho.",
     mensagem:
-      "Para resíduos, a melhor quest é objetiva: separar, reutilizar e reduzir. A Lumën pontua ações fáceis de comprovar no dia a dia.",
+      "Transforme o que seria lixo em recurso. Nesta categoria, suas missões envolvem separar corretamente os materiais e repensar suas embalagens.",
     quests: [
       {
         titulo: "Separação inteligente",
@@ -76,9 +76,9 @@ export const ecologicalProblems: EcologicalProblem[] = [
     titulo: "Desperdício de água",
     causa: "Uso irresponsável e vazamentos não monitorados",
     resumo:
-      "Banhos longos, torneiras abertas e pequenos vazamentos aumentam desperdício. Medir o uso ajuda a mudar comportamento.",
+      "A água potável é um recurso finito e precioso. Alterações simples na rotina podem economizar milhares de litros por ano.",
     mensagem:
-      "Água combina muito com missões rápidas. O usuário entende o impacto quando percebe onde desperdiça sem notar.",
+      "Foque em missões de curto prazo. Fechar a torneira e identificar vazamentos são as formas mais rápidas de acumular pontos e salvar recursos.",
     quests: [
       {
         titulo: "Banho cronometrado",
@@ -111,9 +111,9 @@ export const ecologicalProblems: EcologicalProblem[] = [
     titulo: "Perda de biodiversidade",
     causa: "Desmatamento e perda de conexão com áreas verdes",
     resumo:
-      "A natureza depende de habitats preservados. Pequenas ações de cuidado com áreas verdes ajudam a criar consciência e proteção local.",
+      "A preservação da flora e fauna locais mantém o equilíbrio ecológico, essencial para a qualidade de vida e a saúde dos ecossistemas.",
     mensagem:
-      "Aqui a experiência conecta o usuário com o ambiente ao redor. A quest parece simples, mas ajuda a criar vínculo com a natureza.",
+      "Reconecte-se com o meio ambiente ao seu redor. Suas missões aqui envolvem mapear, cuidar e proteger as áreas verdes da sua comunidade.",
     quests: [
       {
         titulo: "Mapa verde do bairro",
@@ -146,9 +146,9 @@ export const ecologicalProblems: EcologicalProblem[] = [
     titulo: "Poluição urbana",
     causa: "Emissões veiculares e descarte irregular de materiais",
     resumo:
-      "Poluição afeta ar, água, solo e saúde. A experiência incentiva escolhas que reduzam exposição e descarte incorreto.",
+      "A poluição afeta severamente a qualidade do ar, da água e a nossa saúde. Reduzir a pegada de descartáveis é um passo vital.",
     mensagem:
-      "Para poluição, a Lumën recomenda missões visíveis: observar o problema, reduzir descartáveis e compartilhar uma solução simples.",
+      "Seja um agente fiscalizador ambiental. Suas missões focam na observação crítica, redução de plásticos de uso único e conscientização.",
     quests: [
       {
         titulo: "Observador da poluição",
