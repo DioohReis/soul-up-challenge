@@ -47,13 +47,13 @@ export const team: TeamMember[] = [
   },
   {
     nome: 'Gabriel Razo',
-    cargo: 'Full-Stack Developer',
+    cargo: 'Java Developer',
     rm: '572244',
     turma: '1TDSPF',
     github: 'https://github.com/gabrielrazod9j-ops',
     linkedin: 'https://www.linkedin.com/in/gabriel-razo-dantas-34724b301/',
     descricao:
-      'Contribui com o desenvolvimento da solução e com a estruturação técnica do avatar inteligente Lumën.',
+      'Contribui com o desenvolvimento do sistema de Java integrado em Crud e Dao.',
     imagem: '/image/razo.01.jpeg',
   },
 ]
