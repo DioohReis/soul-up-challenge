@@ -1,4 +1,4 @@
-https://www.youtube.com/watch?v=oXtvHNy5etg&list=PLcF-2M9iPSkGeEEfcYFv0e-eHLnwvsjhhj
+https://www.youtube.com/watch?v=oXtvHNetg&list=PLcF-2M9iPSkGeEEfcYFv0e-eHLnwvsjhhj
 
 # Lumen AI · Soul UP — Challenge 2026
 
