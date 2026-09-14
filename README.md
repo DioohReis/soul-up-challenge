@@ -1499,9 +1499,9 @@ Para verificar os principais requisitos do projeto:
 | Foto | Integrante | RM | Turma | GitHub | LinkedIn |
 | --- | --- | --- | --- | --- | --- |
 | ![Diogo](public/image/DiogoRM573301.jpg) | Diogo Guilherme | 573301 | 1TDSPF | [DioohReis](https://github.com/DioohReis) | [Perfil](https://www.linkedin.com/in/diogo-guilherme-de-assis-reis-95b11624b/) |
-| ![Gabriel Ricardo](public/image/Gabriel_Ricardo-01.jpeg) | Gabriel Ricardo | 572279 | 1TDSPF | [gabriel-ricardo-ADS](https://github.com/gabriel-ricardo-ADS) | [Perfil](https://www.linkedin.com/in/gabriel-ricardo-lima/) |
-| ![Matheus](public/image/Matheus_Rodrigues.jpeg) | Matheus Rodrigues | 570469 | 1TDSPF | [MatheusRodriguesSerrao](https://github.com/MatheusRodriguesSerrao) | [Perfil](https://www.linkedin.com/in/matheus-rodrigues-06060a3a6/) |
-| ![Luiz](public/image/LuizHenrique572727.jpeg) | Luiz Henrique Alves Albarello | 572727 | 1TDSPF | [LuizHenriqueAAlbarello](https://github.com/LuizHenriqueAAlbarello) | [Perfil](https://www.linkedin.com/in/luiz-henrique-alves-albarello-82297b410/) |
+| ![Gabriel Ricardo](public/image/Gabriel_Ricardo-01.jpg) | Gabriel Ricardo | 572279 | 1TDSPF | [gabriel-ricardo-ADS](https://github.com/gabriel-ricardo-ADS) | [Perfil](https://www.linkedin.com/in/gabriel-ricardo-lima/) |
+| ![Matheus](public/image/Rodrigues.png) | Matheus Rodrigues | 570469 | 1TDSPF | [MatheusRodriguesSerrao](https://github.com/MatheusRodriguesSerrao) | [Perfil](https://www.linkedin.com/in/matheus-rodrigues-06060a3a6/) |
+| ![Luiz](public/image/Luiz_Henrique.jpeg) | Luiz Henrique Alves Albarello | 572727 | 1TDSPF | [LuizHenriqueAAlbarello](https://github.com/LuizHenriqueAAlbarello) | [Perfil](https://www.linkedin.com/in/luiz-henrique-alves-albarello-82297b410/) |
 | ![Gabriel Razo](public/image/razo.01.jpeg) | Gabriel Razo | 572244 | 1TDSPF | [gabrielrazod9j-ops](https://github.com/gabrielrazod9j-ops) | [Perfil](https://www.linkedin.com/in/gabriel-razo-dantas-34724b301/) |
 
 ## Repositório
