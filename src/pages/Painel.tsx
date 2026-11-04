@@ -229,10 +229,22 @@ export function Painel() {
               </select>
             </div>
 
+            {/* Contador de usuários (Issue #30) */}
             {estado.status === "sucesso" && usuarios.length > 0 && (
               <p className="mt-3 text-xs text-white/50">
                 Exibindo {filtrados.length} de {usuarios.length} usuários
               </p>
+            )}
+
+            {/* Botão para limpar a busca (Issue #31) */}
+            {busca && (
+              <button
+                type="button"
+                className={`${botaoSecundario} mt-3`}
+                onClick={() => setBusca("")}
+              >
+                ✕ Limpar busca
+              </button>
             )}
 
             <div className="mt-5">
