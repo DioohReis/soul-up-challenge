@@ -52,6 +52,20 @@ export function Solucao() {
           </div>
         </GlassCard>
       </section>
+
+      <section className="mx-auto max-w-7xl px-4 pt-10 sm:px-6 lg:px-8">
+        <GlassCard>
+          <span className="text-xs font-black uppercase tracking-[0.2em] text-emerald-200">Novidade da Sprint 4</span>
+          <h2 className="mt-4 text-2xl font-black sm:text-3xl">Painel com dados reais</h2>
+          <p className="mt-3 text-sm leading-7 text-white/65 sm:text-base">
+            No Painel é possível cadastrar, editar e excluir usuários e acompanhar avatar, ações, missões e
+            publicações de cada um. Tudo é salvo no banco Oracle através da nossa API Java.
+          </p>
+          <Link to="/painel" className="mt-6 inline-flex rounded-full bg-gradient-to-r from-cyan-300 to-emerald-300 px-6 py-3 text-sm font-black text-[#00140f] transition hover:brightness-110">
+            Abrir o Painel
+          </Link>
+        </GlassCard>
+      </section>
     </main>
   )
 }
