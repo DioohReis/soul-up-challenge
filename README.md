@@ -550,6 +550,16 @@ Arquivo `src/types/api.ts`:
 | Registro inexistente | aviso amarelo no formulário | o recurso ainda não foi criado para aquele usuário |
 | Ações | toast do `FeedbackContext` | sucesso ou erro de cada POST / PUT / DELETE |
 
+## Entidades do banco
+
+| Entidade | Principais campos | Relação |
+| --- | --- | --- |
+| USUARIO | idUsuario, nome, email, nivelEngajamento, pontosAcumulados, missoesCompletas | entidade principal |
+| AVATAR | nomeAvatar, personalidade, totalInteracoes | 1 por usuário |
+| ACAO | nomeAcao, descricao, tipoAcao, dificuldade, pontosGerados, realizada | 1 por usuário |
+| MISSAO | titulo, descricao, categoria, pontosRecompensa, progressoAtual, status | 1 por usuário |
+| PUBLICACAO | conteudo, categoria, publicada | 1 por usuário |
+
 ---
 
 # 9. Nexo 3D — modelagem e renderização
