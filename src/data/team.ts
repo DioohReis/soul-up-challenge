@@ -54,7 +54,7 @@ export const team: TeamMember[] = [
     github: "https://github.com/gabrielrazod9j-ops",
     linkedin: "https://www.linkedin.com/in/gabriel-razo-dantas-34724b301/",
     descricao:
-      "Contribui com o desenvolvimento do sistema de Java integrado em Crud e Dao.",
+      "Na Sprint 4, participei da integração do back-end com o front-end, atuando no desenvolvimento do codigo de java e na criação de endpoints para a comunicação entre o front-end e o back-end, garantindo que os dados fossem transmitidos corretamente e que a experiência do usuário fosse fluida e eficiente.",
     imagem: "/image/razo.01.jpeg",
   },
 ];
