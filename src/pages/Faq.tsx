@@ -30,7 +30,7 @@ const questions = [
     "Meus dados ficam salvos?",
     "Depende da página. Na Experiência, o progresso fica salvo no seu navegador (localStorage). No Painel, os usuários e suas jornadas são salvos no banco de dados Oracle através da nossa API Java, então aparecem em qualquer dispositivo.",
   ],
-    [
+  [
     "Por que o Painel às vezes demora para carregar?",
     "Nossa API Java está hospedada no plano gratuito do Render. Quando fica um tempo sem uso, ela 'dorme' e a primeira requisição pode levar até 1 minuto. Depois disso, tudo fica rápido. Enquanto isso, o site mostra uma mensagem de carregamento.",
   ],
