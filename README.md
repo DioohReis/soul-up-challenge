@@ -13,7 +13,7 @@ A aplicação foi construída como uma **SPA (Single Page Application)** com **R
 | Item | Link |
 | --- | --- |
 | Repositório GitHub | https://github.com/DioohReis/soul-up-challenge |
-| Deploy na Vercel | **`<COLE AQUI A URL DA VERCEL>`** |
+| Deploy na Vercel | https://soul-up-challenge.vercel.app |
 | Vídeo no YouTube (Sprint 4) | **`<COLE AQUI O LINK DO VÍDEO>`** |
 | API Java publicada (Render) | https://soulup-sprint4-java.onrender.com |
 | Exemplo de endpoint | https://soulup-sprint4-java.onrender.com/usuario |
@@ -116,7 +116,7 @@ O principal objetivo acadêmico é aplicar de forma integrada conceitos de desen
 - interação com ponteiro e teclado;
 - renderização 3D em tempo real;
 - separação de responsabilidades;
-- preparação arquitetural para integrações futuras.
+- integração com a API Java (Spring Boot) publicada no Render.
 
 Além da implementação funcional, o projeto busca demonstrar uma preocupação com **UX/UI**, clareza de navegação, feedback ao usuário e consistência visual.
 
@@ -1559,7 +1559,7 @@ Isso facilita uma futura substituição da conversa baseada em regras por uma AP
 
 ## 21.5 Persistência no navegador
 
-Para a Sprint Front-End, `localStorage` permite demonstrar continuidade de jornada sem criar backend apenas para persistência.
+Na página Experiência, o `localStorage` guarda a continuidade da jornada no navegador. Os dados de usuários, avatares, ações, missões e publicações ficam no banco Oracle, acessados pelo Painel através da API Java (seção 8.1).
 
 ## 21.6 Sem biblioteca pronta de UI
 
@@ -1611,10 +1611,7 @@ A disponibilidade e a voz utilizada dependem do suporte do navegador e do sistem
 
 A arquitetura atual permite evoluções como:
 
-- conexão com backend Java;
-- persistência em banco de dados;
 - autenticação segura;
-- API REST;
 - sincronização entre dispositivos;
 - IA generativa;
 - histórico real de conversas;
@@ -1744,7 +1741,7 @@ persistência
 renderização 3D
 ```
 
-Essa organização permite que o sistema atual funcione completamente como protótipo Front-End e, ao mesmo tempo, esteja preparado para receber backend, persistência remota e IA generativa em etapas futuras.
+Na Sprint 4, essa organização permitiu conectar o front-end à API Java da equipe: o Painel lista, detalha, cadastra, edita e exclui dados reais salvos no banco Oracle, com camada de serviços tipada e tratamento de carregamento, erro e resposta vazia. A mesma base está preparada para evoluções como autenticação e IA generativa.
 
 Mais do que uma página com um personagem visual, o projeto cria uma base para um **companheiro digital interativo**, capaz de acompanhar a jornada do usuário e transformar ações sustentáveis em progresso perceptível.
 
