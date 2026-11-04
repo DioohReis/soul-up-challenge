@@ -47,11 +47,11 @@ export function Sobre() {
 
       <section className="mx-auto grid max-w-7xl gap-5 px-4 pt-6 sm:px-6 lg:grid-cols-2 lg:px-8">
         <GlassCard>
-          <span className="text-xs font-black uppercase tracking-[0.2em] text-cyan-200">Tecnologias obrigatórias da Sprint 03</span>
+          <span className="text-xs font-black uppercase tracking-[0.2em] text-cyan-200">Tecnologias obrigatórias da Sprint 04</span>
           <h2 className="mt-3 text-2xl font-black">Front-end moderno e componentizado</h2>
-          <p className="mt-4 text-sm leading-7 text-white/65">A solução foi migrada para React + Vite + TypeScript, com navegação SPA, Tailwind CSS, React Hook Form e organização modular.</p>
+          <p className="mt-4 text-sm leading-7 text-white/65">A solução foi migrada para React + Vite + TypeScript, com navegação SPA, Tailwind CSS, React Hook Form e organização modular. Na Sprint 04, o front-end passou a consumir a API Java publicada no Render.</p>
           <div className="mt-5 flex flex-wrap gap-2">
-            {['React', 'Vite', 'TypeScript', 'Tailwind CSS', 'React Router DOM', 'React Hook Form', 'Git & GitHub'].map((tech) => (
+            {['React', 'Vite', 'TypeScript', 'Tailwind CSS', 'React Router DOM', 'React Hook Form', 'Git & GitHub', 'API Java (Spring Boot)', 'Fetch API', 'Vercel'].map((tech) => (
               <span key={tech} className="rounded-full border border-cyan-200/20 bg-cyan-300/5 px-3 py-1.5 text-xs font-bold text-cyan-100">{tech}</span>
             ))}
           </div>
@@ -71,6 +71,22 @@ export function Sobre() {
                 <div><h3 className="font-black">{title}</h3><p className="mt-1 text-sm leading-6 text-white/55">{description}</p></div>
               </div>
             ))}
+          </div>
+        </GlassCard>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 pt-6 sm:px-6 lg:px-8">
+        <GlassCard>
+          <span className="text-xs font-black uppercase tracking-[0.2em] text-cyan-200">Links do projeto</span>
+          <h2 className="mt-3 text-2xl font-black">Código-fonte e API</h2>
+          <p className="mt-3 text-sm leading-7 text-white/65">Acesse o repositório da equipe no GitHub e a API Java que fornece os dados do Painel.</p>
+          <div className="mt-5 flex flex-col gap-3 sm:flex-row">
+            <a href="https://github.com/DioohReis/soul-up-challenge" target="_blank" rel="noreferrer" className="rounded-full border border-cyan-200/30 bg-cyan-300/10 px-6 py-3 text-center text-sm font-black text-cyan-100 transition hover:border-cyan-200/60 hover:bg-cyan-300/20">
+              Repositório no GitHub
+            </a>
+            <a href="https://soulup-sprint4-java.onrender.com/usuario" target="_blank" rel="noreferrer" className="rounded-full border border-emerald-200/30 bg-emerald-300/10 px-6 py-3 text-center text-sm font-black text-emerald-100 transition hover:border-emerald-200/60 hover:bg-emerald-300/20">
+              API Java (Render)
+            </a>
           </div>
         </GlassCard>
       </section>

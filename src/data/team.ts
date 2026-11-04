@@ -21,7 +21,7 @@ export const team: TeamMember[] = [
     github: "https://github.com/gabriel-ricardo-ADS",
     linkedin: "https://www.linkedin.com/in/gabriel-ricardo-lima/",
     descricao:
-      "Atua principalmente no desenvolvimento em Python e na Engenharia de Software do projeto, contribuindo com a lógica da Lumen AI, definição de fluxos, arquitetura da solução e integração entre inteligência, dados e experiência do usuário.",
+      "Atua no desenvolvimento em Python e na Engenharia de Software do projeto. Na Sprint 4, otimizou o carregamento das páginas com React.lazy e atualizou as páginas Home, Sobre e Solução para apresentar o Painel integrado à API Java.",
     imagem: "/image/Gabriel_Ricardo-01.jpg",
   },
   {
