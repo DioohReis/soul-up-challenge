@@ -1161,6 +1161,7 @@ A aplicação adapta:
 
 ## Breakpoints do Painel
 
+
 | Prefixo Tailwind | Largura mínima | O que muda no Painel |
 | --- | --- | --- |
 | (sem prefixo) | 0px | Usuários em cartões, um embaixo do outro |
