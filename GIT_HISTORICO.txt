@@ -1,6 +1,33 @@
 Histórico de commits do projeto Lumen AI Soul UP
 Gerado em: 2026-11-04 (Sprint 4)
 
+b73da63 2026-11-04 DioohReis style: restaurar formatacao do Painel e posicionar o print mobile no README
+d345199 2026-11-04 DioohReis Merge pull request #46 from MatheusRodriguesSerrao
+fc2fa74 2026-11-04 DioohReis Merge pull request #44 from MatheusRodriguesSerrao
+96d68b4 2026-11-04 DioohReis Merge pull request #43 from MatheusRodriguesSerrao
+8b6ce99 2026-11-04 DioohReis Merge pull request #40 from gabrielrazod9j-ops/feature/rm572244
+9e007de 2026-11-04 DioohReis Merge pull request #45 from gabriel-ricardo-ADS
+54f3600 2026-11-04 DioohReis Merge pull request #41 from MatheusRodriguesSerrao/feature/nexo-texto-sprint4
+96da261 2026-11-04 Diogo Guilherme de Assis Reis Merge pull request #47 from MatheusRodriguesSerrao/feature/bio-matheus
+7644559 2026-11-04 DioohReis Merge pull request #48 from DioohReis/fix/revisao-sprint4
+3432ed4 2026-11-04 DioohReis fix: redirecionamentos /usuarios e /painel/usuarios com aviso e payload do avatar enxuto
+7af8c8a 2026-11-04 MatheusRodriguesSerrao docs: atualizar minha descrição de integrante com a Sprint 4 (closes #33)
+c30ef13 2026-11-04 MatheusRodriguesSerrao docs: atualizar o GIT_HISTORICO.txt com os commits da Sprint 4 (closes #32)
+3a2d654 2026-11-04 MatheusRodriguesSerrao feat: painel: botão para limpar a busca (closes #31)
+ad411ad 2026-11-04 gabriel-ricardo-ADS docs: atualizar minha descrição de integrante com a Sprint 4 (closes #23)
+1ec7a30 2026-11-04 gabriel-ricardo-ADS feat: adicionar atalho para o Painel na Home (closes #22)
+3ea5a18 2026-11-04 gabriel-ricardo-ADS feat: explicar o Painel (API) na página Solução (closes #21)
+7f33d76 2026-11-04 gabriel-ricardo-ADS feat: adicionar links do repositório e da API na página Sobre (closes #20)
+0ffead9 2026-11-04 gabriel-ricardo-ADS feat: atualizar tecnologias da página Sobre para a Sprint 4 (closes #19)
+4cdbcc8 2026-11-04 MatheusRodriguesSerrao feat: painel: mostrar quantos usuários a busca encontrou (closes #30)
+30d2f67 2026-11-04 gabriel-ricardo-ADS perf: carrega paginas sob demanda com React.lazy e Suspense
+78fdcc9 2026-11-04 MatheusRodriguesSerrao fix: atualizar a fala do Nexo que ainda cita a Sprint 03 (closes #29)
+13992e5 2026-11-04 gabriel feat: alterando a descricao do integrante Gabriel.
+e11d3a0 2026-11-04 gabriel docs: adicionando o breakpoint do painel no README.
+0bbaba2 2026-11-04 gabriel feat: atualizar a minha descrição de integrante com a sprint 4.
+3dce6c9 2026-11-04 gabriel docs: adicionar print do Painel no celular ao README.
+0eb4c56 2026-11-04 gabriel feat: pagina 404 - sugerir paginas para o usuario.
+84febd0 2026-11-04 gabriel feat: adiconar o link do painel no rodape.
 7aa9fb7 2026-11-04 DioohReis docs: README da Sprint 4 com endpoints, como usar e prints do painel
 4dbf849 2026-11-04 DioohReis chore: vercel.json para SPA, .env.example, Vercel Analytics e versao 4.0.0
 12fc003 2026-11-04 DioohReis feat: pagina Painel e rota dinamica /painel/usuarios/:id consumindo a API
