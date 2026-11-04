@@ -1,6 +1,8 @@
+import { Suspense } from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
 import { Footer } from './Footer'
 import { Header } from './Header'
+import { PageLoader } from './PageLoader'
 
 export function Layout() {
   const isExperience = useLocation().pathname === '/experiencia'
@@ -9,7 +11,9 @@ export function Layout() {
       {!isExperience && <div className="pointer-events-none fixed inset-0 -z-0 bg-[radial-gradient(circle_at_15%_10%,rgba(34,211,238,0.08),transparent_28%),radial-gradient(circle_at_85%_35%,rgba(110,231,183,0.08),transparent_30%)]" />}
       <div className="relative z-10">
         <Header />
-        <Outlet />
+        <Suspense fallback={<PageLoader claro={isExperience} />}>
+          <Outlet />
+        </Suspense>
         <Footer />
       </div>
     </div>

@@ -1,20 +1,24 @@
+import { lazy } from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom'
 import { Analytics } from '@vercel/analytics/react'
 import { Layout } from './components/Layout'
 import { ScrollToTop } from './components/ScrollToTop'
 import { FeedbackProvider } from './context/FeedbackContext'
-import { Contato } from './pages/Contato'
-import { Experiencia } from './pages/Experiencia'
-import { Faq } from './pages/Faq'
-import { Home } from './pages/Home'
-import { IntegranteDetalhe } from './pages/IntegranteDetalhe'
-import { Integrantes } from './pages/Integrantes'
-import { Login } from './pages/Login'
-import { NotFound } from './pages/NotFound'
-import { Painel } from './pages/Painel'
-import { Sobre } from './pages/Sobre'
-import { Solucao } from './pages/Solucao'
-import { UsuarioDetalhe } from './pages/UsuarioDetalhe'
+
+// Páginas carregadas sob demanda (code splitting): cada rota vira um arquivo .js
+// separado no build e só é baixada quando o usuário acessa a página.
+const Home = lazy(() => import('./pages/Home').then((m) => ({ default: m.Home })))
+const Sobre = lazy(() => import('./pages/Sobre').then((m) => ({ default: m.Sobre })))
+const Solucao = lazy(() => import('./pages/Solucao').then((m) => ({ default: m.Solucao })))
+const Experiencia = lazy(() => import('./pages/Experiencia').then((m) => ({ default: m.Experiencia })))
+const Painel = lazy(() => import('./pages/Painel').then((m) => ({ default: m.Painel })))
+const UsuarioDetalhe = lazy(() => import('./pages/UsuarioDetalhe').then((m) => ({ default: m.UsuarioDetalhe })))
+const Integrantes = lazy(() => import('./pages/Integrantes').then((m) => ({ default: m.Integrantes })))
+const IntegranteDetalhe = lazy(() => import('./pages/IntegranteDetalhe').then((m) => ({ default: m.IntegranteDetalhe })))
+const Contato = lazy(() => import('./pages/Contato').then((m) => ({ default: m.Contato })))
+const Faq = lazy(() => import('./pages/Faq').then((m) => ({ default: m.Faq })))
+const Login = lazy(() => import('./pages/Login').then((m) => ({ default: m.Login })))
+const NotFound = lazy(() => import('./pages/NotFound').then((m) => ({ default: m.NotFound })))
 
 export default function App() {
   return (
