@@ -1,17 +1,39 @@
-https://www.youtube.com/watch?v=oXtvHNetg&list=PLcF-2M9iPSkGeEEfcYFv0e-eHLnwvsjhhj
-
 # Lumen AI · Soul UP — Challenge 2026
 
-> Aplicação Front-End desenvolvida pela equipe **1TDSPF** para o desafio **Avatar Inteligente e Interativo** da Soul UP, na disciplina **Front-End Design Engineering — Sprint 3**.
+> Aplicação Front-End desenvolvida pela equipe **1TDSPF** para o desafio **Avatar Inteligente e Interativo** da Soul UP, na disciplina **Front-End Design Engineering — Sprint 4**.
 
 O **Lumen AI** é uma experiência web gamificada de sustentabilidade. O projeto transforma ações ambientais em uma jornada acompanhada pelo **Nexo**, um avatar 3D interativo que apresenta missões, reage ao usuário, acompanha XP e conquistas e conduz uma conversa local baseada em regras.
 
-A aplicação foi construída como uma **SPA (Single Page Application)** com **React 18, TypeScript, Vite, Tailwind CSS, React Router DOM, React Hook Form e Three.js**. Nesta Sprint, todo o fluxo funciona localmente no navegador: não há API externa, backend, banco de dados remoto ou IA generativa em produção.
+A aplicação foi construída como uma **SPA (Single Page Application)** com **React 18, TypeScript, Vite, Tailwind CSS, React Router DOM, React Hook Form e Three.js**. Na **Sprint 4** o front-end passou a consumir a **API Java (Spring Boot)** desenvolvida em Domain Driven Design, publicada no Render e conectada ao banco Oracle: usuários, avatares, ações sustentáveis, missões e publicações são listados, detalhados, criados, editados e excluídos pela página **Painel**.
+
+---
+
+## Como usar
+
+| Item | Link |
+| --- | --- |
+| Repositório GitHub | https://github.com/DioohReis/soul-up-challenge |
+| Deploy na Vercel | **`<COLE AQUI A URL DA VERCEL>`** |
+| Vídeo no YouTube (Sprint 4) | **`<COLE AQUI O LINK DO VÍDEO>`** |
+| API Java publicada (Render) | https://soulup-sprint4-java.onrender.com |
+| Exemplo de endpoint | https://soulup-sprint4-java.onrender.com/usuario |
+
+> A API está no plano gratuito do Render. Se ela estiver "dormindo", a primeira requisição pode levar até 1 minuto; o front mostra um aviso de carregamento enquanto isso.
+
+Passo a passo rápido:
+
+1. Acesse o deploy da Vercel (ou rode localmente, veja [Como executar](#19-como-executar)).
+2. Clique em **PAINEL** no menu.
+3. Cadastre um usuário (POST) e você será levado para `/painel/usuarios/:id`.
+4. Nas abas **Avatar, Ação, Missão e Publicação**, crie, edite ou exclua cada registro.
+5. Use **Realizar ação** e **Avançar progresso** para ver os pontos do usuário mudarem.
+6. Volte ao Painel para editar ou excluir usuários.
 
 ---
 
 ## Sumário
 
+- [Como usar](#como-usar)
 - [1. Visão geral](#1-visão-geral)
 - [2. Contexto acadêmico e objetivo](#2-contexto-acadêmico-e-objetivo)
 - [3. Escopo da Sprint](#3-escopo-da-sprint)
@@ -20,6 +42,7 @@ A aplicação foi construída como uma **SPA (Single Page Application)** com **R
 - [6. Arquitetura da aplicação](#6-arquitetura-da-aplicação)
 - [7. Estrutura de diretórios](#7-estrutura-de-diretórios)
 - [8. Rotas](#8-rotas)
+- [8.1 Integração com a API Java (Sprint 4)](#81-integração-com-a-api-java-sprint-4)
 - [9. Nexo 3D — modelagem e renderização](#9-nexo-3d--modelagem-e-renderização)
 - [10. Estados e animações do Nexo](#10-estados-e-animações-do-nexo)
 - [11. Jornada, missões e gamificação](#11-jornada-missões-e-gamificação)
@@ -36,8 +59,9 @@ A aplicação foi construída como uma **SPA (Single Page Application)** com **R
 - [22. Limitações atuais](#22-limitações-atuais)
 - [23. Evoluções futuras](#23-evoluções-futuras)
 - [24. Guia rápido para avaliação](#24-guia-rápido-para-avaliação)
-- [25. Equipe](#25-equipe)
-- [26. Conclusão](#26-conclusão)
+- [25. Autores e Créditos](#25-autores-e-créditos)
+- [26. Contato](#26-contato)
+- [27. Conclusão](#27-conclusão)
 
 ---
 
@@ -129,7 +153,20 @@ A versão atual contém:
 - suporte a `prefers-reduced-motion`;
 - fallback em caso de falha WebGL.
 
-## Não implementado nesta Sprint
+### Novidades da Sprint 4
+
+- consumo da API Java publicada no Render (`fetch` nativo, sem Axios);
+- camada de serviços em `src/services/` (nenhum componente chama `fetch` diretamente);
+- tipagem completa das respostas e payloads em `src/types/api.ts`;
+- página **Painel** (`/painel`) com listagem, busca, ordenação, cadastro, edição e exclusão de usuários;
+- rota dinâmica **`/painel/usuarios/:id`** com a jornada completa do usuário (GET de 5 endpoints em paralelo);
+- CRUD de avatar, ação sustentável, missão e publicação (POST, PUT, DELETE);
+- ações de negócio: realizar ação (`POST /acao/{id}/realizacao`) e avançar missão (`POST /missao/{id}/progresso`);
+- estados de carregamento, erro (com "tentar novamente") e lista vazia;
+- avisos globais com `useContext` (`FeedbackContext`) e redirecionamento com mensagem personalizada;
+- `vercel.json` com rewrite para SPA e Vercel Analytics.
+
+## Ainda não implementado
 
 Ainda não fazem parte da implementação atual:
 
@@ -139,8 +176,7 @@ Ainda não fazem parte da implementação atual:
 - IA generativa conectada a API;
 - sincronização de dados em nuvem;
 - comprovação automática de missões;
-- resgate real de recompensas;
-- integração de produção com API Java.
+- resgate real de recompensas.
 
 Essa separação é importante porque evita apresentar como concluído algo que está apenas planejado para evolução futura.
 
@@ -164,6 +200,20 @@ Essa separação é importante porque evita apresentar como concluído algo que 
 
 ![Experiência mobile](docs/imagens/12-experiencia-mobile.png)
 
+## Painel integrado à API (Sprint 4)
+
+Lista de usuários vinda da API (`GET /usuario`) com cadastro, edição e exclusão:
+
+![Painel consumindo a API Java](docs/imagens/13-painel-api.jpg)
+
+Rota dinâmica `/painel/usuarios/:id` com a jornada do usuário (aba Missão):
+
+![Jornada do usuário](docs/imagens/14-jornada-usuario-api.jpg)
+
+Estado de carregamento enquanto a API responde:
+
+![Carregando dados da API](docs/imagens/15-painel-carregando.jpg)
+
 As imagens acima estão armazenadas localmente em `docs/imagens/`.
 
 ---
@@ -184,6 +234,11 @@ As versões abaixo correspondem ao `package.json` do projeto.
 | Three.js | 0.180.0 | Modelagem, animação e renderização 3D |
 | PostCSS | 8.5.28 | Processamento do CSS |
 | Autoprefixer | 10.4.20 | Compatibilidade de propriedades CSS |
+| Fetch API | nativa | Requisições HTTP para a API Java (sem Axios) |
+| Vercel Analytics | 2.0.1 | Métricas de acesso do deploy na Vercel |
+| Java + Spring Boot (back-end) | — | API REST publicada no Render |
+| Oracle Database (back-end) | — | Persistência dos dados da API |
+| Vercel | — | Hospedagem do front-end |
 | Git / GitHub | — | Versionamento, histórico e colaboração |
 
 ## Por que cada tecnologia foi escolhida?
@@ -278,6 +333,8 @@ soul-up-challenge/
 │
 ├── src/
 │   ├── components/
+│   │   ├── api/                      Estados de loading, erro e vazio da API
+│   │   ├── painel/                   Formulários tipados do Painel (usuário e recursos)
 │   │   ├── experience/               Componentes da página Experiência
 │   │   ├── gamification/             HUD e elementos de gamificação
 │   │   ├── lumen/                    Componentes de protótipos anteriores
@@ -289,9 +346,13 @@ soul-up-challenge/
 │   │   ├── Layout.tsx
 │   │   ├── Modal.tsx
 │   │   ├── PageHero.tsx
+│   │   ├── RedirecionarComAviso.tsx
 │   │   ├── ScrollToTop.tsx
 │   │   ├── SocialIcon.tsx
 │   │   └── TeamCarousel.tsx
+│   │
+│   ├── context/
+│   │   └── FeedbackContext.tsx       Avisos globais (useContext)
 │   │
 │   ├── data/
 │   │   ├── experience.ts
@@ -302,6 +363,7 @@ soul-up-challenge/
 │   │   └── team.ts
 │   │
 │   ├── hooks/
+│   │   ├── useApiRequest.ts          Estado carregando / erro / sucesso
 │   │   ├── useNexoDialogue.ts
 │   │   ├── useNexoInteraction.ts
 │   │   ├── useNexoJourney.ts
@@ -316,10 +378,18 @@ soul-up-challenge/
 │   │   ├── Integrantes.tsx
 │   │   ├── Login.tsx
 │   │   ├── NotFound.tsx
+│   │   ├── Painel.tsx                Lista e CRUD de usuários (API)
 │   │   ├── Sobre.tsx
-│   │   └── Solucao.tsx
+│   │   ├── Solucao.tsx
+│   │   └── UsuarioDetalhe.tsx        Rota dinâmica /painel/usuarios/:id
+│   │
+│   ├── services/
+│   │   ├── api.ts                    Cliente HTTP (fetch) e tratamento de erros
+│   │   ├── usuarioService.ts         Endpoints /usuario
+│   │   └── jornadaService.ts         Endpoints /avatar, /acao, /missao, /publicacao
 │   │
 │   ├── types/
+│   │   ├── api.ts                    Interfaces, unions e intersections da API
 │   │   ├── index.ts
 │   │   ├── journey.ts
 │   │   └── nexo.ts
@@ -330,8 +400,10 @@ soul-up-challenge/
 │   │
 │   ├── App.tsx
 │   ├── index.css
-│   └── main.tsx
+│   ├── main.tsx
+│   └── vite-env.d.ts                 Tipagem de VITE_API_URL
 │
+├── .env.example                      URL da API
 ├── GIT_HISTORICO.txt
 ├── index.html
 ├── package.json
@@ -341,6 +413,7 @@ soul-up-challenge/
 ├── tsconfig.app.json
 ├── tsconfig.json
 ├── tsconfig.node.json
+├── vercel.json                       Rewrite das rotas da SPA
 └── vite.config.ts
 ```
 
@@ -356,11 +429,14 @@ As rotas são definidas em `src/App.tsx`.
 | `/sobre` | `Sobre` | Contextualização do projeto |
 | `/solucao` | `Solucao` | Explicação da proposta |
 | `/experiencia` | `Experiencia` | Jornada gamificada e Nexo 3D |
+| `/painel` | `Painel` | Lista e CRUD de usuários consumindo a API Java |
+| `/painel/usuarios/:id` | `UsuarioDetalhe` | Jornada dinâmica do usuário vinda da API |
 | `/integrantes` | `Integrantes` | Carrossel e dados da equipe |
 | `/integrantes/:rm` | `IntegranteDetalhe` | Perfil dinâmico de integrante |
 | `/contato` | `Contato` | Formulário demonstrativo |
 | `/faq` | `Faq` | Perguntas frequentes |
 | `/login` | `Login` | Login local demonstrativo |
+| `/home`, `/usuarios`, `/painel/usuarios` | `Navigate` | Redirecionamentos para a rota correta |
 | `*` | `NotFound` | Tratamento de rota inexistente |
 
 ## Rota dinâmica
@@ -381,6 +457,95 @@ Isso permite reutilizar a mesma página para todos os integrantes:
 ```
 
 A interface procura o integrante correspondente no conjunto de dados da equipe e apresenta seu perfil.
+
+## Rota dinâmica com dados da API
+
+`/painel/usuarios/:id` lê o `id` com `useParams()` e busca na API o usuário e os 4 recursos da jornada. Redirecionamentos com mensagem personalizada (componente `RedirecionarComAviso` + `FeedbackContext`):
+
+| Situação | Comportamento |
+| --- | --- |
+| `id` não numérico (ex.: `/painel/usuarios/abc`) | volta para `/painel` com o aviso **"ID inválido"** |
+| usuário inexistente (ex.: `/painel/usuarios/88888`) | volta para `/painel` com **"Usuário #88888 não encontrado"** |
+| usuário excluído na própria página | volta para `/painel` com **"Usuário excluído"** |
+| usuário cadastrado no Painel | vai direto para `/painel/usuarios/:id` com **"Usuário cadastrado!"** |
+| API fora do ar | mensagem de erro com botão **Tentar novamente** |
+
+---
+
+# 8.1 Integração com a API Java (Sprint 4)
+
+**URL base:** https://soulup-sprint4-java.onrender.com (configurável por `VITE_API_URL`, veja `.env.example`).
+
+## Endpoints consumidos
+
+| Método | Endpoint | Uso no front-end | Tela |
+| --- | --- | --- | --- |
+| GET | `/usuario` | Lista de usuários | `/painel` |
+| GET | `/usuario/{id}` | Detalhe do usuário | `/painel/usuarios/:id` |
+| POST | `/usuario` | Cadastrar usuário | `/painel` |
+| PUT | `/usuario/{id}` | Editar nome/e-mail | `/painel` e detalhe |
+| DELETE | `/usuario/{id}` | Excluir usuário e jornada | `/painel` e detalhe |
+| GET / POST / PUT / DELETE | `/avatar/{idUsuario}` | CRUD do avatar | detalhe → aba Avatar |
+| GET / POST / PUT / DELETE | `/acao/{idUsuario}` | CRUD da ação sustentável | detalhe → aba Ação |
+| POST | `/acao/{idUsuario}/realizacao` | Realiza a ação e soma pontos | detalhe → aba Ação |
+| GET / POST / PUT / DELETE | `/missao/{idUsuario}` | CRUD da missão | detalhe → aba Missão |
+| POST | `/missao/{idUsuario}/progresso` | Avança o progresso (`{ "incremento": n }`) | detalhe → aba Missão |
+| GET / POST / PUT / DELETE | `/publicacao/{idUsuario}` | CRUD da publicação | detalhe → aba Publicação |
+
+Exemplo de resposta de `GET /usuario/1`:
+
+```json
+{
+  "idUsuario": 1,
+  "nome": "Gabriel",
+  "email": "Gabriel@gmail.com",
+  "nivelEngajamento": "Iniciante",
+  "missoesCompletas": 2,
+  "pontosAcumulados": 60
+}
+```
+
+## Camada de serviços
+
+```text
+Componente (Painel / UsuarioDetalhe)
+      ↓
+useApiRequest  →  estado: carregando | erro | sucesso
+      ↓
+usuarioService / jornadaService   (um método por endpoint)
+      ↓
+services/api.ts → requisicao<T>() com fetch, JSON e ApiError
+      ↓
+API Java (Render) → Oracle
+```
+
+- **`services/api.ts`**: único lugar que chama `fetch`. Converte erros HTTP em `ApiError` com a mensagem enviada pelo back-end (`{ "message": "..." }`) e trata falha de conexão.
+- **`buscarOuNulo<T>()`**: a API responde "não existe" com `200` vazio ou `404`; as duas formas viram `null` (registro ainda não cadastrado).
+- **`jornadaService.ts`**: uma fábrica genérica `criarServico<R, P>()` gera `obter`, `criar`, `atualizar` e `excluir` tipados para cada recurso.
+
+## Tipagem (TypeScript)
+
+Arquivo `src/types/api.ts`:
+
+| Conceito | Exemplos |
+| --- | --- |
+| Tipos básicos | `string`, `number`, `boolean` nos campos das entidades |
+| `interface` | `Usuario`, `Avatar`, `AcaoSustentavel`, `Missao`, `Publicacao`, `ErroApiCorpo` |
+| Union types | `Personalidade`, `Dificuldade`, `StatusMissao`, `MetodoHttp`, `RecursoJornada` |
+| Discriminated union | `EstadoRequisicao<T>` (`carregando` / `erro` / `sucesso`) |
+| Intersection types | `UsuarioComJornada = Usuario & JornadaUsuario`, `ComVinculo<T> = T & { usuarioVinculado? }` |
+| Utility types | `Pick` (`UsuarioPayload`), `Omit` (`MissaoPayload`), mapped type (`JornadaUsuario`) |
+| Generics | `requisicao<T>()`, `useApiRequest<T>()`, `RecursoForm<T>` |
+
+## Loading, erro e vazio
+
+| Estado | Componente | Quando aparece |
+| --- | --- | --- |
+| Carregando | `LoadingState` | enquanto a API responde (avisa sobre o "cold start" do Render) |
+| Erro | `ErrorState` | falha de rede ou status 4xx/5xx, com botão **Tentar novamente** |
+| Vazio | `EmptyState` | nenhum usuário cadastrado ou busca sem resultado |
+| Registro inexistente | aviso amarelo no formulário | o recurso ainda não foi criado para aquele usuário |
+| Ações | toast do `FeedbackContext` | sucesso ou erro de cada POST / PUT / DELETE |
 
 ---
 
@@ -1180,7 +1345,17 @@ Alternativamente:
 npm install
 ```
 
-## 3. Executar em desenvolvimento
+## 3. (Opcional) Configurar a URL da API
+
+Copie `.env.example` para `.env`. Sem esse arquivo, o front usa a API publicada no Render.
+
+```text
+VITE_API_URL=https://soulup-sprint4-java.onrender.com
+```
+
+Na Vercel, a mesma variável pode ser cadastrada em **Settings → Environment Variables**.
+
+## 4. Executar em desenvolvimento
 
 ```bash
 npm run dev
@@ -1192,7 +1367,7 @@ O Vite exibirá o endereço local, normalmente semelhante a:
 http://localhost:5173
 ```
 
-## 4. Validar TypeScript
+## 5. Validar TypeScript
 
 ```bash
 npm run typecheck
@@ -1204,7 +1379,7 @@ Esse script executa:
 tsc --noEmit -p tsconfig.app.json --pretty
 ```
 
-## 5. Gerar build de produção
+## 6. Gerar build de produção
 
 ```bash
 npm run build
@@ -1216,7 +1391,7 @@ O build executa:
 2. compilação com Vite;
 3. geração de `dist/`.
 
-## 6. Visualizar o build
+## 7. Visualizar o build
 
 ```bash
 npm run preview
@@ -1489,12 +1664,18 @@ Para verificar os principais requisitos do projeto:
 22. redimensione a janela;
 23. teste em viewport mobile;
 24. ative `prefers-reduced-motion` no sistema/navegador;
-25. execute `npm run typecheck`;
-26. execute `npm run build`.
+25. acesse `/painel` e aguarde a lista de usuários da API;
+26. cadastre um usuário e confira o redirecionamento para `/painel/usuarios/:id`;
+27. crie avatar, ação, missão e publicação nas abas;
+28. clique em **Realizar ação** e **Avançar progresso** e veja os pontos mudarem;
+29. acesse `/painel/usuarios/abc` e `/painel/usuarios/88888` para ver os redirecionamentos;
+30. exclua o usuário de teste;
+31. execute `npm run typecheck`;
+32. execute `npm run build`.
 
 ---
 
-# 25. Equipe
+# 25. Autores e Créditos
 
 | Foto | Integrante | RM | Turma | GitHub | LinkedIn |
 | --- | --- | --- | --- | --- | --- |
@@ -1506,15 +1687,21 @@ Para verificar os principais requisitos do projeto:
 
 ## Repositório
 
-GitHub:
+GitHub: https://github.com/DioohReis/soul-up-challenge
 
-https://github.com/DioohReis/soul-up-challenge
-
-> O vídeo da Sprint 3 deve ser adicionado aqui pela equipe assim que o link definitivo estiver disponível.
+Todos os links (Vercel, YouTube e API) estão na seção [Como usar](#como-usar).
 
 ---
 
-# 26. Conclusão
+# 26. Contato
+
+- Página de contato da aplicação: rota `/contato`.
+- GitHub e LinkedIn de cada integrante: tabela da seção [25. Autores e Créditos](#25-autores-e-créditos).
+- Issues do projeto: https://github.com/DioohReis/soul-up-challenge/issues
+
+---
+
+# 27. Conclusão
 
 O **Lumen AI · Soul UP** demonstra a integração de fundamentos tradicionais de Front-End com uma experiência tridimensional mais avançada.
 
@@ -1545,7 +1732,8 @@ Front-End
 ├── Vite 7.3.6
 ├── Tailwind CSS 3.4.17
 ├── React Router DOM 7.18.3
-└── React Hook Form 7.54.2
+├── React Hook Form 7.54.2
+└── Fetch API → API Java (Spring Boot) no Render
 
 3D
 ├── Three.js 0.180.0
