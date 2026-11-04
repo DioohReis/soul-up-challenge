@@ -47,11 +47,11 @@ export function Sobre() {
 
       <section className="mx-auto grid max-w-7xl gap-5 px-4 pt-6 sm:px-6 lg:grid-cols-2 lg:px-8">
         <GlassCard>
-          <span className="text-xs font-black uppercase tracking-[0.2em] text-cyan-200">Tecnologias obrigatórias da Sprint 03</span>
+          <span className="text-xs font-black uppercase tracking-[0.2em] text-cyan-200">Tecnologias obrigatórias da Sprint 04</span>
           <h2 className="mt-3 text-2xl font-black">Front-end moderno e componentizado</h2>
-          <p className="mt-4 text-sm leading-7 text-white/65">A solução foi migrada para React + Vite + TypeScript, com navegação SPA, Tailwind CSS, React Hook Form e organização modular.</p>
+          <p className="mt-4 text-sm leading-7 text-white/65">A solução foi migrada para React + Vite + TypeScript, com navegação SPA, Tailwind CSS, React Hook Form e organização modular. Na Sprint 04, o front-end passou a consumir a API Java publicada no Render.</p>
           <div className="mt-5 flex flex-wrap gap-2">
-            {['React', 'Vite', 'TypeScript', 'Tailwind CSS', 'React Router DOM', 'React Hook Form', 'Git & GitHub'].map((tech) => (
+            {['React', 'Vite', 'TypeScript', 'Tailwind CSS', 'React Router DOM', 'React Hook Form', 'Git & GitHub', 'API Java (Spring Boot)', 'Fetch API', 'Vercel'].map((tech) => (
               <span key={tech} className="rounded-full border border-cyan-200/20 bg-cyan-300/5 px-3 py-1.5 text-xs font-bold text-cyan-100">{tech}</span>
             ))}
           </div>
