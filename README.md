@@ -436,7 +436,8 @@ As rotas são definidas em `src/App.tsx`.
 | `/contato` | `Contato` | Formulário demonstrativo |
 | `/faq` | `Faq` | Perguntas frequentes |
 | `/login` | `Login` | Login local demonstrativo |
-| `/home`, `/usuarios`, `/painel/usuarios` | `Navigate` | Redirecionamentos para a rota correta |
+| `/home` | `Navigate` | Redireciona para `/` |
+| `/usuarios`, `/painel/usuarios` | `RedirecionarComAviso` | Redirecionam para `/painel` exibindo um aviso |
 | `*` | `NotFound` | Tratamento de rota inexistente |
 
 ## Rota dinâmica
@@ -468,6 +469,8 @@ A interface procura o integrante correspondente no conjunto de dados da equipe e
 | usuário inexistente (ex.: `/painel/usuarios/88888`) | volta para `/painel` com **"Usuário #88888 não encontrado"** |
 | usuário excluído na própria página | volta para `/painel` com **"Usuário excluído"** |
 | usuário cadastrado no Painel | vai direto para `/painel/usuarios/:id` com **"Usuário cadastrado!"** |
+| acesso a `/usuarios` | vai para `/painel` com **"Os usuários agora ficam no Painel"** |
+| acesso a `/painel/usuarios` (sem ID) | vai para `/painel` com **"Escolha um usuário"** |
 | API fora do ar | mensagem de erro com botão **Tentar novamente** |
 
 ---
