@@ -6,6 +6,7 @@ const links = [
   { to: '/sobre', label: 'SOBRE' },
   { to: '/solucao', label: 'SOLUÇÃO' },
   { to: '/experiencia', label: 'EXPERIÊNCIA' },
+  { to: '/painel', label: 'PAINEL' },
   { to: '/integrantes', label: 'INTEGRANTES' },
   { to: '/contato', label: 'CONTATO' },
   { to: '/faq', label: 'FAQ' },
@@ -30,7 +31,7 @@ export function Header() {
     <header className={`sticky top-0 z-50 border-b backdrop-blur-xl ${isExperience ? 'border-[#dbe5f3] bg-[#f9fbff]/95' : 'border-cyan-300/15 bg-[#00140f]/90'}`}>
       <div className="mx-auto flex min-h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:px-6 lg:px-8">
         <NavLink to="/" className="flex items-center gap-3" aria-label="Ir para a página inicial">
-          {isExperience ? <span className="text-[30px] font-extrabold tracking-[-2px] text-[#102859]">soul·up</span> : <><img src="/image/logo.png" alt="Lumen AI" className="h-9 w-9 rounded-xl object-cover ring-1 ring-cyan-300/30" /><span className="hidden text-sm font-black tracking-[0.22em] text-cyan-100 sm:inline">LUMEN AI</span></>}
+          {isExperience ? <span className="text-[30px] font-extrabold tracking-[-2px] text-[#102859]">soul·up</span> : <><img src="/image/logo.png" alt="Lumen AI" className="h-9 w-9 rounded-xl object-cover ring-1 ring-cyan-300/30" /><span className="hidden whitespace-nowrap text-sm font-black tracking-[0.22em] text-cyan-100 sm:inline lg:hidden xl:inline">LUMEN AI</span></>}
         </NavLink>
 
         <button
@@ -61,7 +62,7 @@ export function Header() {
               end={link.end}
               onClick={() => setMenuOpen(false)}
               className={({ isActive }) =>
-                `rounded-full px-3 py-2 font-extrabold transition ${isExperience ? 'text-[10px] tracking-[0.075em]' : 'text-xs tracking-[0.12em]'} ${
+                `rounded-full px-3 py-2 font-extrabold transition lg:px-2.5 xl:px-3 ${isExperience ? 'text-[10px] tracking-[0.075em]' : 'text-xs tracking-[0.12em]'} ${
                   isExperience ? (isActive ? 'bg-[#e9f0ff] text-[#235dc8] ring-1 ring-[#cbdcf9]' : 'text-[#64738c] hover:bg-[#e9f0ff]') : isActive
                     ? 'bg-cyan-300/15 text-cyan-100 ring-1 ring-cyan-300/45'
                     : 'text-white/80 hover:bg-white/5 hover:text-white'
