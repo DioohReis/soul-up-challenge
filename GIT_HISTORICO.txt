@@ -1,6 +1,18 @@
 Histórico de commits do projeto Lumen AI Soul UP
 Gerado em: 2026-11-04 (Sprint 4)
 
+88dbd65 2026-11-04 DioohReis style: corrigir indentacao da nova pergunta do FAQ
+909977e 2026-11-04 DioohReis Merge pull request #53 from LuizHenriqueAAlbarello
+0ccda02 2026-11-04 DioohReis Merge pull request #52 from LuizHenriqueAAlbarello
+0ee7e26 2026-11-04 DioohReis Merge pull request #49 from LuizHenriqueAAlbarello
+e3f6fa6 2026-11-04 DioohReis Merge pull request #50 from LuizHenriqueAAlbarello
+b5acb73 2026-11-04 DioohReis Merge pull request #51 from LuizHenriqueAAlbarello
+679991c 2026-11-04 LuizHenriqueAAlbarello docs: atualizar descrição de Luiz com as contribuições da Sprint 4
+5f93b91 2026-11-04 LuizHenriqueAAlbarello feat: adicionar FAQ sobre o carregamento inicial da API no Render
+a9302a5 2026-11-04 LuizHenriqueAAlbarello fix: atualizar a resposta do FAQ sobre tecnologias usadas
+865f2b3 2026-11-04 LuizHenriqueAAlbarello fix: corrigir resposta do FAQ sobre persistência dos dados
+42a76c6 2026-11-04 LuizHenriqueAAlbarello docs: adicionar tabela com as entidades do banco no README
+19f0945 2026-11-04 DioohReis docs: regenerar GIT_HISTORICO.txt apos os merges da Sprint 4
 b73da63 2026-11-04 DioohReis style: restaurar formatacao do Painel e posicionar o print mobile no README
 d345199 2026-11-04 DioohReis Merge pull request #46 from MatheusRodriguesSerrao
 fc2fa74 2026-11-04 DioohReis Merge pull request #44 from MatheusRodriguesSerrao
