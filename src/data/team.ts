@@ -32,19 +32,19 @@ export const team: TeamMember[] = [
     github: "https://github.com/MatheusRodriguesSerrao",
     linkedin: "https://www.linkedin.com/in/matheus-rodrigues-06060a3a6/",
     descricao:
-      "Atuou na estruturação do banco de dados da Sprint 3, projetando o modelo relacional e garantindo a integridade dos dados que suportam as funcionalidades da solução.",
+      "Atuou na evolução do banco de dados da Sprint 4, refinando o modelo relacional e os scripts DDL para assegurar a integridade, consistência e o suporte robusto às novas integrações e funcionalidades da solução.",
     imagem: "/image/Rodrigues.png",
   },
   {
-    nome: 'Luiz Henrique Alves Albarello',
-    cargo: 'Chat-Bot and AI Developer',
-    rm: '572727',
-    turma: '1TDSPF',
-    github: 'https://github.com/LuizHenriqueAAlbarello',
-    linkedin: 'https://www.linkedin.com/in/luiz-henrique-alves-albarello-82297b410/',
-    descricao:
-      'Atua no desenvolvimento da IA.',
-    imagem: '/image/Luiz_Henrique.jpeg',
+    nome: "Luiz Henrique Alves Albarello",
+    cargo: "Chat-Bot and AI Developer",
+    rm: "572727",
+    turma: "1TDSPF",
+    github: "https://github.com/LuizHenriqueAAlbarello",
+    linkedin:
+      "https://www.linkedin.com/in/luiz-henrique-alves-albarello-82297b410/",
+    descricao: "Atua no desenvolvimento da IA.",
+    imagem: "/image/Luiz_Henrique.jpeg",
   },
   {
     nome: "Gabriel Razo",
