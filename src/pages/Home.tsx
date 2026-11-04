@@ -80,12 +80,15 @@ export function Home() {
             <p className="mx-auto mt-5 max-w-3xl text-base leading-8 text-white/80 sm:text-lg lg:mx-0">
               Uma inteligência interativa que orienta o usuário por meio de avatares, transformando missões, pontos e recompensas em uma jornada simples, motivadora e acessível.
             </p>
-            <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row lg:justify-start">
+            <div className="mt-8 flex flex-col flex-wrap justify-center gap-3 sm:flex-row lg:justify-start">
               <Link to="/experiencia" className="rounded-full bg-gradient-to-r from-cyan-300 to-emerald-300 px-7 py-3.5 text-sm font-black text-[#00140f] transition hover:-translate-y-0.5 hover:brightness-110">
                 Ver experiência
               </Link>
               <Link to="/solucao" className="rounded-full border border-white/25 bg-black/20 px-7 py-3.5 text-sm font-black text-white transition hover:border-cyan-200/60 hover:bg-cyan-300/10">
                 Entender solução
+              </Link>
+              <Link to="/painel" className="rounded-full border border-white/25 bg-black/20 px-7 py-3.5 text-sm font-black text-white transition hover:border-cyan-200/60 hover:bg-cyan-300/10">
+                Ver Painel (API)
               </Link>
             </div>
           </div>
