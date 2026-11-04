@@ -155,7 +155,7 @@ export function UsuarioDetalhe() {
     }
   }
 
-  const avatarAtual: AvatarPayload | null = usuario.avatar && { ...usuario.avatar, personalidade: normalizarPersonalidade(usuario.avatar.personalidade) }
+  const avatarAtual: AvatarPayload | null = usuario.avatar && { nomeAvatar: usuario.avatar.nomeAvatar, personalidade: normalizarPersonalidade(usuario.avatar.personalidade), totalInteracoes: usuario.avatar.totalInteracoes }
   const acaoAtual: AcaoPayload | null = usuario.acao && { nomeAcao: usuario.acao.nomeAcao, descricao: usuario.acao.descricao ?? '', tipoAcao: usuario.acao.tipoAcao, dificuldade: usuario.acao.dificuldade, pontosGerados: usuario.acao.pontosGerados }
   const missaoAtual: MissaoPayload | null = usuario.missao && { titulo: usuario.missao.titulo, descricao: usuario.missao.descricao ?? '', categoria: usuario.missao.categoria, pontosRecompensa: usuario.missao.pontosRecompensa, progressoAtual: usuario.missao.progressoAtual }
   const publicacaoAtual: PublicacaoPayload | null = usuario.publicacao && { conteudo: usuario.publicacao.conteudo, categoria: usuario.publicacao.categoria ?? '', publicada: usuario.publicacao.publicada }

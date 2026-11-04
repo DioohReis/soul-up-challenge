@@ -2,6 +2,7 @@ import { Navigate, Route, Routes } from 'react-router-dom'
 import { Analytics } from '@vercel/analytics/react'
 import { Layout } from './components/Layout'
 import { ScrollToTop } from './components/ScrollToTop'
+import { RedirecionarComAviso } from './components/RedirecionarComAviso'
 import { FeedbackProvider } from './context/FeedbackContext'
 import { Contato } from './pages/Contato'
 import { Experiencia } from './pages/Experiencia'
@@ -39,8 +40,8 @@ export default function App() {
 
           {/* Redirecionamentos */}
           <Route path="/home" element={<Navigate to="/" replace />} />
-          <Route path="/usuarios" element={<Navigate to="/painel" replace />} />
-          <Route path="/painel/usuarios" element={<Navigate to="/painel" replace />} />
+          <Route path="/usuarios" element={<RedirecionarComAviso para="/painel" tipo="info" titulo="Os usuários agora ficam no Painel" mensagem="O endereço /usuarios mudou. Você foi levado para o Painel." />} />
+          <Route path="/painel/usuarios" element={<RedirecionarComAviso para="/painel" tipo="info" titulo="Escolha um usuário" mensagem="Para ver uma jornada, selecione um usuário na lista do Painel." />} />
 
           <Route path="*" element={<NotFound />} />
         </Route>
