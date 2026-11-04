@@ -1,58 +1,131 @@
-Histórico de versionamento preservado antes da otimização do ZIP
-Gerado em: 2026-05-20
+Histórico de commits do projeto Lumen AI Soul UP
+Gerado em: 2026-11-04 (Sprint 4)
 
-Branches encontradas antes da limpeza:
-* main
-  rm573301
-  remotes/origin/main
-  remotes/origin/rm573301
-
-Autores identificados no histórico:
-Diogo Guilherme de Assis Reis <121978315+DioohReis@users.noreply.github.com>
-DioohReis <diogo.dragons6541@gmail.com>
-LuizHenriqueAAlbarello <luizhenriquealvesalbarello@gmail.com>
-MatheusRodriguesSerrao <rmatheusrodrigues193@gmail.com>
-gabriel <gabrielrazod9j@gmail.com>
-gabriel-ricardo-ADS <gabrielricardoglima@gmail.com>
-
-Resumo dos commits:
-4486d6d | 2026-05-20 | DioohReis <diogo.dragons6541@gmail.com> | Remove imagens não utilizadas
-d034e2a | 2026-05-20 | Diogo Guilherme de Assis Reis <121978315+DioohReis@users.noreply.github.com> | Merge pull request #9 from gabriel-ricardo-ADS/main
-c0b80ae | 2026-05-20 | gabriel-ricardo-ADS <gabrielricardoglima@gmail.com> | feat: aprimorando e alterando o sobre.html, e estilizando suas classes no style.css
-964fb3b | 2026-05-20 | gabriel-ricardo-ADS <gabrielricardoglima@gmail.com> | feat: melhorando formulário no contato.js e em seu style.css
-ae2dcfb | 2026-05-20 | gabriel-ricardo-ADS <gabrielricardoglima@gmail.com> | feat: crianção do readme.md
-32a1759 | 2026-05-20 | gabriel-ricardo-ADS <gabrielricardoglima@gmail.com> | feat: criando contato.js e arrumando seu html
-95132d2 | 2026-05-19 | DioohReis <diogo.dragons6541@gmail.com> | feat: Projeto atualizado com correções no style.css, apagando conflitos e codigos sem funcionalidade antigos, criado dois novos js no projeto, um para interações do menu, e o outro para os efeitos das paginas, criei o conteudo das paginas, faq, contato e sobre, arrumei o css do integrantes.
-a719e20 | 2026-05-19 | DioohReis <diogo.dragons6541@gmail.com> | feat: feito as alteraçoes, da pagina integrantes, e foi feito o link para o linkedin e o github com os devidos protocolos de segurança
-423a073 | 2026-05-13 | DioohReis <diogo.dragons6541@gmail.com> | feat: integrantes atualizado, criado uma interação com js para integrantes, atualizado o css e o html da pagina integrantes
-ba4bd09 | 2026-05-13 | DioohReis <diogo.dragons6541@gmail.com> | feat: tirei o css do lumen do style e e criei um proprio css para ele dentro da pasta css
-7a472ac | 2026-05-13 | DioohReis <diogo.dragons6541@gmail.com> | feat: deixei a barra de navegação trasparente, e atualizei umas coisas no no css
-a0fe6c3 | 2026-05-12 | DioohReis <diogo.dragons6541@gmail.com> | feat: criado o js do projeto, fiz um avatar em css e criei responsividade com js.
-1a61304 | 2026-05-12 | DioohReis <diogo.dragons6541@gmail.com> | feat: arrumando a responsividade para outros dispositivos
-755cb66 | 2026-05-04 | DioohReis <diogo.dragons6541@gmail.com> |     Merge branch 'main' of https://github.com/DioohReis/soul-up-challegen
-e044ad0 | 2026-05-04 | DioohReis <diogo.dragons6541@gmail.com> | feat: update background image and navigation links
-cc7f751 | 2026-05-04 | DioohReis <diogo.dragons6541@gmail.com> | feat: att imagem, e paginas
-c294b26 | 2026-05-04 | Diogo Guilherme de Assis Reis <121978315+DioohReis@users.noreply.github.com> | Merge pull request #8 from gabriel-ricardo-ADS/rm572279
-5751e62 | 2026-05-04 | gabriel-ricardo-ADS <gabrielricardoglima@gmail.com> | feat: removendo botão e alinhando o cabeçalho
-9f013f9 | 2026-05-04 | Diogo Guilherme de Assis Reis <121978315+DioohReis@users.noreply.github.com> | Merge pull request #7 from gabriel-ricardo-ADS/rm572279
-f6a4a92 | 2026-05-04 | gabriel-ricardo-ADS <gabrielricardoglima@gmail.com> | feat: adicionando @media aos dois arquivos css para até 1024px, 768px e 480px
-1a83a2f | 2026-05-04 | DioohReis <diogo.dragons6541@gmail.com> | feat: alterando o fundo da pagina inicial
-4317527 | 2026-04-30 | DioohReis <diogo.dragons6541@gmail.com> | feat: fotos de todos os integrantes do grupo esta okay
-e1e7e57 | 2026-04-30 | Diogo Guilherme de Assis Reis <121978315+DioohReis@users.noreply.github.com> | Merge pull request #5 from LuizHenriqueAAlbarello/RM572727
-a4d9220 | 2026-04-30 | DioohReis <diogo.dragons6541@gmail.com> | feat: adicionando a foto do integrante Matheus na pagina integrantes
-f2d6fc1 | 2026-04-30 | Diogo Guilherme de Assis Reis <121978315+DioohReis@users.noreply.github.com> | Merge pull request #6 from MatheusRodriguesSerrao/rm570469
-b50e061 | 2026-04-30 | MatheusRodriguesSerrao <rmatheusrodrigues193@gmail.com> | feat: adicionando imagem na pasta de fotos, integrante Matheus Rodrigues
-2e5b5e3 | 2026-04-30 | LuizHenriqueAAlbarello <luizhenriquealvesalbarello@gmail.com> | feat: Adicionado Foto Luiz
-0353e8a | 2026-04-29 | Diogo Guilherme de Assis Reis <121978315+DioohReis@users.noreply.github.com> | Merge pull request #4 from gabriel-ricardo-ADS/rm572279
-07f4d99 | 2026-04-29 | gabriel-ricardo-ADS <gabrielricardoglima@gmail.com> | feat: montando estrutura no sobre.html para futuro preenchimento das informações
-85feb72 | 2026-04-29 | gabriel-ricardo-ADS <gabrielricardoglima@gmail.com> | feat: adicionando imagem do integrante Gabriel Ricardo, alterando texto da IA e data do rodapé
-88eb0a5 | 2026-04-29 | DioohReis <diogo.dragons6541@gmail.com> | feat: Iniciei a criação da pagina principal, coloquei uns elementos com css, para deixar mais dinamico e visual.
-5a0f76f | 2026-04-29 | Diogo Guilherme de Assis Reis <121978315+DioohReis@users.noreply.github.com> | Merge pull request #2 from gabrielrazod9j-ops/rm572244
-4f4e754 | 2026-04-29 | Diogo Guilherme de Assis Reis <121978315+DioohReis@users.noreply.github.com> | Merge branch 'main' into rm572244
-4da741e | 2026-04-29 | Diogo Guilherme de Assis Reis <121978315+DioohReis@users.noreply.github.com> | Merge pull request #3 from DioohReis/rm573301
-9a036be | 2026-04-29 | DioohReis <diogo.dragons6541@gmail.com> | feat: foi feito alguns testes, mas nenhuma atualização muito grande
-eb78c0a | 2026-04-29 | gabriel <gabrielrazod9j@gmail.com> | feat: adicionando a foto .jpg na pagina de integrantes do projeto
-0668718 | 2026-04-29 | gabriel <gabrielrazod9j@gmail.com> | feat: adicionando imagem na pasta de fotos
-9d74c43 | 2026-04-28 | DioohReis <diogo.dragons6541@gmail.com> | feat: criei o cabeçalho de todas as paginas, criei o css padrão das paginas e um css expecifico para integrantes
-74c527b | 2026-04-28 | DioohReis <diogo.dragons6541@gmail.com> | feat: criando as paginas obrigatorias do projeto.
-79f0ffd | 2026-04-28 | DioohReis <diogo.dragons6541@gmail.com> | feat: Criando as pastas dentro do projeto css, pages, js. E iniciando a criação da pagina inicial index.html
+7aa9fb7 2026-11-04 DioohReis docs: README da Sprint 4 com endpoints, como usar e prints do painel
+4dbf849 2026-11-04 DioohReis chore: vercel.json para SPA, .env.example, Vercel Analytics e versao 4.0.0
+12fc003 2026-11-04 DioohReis feat: pagina Painel e rota dinamica /painel/usuarios/:id consumindo a API
+56bbdf2 2026-11-04 DioohReis feat: formularios tipados do painel (usuario e recursos da jornada)
+3954973 2026-11-04 DioohReis feat: hook useApiRequest, FeedbackContext e estados de loading, erro e vazio
+0cbfc4d 2026-11-04 DioohReis feat: tipos da API Java e camada de servicos com fetch
+464e0df 2026-09-14 Diogo Guilherme de Assis Reis Update Readme
+ce6b3db 2026-09-13 Diogo Guilherme de Assis Reis Fix YouTube link in README.md
+03d0493 2026-09-13 Diogo Guilherme de Assis Reis Update YouTube link in README.md
+5eb0ec2 2026-09-13 Diogo Guilherme de Assis Reis Add YouTube video link to README
+de5a658 2026-09-13 Diogo Guilherme de Assis Reis Merge pull request #18 from MatheusRodriguesSerrao/rm570469
+5bc39d2 2026-09-13 Matheus Rodrigues Serrão Merge branch 'main' into rm570469
+af02cd0 2026-09-13 MatheusRodriguesSerrao content: Aprimorar descricoes das quests com foco em gamificacao.
+19a024c 2026-09-13 MatheusRodriguesSerrao content: Refinar textos educacionais e ux writing da plataforma.
+c0599c6 2026-09-13 MatheusRodriguesSerrao content: aprimorar descricoes de causa dos problemas ecologicos
+6c4d216 2026-09-13 MatheusRodriguesSerrao docs: atualizar descricoes das conquistas das missoes sustentaveis
+7efa414 2026-09-13 Diogo Guilherme de Assis Reis Merge pull request #17 from LuizHenriqueAAlbarello/RM572727
+4e6a499 2026-09-13 MatheusRodriguesSerrao docs: Adiciona pergunta sobre persistência local de dados.
+eb82638 2026-09-13 MatheusRodriguesSerrao chore: Atualizar descricao tecnica de modelagem de dados no perfil da equipe
+d21330f 2026-09-13 MatheusRodriguesSerrao feat: adicionar foto de perfil do Matheus
+df05d2c 2026-09-13 MatheusRodriguesSerrao feat: remover referencia da foto de perfil de Matheus
+3f23070 2026-09-13 LuizHenriqueAAlbarello feat: arrumando texto nexo
+e68f3bb 2026-09-13 LuizHenriqueAAlbarello faeat: arrumando imagem luiz
+3c8d750 2026-09-13 LuizHenriqueAAlbarello feat: Arrumando frase nexo
+071c102 2026-09-13 LuizHenriqueAAlbarello feat: Reorganizando frases
+9711f2a 2026-09-13 LuizHenriqueAAlbarello feat: arrumando textos do nexo
+f51ca51 2026-09-13 LuizHenriqueAAlbarello feat: Descrição alterada
+f7fc48a 2026-09-13 Diogo Guilherme de Assis Reis Merge pull request #16 from gabriel-ricardo-ADS/feature/rm572279
+1e6f3dc 2026-09-13 LuizHenriqueAAlbarello feat: Adicionando imagem nova membro Luiz
+cfa300d 2026-09-13 gabriel-ricardo-ADS docs: atualiza conceito da Lumen AI e descricao do integrante
+98f7573 2026-09-13 gabriel-ricardo-ADS fix: atualiza nomenclatura da pagina 404
+541de00 2026-09-13 gabriel-ricardo-ADS Merge remote-tracking branch 'upstream/main' into feature/rm572279
+c2158d2 2026-09-13 gabriel-ricardo-ADS feat: corrige orientação das mãos do nexo
+415b299 2026-09-13 gabriel-ricardo-ADS chore: atualiza foto de integrante Gabriel Ricardo
+a02fe80 2026-09-13 gabriel-ricardo-ADS fix: corrige tipagem dos níveis da experiência
+18df06b 2026-09-13 Diogo Guilherme de Assis Reis Merge pull request #15 from gabrielrazod9j-ops/feature/rm572244
+73b820e 2026-09-13 gabriel feat: Fazendo alteração na descrição do cargo no team.ts
+b7ed8bf 2026-09-13 gabriel feat: Alterando meu cargo na pagina team react.
+77182e8 2026-09-13 Razo Merge branch 'DioohReis:main' into feature/rm572244
+b6cf3eb 2026-09-13 DioohReis feat: logica importada das missoes do projeto em html e css e js nativo. criado novas logicas para seguir o andamento do projeto
+19e4ce9 2026-09-13 DioohReis Feat: fiz uma nova pagina para experiência, e implementei funcoes para deixar a pagina mais parecida com o da soul up. criado logicas para pontos, crei um chat para receber informacões dos usuarios e preparar para receber o agente em pyhon.
+c19bfea 2026-09-13 DioohReis feat: migrando as informacões do time para react
+5575f4a 2026-09-13 DioohReis feat: estrutura base do projeto, e  atualizando as paginas para react.
+1adae03 2026-09-13 DioohReis feat: adicionando fotos do projeto para colocar no readme
+1e976b0 2026-09-13 Razo Merge branch 'DioohReis:main' into feature/rm572244
+21a1acb 2026-09-13 gabriel feat: Migrando o faq anterior para react.
+06bd333 2026-09-13 gabriel feat: Preparando a pagina integrantes para receber carrosel e informações do time.
+7b0995e 2026-09-13 gabriel feat: Atualizando o carrosel para receber as informções do time.
+26805b5 2026-09-13 gabriel feat: Implementando o modal.
+1c1b73e 2026-09-13 gabriel feat: Implementando o  carrosel antigo em react.
+d61ee65 2026-09-13 Diogo Guilherme de Assis Reis Merge pull request #14 from gabrielrazod9j-ops/feature/rm572244
+c5a5110 2026-09-13 gabriel feat: Atualizando a pagina da pagina integrantes.
+be42740 2026-09-13 DioohReis Feat: documentacão feita
+845f2bc 2026-09-13 DioohReis feat: atualizando e preparando o arquivo Experiencia.tsx, para receber o nexo e outras funções
+27c23b5 2026-09-13 DioohReis feat: criação do nexo, modelagem, e preparação pra receber as quests feitas. Twailwind configurado com as cores da nova pagina experiencia.
+68626b7 2026-09-08 DioohReis feat: adicionando arquivo de estilo
+9db2531 2026-09-08 DioohReis feat: criando o restante dos arquivos tsx do projeto, preparando o ambiente para futuras atualizações
+715f35f 2026-09-08 DioohReis feat: criando os arquivos tsx do projeto com o conteudo do projeto anterior.
+17861a8 2026-09-08 DioohReis feat: adicionando as imagens ao projeto
+459720d 2026-09-08 DioohReis feat: instalando no projeto o tailwind, e preparando o ambiente para react
+389911c 2026-09-08 DioohReis feat: apagando a antiga estrutura do css,html e js nativo e preparando para a migração para o react
+cb696e0 2026-05-23 DioohReis update Readme.md
+dc86036 2026-05-22 DioohReis feat: ultima att.
+e1a34d2 2026-05-22 Diogo Guilherme de Assis Reis Update README.md
+61c9231 2026-05-22 Diogo Guilherme de Assis Reis Update README.md
+14c576d 2026-05-22 DioohReis feat: README atualizado.
+30f1b57 2026-05-22 Diogo Guilherme de Assis Reis Merge pull request #13 from MatheusRodriguesSerrao/rm570469
+0eaf41a 2026-05-22 MatheusRodriguesSerrao feat : Atualizando nome na aba de login.
+616aff6 2026-05-22 MatheusRodriguesSerrao feat : Atualizando placeholder do campo de e-mail no formulário de login.
+2876d45 2026-05-22 MatheusRodriguesSerrao feat : Alterando mensagem de erro para senha incorreta no login.
+3606cb1 2026-05-22 MatheusRodriguesSerrao feat : Alteração na mensagem de erro para usuarion não cadastrado.
+bec6098 2026-05-22 MatheusRodriguesSerrao feat : Adicionando descrição do integrante.
+4185ed3 2026-05-22 Diogo Guilherme de Assis Reis Merge pull request #12 from LuizHenriqueAAlbarello/RM572727
+0e4dba8 2026-05-22 MatheusRodriguesSerrao feat : Adicionando link do linkedin
+efd48a5 2026-05-21 LuizHenriqueAAlbarello feat: arrumado endereço
+5b06fa7 2026-05-21 LuizHenriqueAAlbarello feat: arrumado nome luiz
+44265af 2026-05-21 LuizHenriqueAAlbarello feta: adicionado e criado email
+76c5769 2026-05-21 LuizHenriqueAAlbarello feat: adicionado perfil linkedin
+49be5ae 2026-05-21 DioohReis feat: provavelmente a ultima att da pagina experiencia, muito orgulhoso com o projeto.
+0fffdee 2026-05-20 Diogo Guilherme de Assis Reis Merge pull request #11 from gabrielrazod9j-ops/rm522244
+8168f2d 2026-05-20 Razo Merge branch 'DioohReis:main' into rm522244
+4ac9ca6 2026-05-20 gabriel feat: adicionando email
+1845458 2026-05-20 gabriel feat: adicionando o email na área de contato
+6cc2cb0 2026-05-20 Diogo Guilherme de Assis Reis Merge pull request #10 from gabrielrazod9j-ops/rm522244
+d3a638b 2026-05-20 gabriel feat: alterando a descrição do integrante
+b17f6ed 2026-05-20 gabriel feat: adicionando link do linkedin
+ec05ca0 2026-05-20 gabriel feat: Alteração do nome
+4ba4388 2026-05-20 DioohReis feat: criamos o login que leva para a pagina de EXPERIÊNCIA aonde o lumen mostra o nome do usuario, e algumas sugestoes de como fazer esse usuario melhorar e ter maior engajamento com a plataforma, foi otimizado tambem os arquivos e agora ele se encaixa no que foi pedido no pdf de um tamanho inferior a 50mb, foi criado tambem um arquivo txt com o historico do git
+4486d6d 2026-05-20 DioohReis Remove imagens não utilizadas
+d034e2a 2026-05-20 Diogo Guilherme de Assis Reis Merge pull request #9 from gabriel-ricardo-ADS/main
+c0b80ae 2026-05-20 gabriel-ricardo-ADS feat: aprimorando e alterando o sobre.html, e estilizando suas classes no style.css
+964fb3b 2026-05-20 gabriel-ricardo-ADS feat: melhorando formulário no contato.js e em seu style.css
+ae2dcfb 2026-05-20 gabriel-ricardo-ADS feat: crianção do readme.md
+32a1759 2026-05-20 gabriel-ricardo-ADS feat: criando contato.js e arrumando seu html
+95132d2 2026-05-19 DioohReis feat: Projeto atualizado com correções no style.css, apagando conflitos e codigos sem funcionalidade antigos, criado dois novos js no projeto, um para interações do menu, e o outro para os efeitos das paginas, criei o conteudo das paginas, faq, contato e sobre, arrumei o css do integrantes.
+a719e20 2026-05-19 DioohReis feat: feito as alteraçoes, da pagina integrantes, e foi feito o link para o linkedin e o github com os devidos protocolos de segurança
+423a073 2026-05-13 DioohReis feat: integrantes atualizado, criado uma interação com js para integrantes, atualizado o css e o html da pagina integrantes
+ba4bd09 2026-05-13 DioohReis feat: tirei o css do lumen do style e e criei um proprio css para ele dentro da pasta css
+7a472ac 2026-05-13 DioohReis feat: deixei a barra de navegação trasparente, e atualizei umas coisas no no css
+a0fe6c3 2026-05-12 DioohReis feat: criado o js do projeto, fiz um avatar em css e criei responsividade com js.
+1a61304 2026-05-12 DioohReis feat: arrumando a responsividade para outros dispositivos
+755cb66 2026-05-04 DioohReis     Merge branch 'main' of https://github.com/DioohReis/soul-up-challegen
+e044ad0 2026-05-04 DioohReis feat: update background image and navigation links
+cc7f751 2026-05-04 DioohReis feat: att imagem, e paginas
+c294b26 2026-05-04 Diogo Guilherme de Assis Reis Merge pull request #8 from gabriel-ricardo-ADS/rm572279
+5751e62 2026-05-04 gabriel-ricardo-ADS feat: removendo botão e alinhando o cabeçalho
+9f013f9 2026-05-04 Diogo Guilherme de Assis Reis Merge pull request #7 from gabriel-ricardo-ADS/rm572279
+f6a4a92 2026-05-04 gabriel-ricardo-ADS feat: adicionando @media aos dois arquivos css para até 1024px, 768px e 480px
+1a83a2f 2026-05-04 DioohReis feat: alterando o fundo da pagina inicial
+4317527 2026-04-30 DioohReis feat: fotos de todos os integrantes do grupo esta okay
+e1e7e57 2026-04-30 Diogo Guilherme de Assis Reis Merge pull request #5 from LuizHenriqueAAlbarello/RM572727
+a4d9220 2026-04-30 DioohReis feat: adicionando a foto do integrante Matheus na pagina integrantes
+f2d6fc1 2026-04-30 Diogo Guilherme de Assis Reis Merge pull request #6 from MatheusRodriguesSerrao/rm570469
+b50e061 2026-04-30 MatheusRodriguesSerrao feat: adicionando imagem na pasta de fotos, integrante Matheus Rodrigues
+2e5b5e3 2026-04-30 LuizHenriqueAAlbarello feat: Adicionado Foto Luiz
+0353e8a 2026-04-29 Diogo Guilherme de Assis Reis Merge pull request #4 from gabriel-ricardo-ADS/rm572279
+07f4d99 2026-04-29 gabriel-ricardo-ADS feat: montando estrutura no sobre.html para futuro preenchimento das informações
+85feb72 2026-04-29 gabriel-ricardo-ADS feat: adicionando imagem do integrante Gabriel Ricardo, alterando texto da IA e data do rodapé
+88eb0a5 2026-04-29 DioohReis feat: Iniciei a criação da pagina principal, coloquei uns elementos com css, para deixar mais dinamico e visual.
+5a0f76f 2026-04-29 Diogo Guilherme de Assis Reis Merge pull request #2 from gabrielrazod9j-ops/rm572244
+4f4e754 2026-04-29 Diogo Guilherme de Assis Reis Merge branch 'main' into rm572244
+4da741e 2026-04-29 Diogo Guilherme de Assis Reis Merge pull request #3 from DioohReis/rm573301
+9a036be 2026-04-29 DioohReis feat: foi feito alguns testes, mas nenhuma atualização muito grande
+eb78c0a 2026-04-29 gabriel feat: adicionando a foto .jpg na pagina de integrantes do projeto
+0668718 2026-04-29 gabriel feat: adicionando imagem na pasta de fotos
+9d74c43 2026-04-28 DioohReis feat: criei o cabeçalho de todas as paginas, criei o css padrão das paginas e um css expecifico para integrantes
+74c527b 2026-04-28 DioohReis feat: criando as paginas obrigatorias do projeto.
+79f0ffd 2026-04-28 DioohReis feat: Criando as pastas dentro do projeto css, pages, js. E iniciando a criação da pagina inicial index.html
