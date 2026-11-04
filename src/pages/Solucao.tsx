@@ -52,6 +52,19 @@ export function Solucao() {
           </div>
         </GlassCard>
       </section>
+
+      <section className="mx-auto max-w-7xl px-4 pt-10 sm:px-6 lg:px-8">
+        <GlassCard className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+          <div className="max-w-3xl">
+            <span className="text-xs font-black uppercase tracking-[0.2em] text-emerald-200">Sprint 4 · Integração com API</span>
+            <h2 className="mt-3 text-2xl font-black sm:text-3xl">Painel com dados reais</h2>
+            <p className="mt-3 text-sm leading-7 text-white/65">O Painel consome a API Java (Spring Boot) da equipe: lista os usuários, mostra os detalhes de cada jornada e permite cadastrar, editar e excluir usuários, avatares, ações, missões e publicações salvos no banco Oracle.</p>
+          </div>
+          <Link to="/painel" className="inline-flex shrink-0 justify-center rounded-full bg-gradient-to-r from-cyan-300 to-emerald-300 px-6 py-3 text-sm font-black text-[#00140f] transition hover:brightness-110">
+            Abrir o Painel
+          </Link>
+        </GlassCard>
+      </section>
     </main>
   )
 }
