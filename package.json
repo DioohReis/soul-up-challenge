@@ -1,9 +1,11 @@
 {
   "name": "lumen-ai-soul-up",
   "private": true,
-  "version": "3.0.0",
+  "version": "4.0.0",
   "type": "module",
-  "engines": { "node": "^20.19.0 || >=22.12.0" },
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc --noEmit -p tsconfig.app.json && vite build",
@@ -11,6 +13,7 @@
     "typecheck": "tsc --noEmit -p tsconfig.app.json --pretty"
   },
   "dependencies": {
+    "@vercel/analytics": "2.0.1",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "react-hook-form": "7.54.2",

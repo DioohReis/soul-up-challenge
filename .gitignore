@@ -7,3 +7,4 @@ entrega/
 .env
 .env.*
 !.env.example
+.claude/
