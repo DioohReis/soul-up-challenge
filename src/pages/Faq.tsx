@@ -28,7 +28,7 @@ const questions = [
   ],
   [
     "Meus dados ficam salvos?",
-    "Sim, o progresso é salvo localmente no navegador (localStorage). Se trocar de dispositivo ou limpar o cache, o progresso não é sincronizado nesta versão.",
+    "Depende da página. Na Experiência, o progresso fica salvo no seu navegador (localStorage). No Painel, os usuários e suas jornadas são salvos no banco de dados Oracle através da nossa API Java, então aparecem em qualquer dispositivo.",
   ],
 ];
 
