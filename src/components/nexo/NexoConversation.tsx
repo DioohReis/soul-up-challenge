@@ -126,7 +126,7 @@ export function NexoConversation({
       return `No momento estamos em ${currentProblem.titulo}. Você pode trocar de tema pelos atalhos abaixo e eu adapto a conversa ao novo contexto.`
     }
 
-    return `Entendi. Nesta Sprint 03 eu estou operando em modo guiado local, sem consumo de API. Posso falar sobre ${currentProblem.titulo}, sugerir uma missão, explicar seu progresso ou mostrar como as recompensas funcionam.`
+    return `Entendi! Eu sou um guia de conversa por regras: posso falar sobre ${currentProblem.titulo}, sugerir uma missão, explicar seu progresso ou mostrar como as recompensas funcionam. Para ver usuários e jornadas salvos no banco, acesse o Painel.`
   }
 
   async function sendMessage(rawMessage: string) {
