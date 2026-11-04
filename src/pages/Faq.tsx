@@ -24,7 +24,7 @@ const questions = [
   ],
   [
     "Quais tecnologias foram usadas?",
-    "React, Vite, TypeScript, Tailwind CSS, React Router DOM e React Hook Form, mantendo a experiência como uma SPA.",
+    "No front-end: React, Vite, TypeScript, Tailwind CSS, React Router DOM, React Hook Form e Three.js, com deploy na Vercel. No back-end: uma API Java com Spring Boot, publicada no Render e ligada a um banco Oracle. As duas partes conversam por requisições HTTP com a Fetch API.",
   ],
   [
     "Meus dados ficam salvos?",
