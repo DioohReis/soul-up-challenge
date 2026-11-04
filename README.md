@@ -1135,6 +1135,7 @@ Portanto, essa tela não deve ser tratada como autenticação de produção.
 ---
 
 # 16. Responsividade
+![Painel no celular](docs/imagens/16-painel-mobile.png)
 
 O projeto utiliza uma abordagem mobile-first.
 
@@ -1160,6 +1161,17 @@ A aplicação adapta:
 - cards;
 - menus;
 - conteúdo secundário.
+
+## Breakpoints do Painel
+
+
+| Prefixo Tailwind | Largura mínima | O que muda no Painel |
+| --- | --- | --- |
+| (sem prefixo) | 0px | Usuários em cartões, um embaixo do outro |
+| `sm:` | 480px | Indicadores em 3 colunas, busca e ordenação lado a lado |
+| `md:` | 768px | Cartões viram tabela |
+| `lg:` | 992px | Formulário ao lado da tabela, coluna "Nível" aparece |
+| `xl:` | 1200px | Coluna "Missões" aparece na tabela |
 
 ## Canvas 3D
 
